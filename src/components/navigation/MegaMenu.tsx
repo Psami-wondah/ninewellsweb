@@ -1,0 +1,42 @@
+import { ArrowRight, X } from '@phosphor-icons/react'
+import { expertiseSlugs, megaMenuContent } from '../../data/siteContent'
+import { Eyebrow } from '../ui/Eyebrow'
+import { InlineLink } from '../ui/InlineLink'
+
+type MegaMenuProps = {
+  menu: 'expertise' | 'industries'
+  onClose: () => void
+}
+
+export function MegaMenu({ menu, onClose }: MegaMenuProps) {
+  const content = megaMenuContent[menu]
+  return (
+    <div className="fixed top-0 right-0 left-[232px] z-[70] hidden border-b border-navy/15 bg-ivory px-[clamp(40px,6vw,95px)] pt-7 pb-11 shadow-[0_24px_60px_rgba(0,22,65,.12)] animate-[menu-in_260ms_cubic-bezier(.2,.7,.2,1)] dark:border-white/15 dark:bg-[#08172a] dark:shadow-black/30 lg:block" role="region" aria-label={`${menu} menu`}>
+      <div className="flex items-center justify-between border-b border-navy/15 pb-5 dark:border-white/15">
+        <Eyebrow className="text-navy dark:text-paper">{content.eyebrow}</Eyebrow>
+        <button className="flex size-10 items-center justify-center border border-navy/20 bg-transparent text-navy dark:border-white/25 dark:text-paper" type="button" onClick={onClose} aria-label="Close menu"><X size={23} /></button>
+      </div>
+      <div className="grid grid-cols-[1.2fr_.75fr_.75fr] gap-14 py-10">
+        <div>
+          <Eyebrow>Navigate</Eyebrow>
+          <h2 className="my-3 whitespace-pre-line font-serif text-[42px] leading-[.98] font-normal tracking-[-.035em] text-navy dark:text-paper">{content.heading}</h2>
+          <InlineLink href={`/#${menu}`}>{content.action}</InlineLink>
+        </div>
+        {content.columns.map((column) => (
+          <div className="flex flex-col gap-3.5" key={column.label}>
+            <Eyebrow>{column.label}</Eyebrow>
+            {column.links.map((link) => {
+              const expertiseHref = expertiseSlugs[link as keyof typeof expertiseSlugs]
+              return <a className="w-fit text-[13px] text-navy no-underline transition-colors hover:text-teal-dark dark:text-paper dark:hover:text-teal-light" href={menu === 'expertise' && expertiseHref ? `/expertise/${expertiseHref}` : `/#${menu}`} key={link}>{link}</a>
+            })}
+          </div>
+        ))}
+      </div>
+      <a className="grid grid-cols-[160px_1fr_30px] items-center border-t border-navy/15 pt-6 text-navy no-underline dark:border-white/15 dark:text-paper" href="/#insights">
+        <Eyebrow>Featured perspective</Eyebrow>
+        <strong className="font-serif text-[22px] font-normal">Nigeria’s energy recovery—and what reform must unlock next</strong>
+        <ArrowRight size={20} aria-hidden="true" />
+      </a>
+    </div>
+  )
+}
