@@ -42,6 +42,27 @@ function App() {
     window.scrollTo(0, 0)
   }, [pathname])
 
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add('is-visible'))
+      return
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      })
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 })
+
+    elements.forEach((element) => observer.observe(element))
+    return () => observer.disconnect()
+  }, [pathname])
+
   const profileSlug = pathname.startsWith('/people/') ? pathname.split('/')[2] : null
   const expertiseSlug = pathname.startsWith('/expertise/') ? pathname.split('/')[2] : null
   const person = profileSlug ? people.find((entry) => entry.slug === profileSlug) : null

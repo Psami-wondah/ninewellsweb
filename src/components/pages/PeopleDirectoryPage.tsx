@@ -36,7 +36,7 @@ export function PeopleDirectoryPage() {
   return (
     <>
       <section className="border-b border-navy/15 bg-ivory px-[clamp(22px,7vw,118px)] pt-[clamp(58px,8vw,108px)] pb-[clamp(64px,8vw,98px)] dark:border-white/15 dark:bg-[#08172a]" aria-labelledby="people-directory-heading">
-        <div className="grid gap-10 lg:grid-cols-[1.25fr_.75fr] lg:items-end">
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_.75fr] lg:items-end" data-reveal="up">
           <div>
             <Eyebrow>People / Directory</Eyebrow>
             <h1 className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper" id="people-directory-heading">Find the right perspective.</h1>
@@ -46,7 +46,7 @@ export function PeopleDirectoryPage() {
       </section>
 
       <section className="bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(54px,7vw,86px)] dark:bg-[#071224]" aria-label="People search and results">
-        <div className="border-y border-navy/20 bg-ivory dark:border-white/20 dark:bg-[#0a192c]">
+        <div className="border-y border-navy/20 bg-ivory dark:border-white/20 dark:bg-[#0a192c]" data-reveal="up">
           <label className="grid min-h-[84px] grid-cols-[32px_1fr] items-center gap-3 border-b border-navy/15 px-5 dark:border-white/15 sm:px-7" htmlFor="people-search">
             <MagnifyingGlass className="text-teal-dark dark:text-teal-light" size={23} aria-hidden="true" />
             <span className="sr-only">Search by name or keyword</span>
@@ -68,7 +68,7 @@ export function PeopleDirectoryPage() {
         {filteredPeople.length > 0 ? (
           <div>
             {filteredPeople.map((person, index) => (
-              <a className="group grid gap-5 border-b border-navy/15 py-8 text-navy no-underline dark:border-white/15 dark:text-paper md:grid-cols-[64px_1.1fr_.8fr_52px] md:items-center lg:py-10" href={`/people/${person.slug}`} key={person.slug}>
+              <a className="group grid gap-5 border-b border-navy/15 py-8 text-navy no-underline dark:border-white/15 dark:text-paper md:grid-cols-[64px_1.1fr_.8fr_52px] md:items-center lg:py-10" href={`/people/${person.slug}`} key={person.slug} data-reveal="up" data-reveal-delay={String((index % 3) + 1)}>
                 <span className="font-serif text-[34px] text-teal-dark dark:text-teal-light">{String(index + 1).padStart(2, '0')}</span>
                 <span>
                   <small className="text-[9px] font-semibold uppercase tracking-[.13em] text-teal-dark dark:text-teal-light">{person.location} · {person.position}</small>

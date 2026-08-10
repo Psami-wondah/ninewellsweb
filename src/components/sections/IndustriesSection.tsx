@@ -6,11 +6,11 @@ import { Eyebrow } from '../ui/Eyebrow'
 export function IndustriesSection() {
   return (
     <section className="grid min-h-[820px] bg-ivory dark:bg-[#0a192c] lg:grid-cols-[1.1fr_.9fr]" id="industries" aria-labelledby="industries-heading">
-      <figure className="relative order-2 m-0 min-h-[390px] overflow-hidden bg-[#eef0f5] lg:order-1 lg:min-h-[740px]">
+      <figure className="relative order-2 m-0 min-h-[390px] overflow-hidden bg-[#eef0f5] lg:order-1 lg:min-h-[740px]" data-reveal="left">
         <img className="h-full w-full object-cover object-center mix-blend-multiply" src={lagosIllustration} alt="Original blue pen-and-ink illustration of the Lekki–Ikoyi Link Bridge and Lagos skyline" />
         <figcaption className="absolute bottom-0 left-0 bg-navy-deep/95 px-6 py-4 text-[10px] uppercase tracking-[.13em] text-ivory">Lagos in line / Original Ninewells study</figcaption>
       </figure>
-      <div className="order-1 px-[clamp(22px,6vw,90px)] py-[clamp(76px,9vw,104px)] lg:order-2">
+      <div className="order-1 px-[clamp(22px,6vw,90px)] py-[clamp(76px,9vw,104px)] lg:order-2" data-reveal="right" data-reveal-delay="1">
         <Eyebrow>Industries</Eyebrow>
         <h2 className="my-6 font-serif text-[clamp(43px,5vw,70px)] leading-[.98] font-normal tracking-[-.04em] text-navy dark:text-paper" id="industries-heading">Knowledge of the forces shaping your world.</h2>
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/85">Sector fluency changes the quality of legal advice. We connect Nigerian law with the commercial, regulatory and operational realities around it.</p>

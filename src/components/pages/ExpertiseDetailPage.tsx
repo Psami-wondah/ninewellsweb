@@ -14,7 +14,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
     <>
       <section className="relative overflow-hidden bg-navy px-[clamp(22px,7vw,118px)] pt-[clamp(46px,6vw,72px)] pb-[clamp(72px,9vw,118px)] text-ivory dark:bg-[#030d1d]" aria-labelledby="expertise-detail-heading">
         <a className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.12em] text-white/80 no-underline" href="/#expertise"><ArrowLeft size={16} /> All expertise</a>
-        <div className="mt-[clamp(72px,10vw,138px)] grid gap-12 lg:grid-cols-[.25fr_1.15fr_.6fr] lg:items-end">
+        <div className="mt-[clamp(72px,10vw,138px)] grid gap-12 lg:grid-cols-[.25fr_1.15fr_.6fr] lg:items-end" data-reveal="up">
           <span className="font-serif text-[clamp(62px,7vw,92px)] leading-none text-teal">{detail.number}</span>
           <h1 className="m-0 max-w-[820px] font-serif text-[clamp(58px,7.5vw,108px)] leading-[.86] font-normal tracking-[-.055em] text-ivory" id="expertise-detail-heading">{detail.title}</h1>
           <p className="m-0 max-w-[430px] border-t border-white/30 pt-6 text-[15px] leading-7 text-white/82">{detail.introduction}</p>
@@ -23,11 +23,11 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
       </section>
 
       <section className="grid gap-14 bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,118px)] dark:bg-[#08172a] lg:grid-cols-[.55fr_1.15fr] lg:gap-[clamp(80px,10vw,165px)]" id="overview">
-        <div>
+        <div data-reveal="left">
           <Eyebrow>Overview / Client needs</Eyebrow>
           <p className="mt-6 max-w-[370px] text-[12px] leading-6 text-slate dark:text-paper/72">{detail.description} Senior attention, commercial fluency and a clear view of what matters most.</p>
         </div>
-        <div>
+        <div data-reveal="right" data-reveal-delay="1">
           <h2 className="m-0 max-w-[850px] font-serif text-[clamp(38px,4.5vw,62px)] leading-[1.04] font-normal tracking-[-.04em] text-navy dark:text-paper">The legal answer is only useful when it works in the real world.</h2>
           <div className="mt-10 grid gap-8 text-[15px] leading-7 text-slate dark:text-paper/78 md:grid-cols-2">
             <p className="m-0">Clients need to see the whole decision: legal position, commercial leverage, stakeholder expectations and the practical path to delivery.</p>

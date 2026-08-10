@@ -12,7 +12,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
   return (
     <>
       <section className="grid min-h-[760px] border-b border-navy/15 bg-ivory dark:border-white/15 dark:bg-[#08172a] lg:grid-cols-[1.08fr_.92fr]" aria-labelledby="profile-heading">
-        <div className="flex flex-col px-[clamp(22px,7vw,118px)] pt-[clamp(42px,6vw,72px)] pb-[clamp(56px,7vw,84px)]">
+        <div className="flex flex-col px-[clamp(22px,7vw,118px)] pt-[clamp(42px,6vw,72px)] pb-[clamp(56px,7vw,84px)]" data-reveal="left">
           <a className="mb-16 inline-flex w-fit items-center gap-3 text-[11px] font-semibold uppercase tracking-[.1em] text-slate no-underline dark:text-paper/80" href="/people"><ArrowLeft size={16} /> All people</a>
           <Eyebrow>{person.location} / {person.position}</Eyebrow>
           <h1 className="mt-6 mb-5 max-w-[690px] font-serif text-[clamp(58px,7.5vw,106px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper" id="profile-heading">{person.name}</h1>
@@ -21,7 +21,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             <a className="inline-flex items-center gap-3 text-[12px] font-semibold text-navy no-underline dark:text-paper" href={person.sourceUrl} target="_blank" rel="noreferrer"><ArrowSquareOut className="text-teal-dark dark:text-teal-light" size={20} /> View {person.sourceLabel}</a>
           </div>
         </div>
-        <figure className="relative m-0 min-h-[520px] overflow-hidden bg-[#eef0f5]">
+        <figure className="relative m-0 min-h-[520px] overflow-hidden bg-[#eef0f5]" data-reveal="fade" data-reveal-delay="1">
           <img className="h-full w-full object-cover object-center mix-blend-multiply" src={lagosIllustration} alt="Blue pen-and-ink illustration of the Lekki–Ikoyi Link Bridge and Lagos skyline" />
           <figcaption className="absolute right-0 bottom-0 bg-navy-deep px-6 py-4 text-[9px] font-semibold uppercase tracking-[.14em] text-ivory">Lagos in line / Editorial illustration</figcaption>
         </figure>
@@ -34,7 +34,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             {['Overview', 'Expertise', 'Experience', 'Perspectives'].map((item, index) => <a className="grid min-h-12 grid-cols-[32px_1fr] items-center border-b border-navy/15 no-underline dark:border-white/15" href={`#${item.toLowerCase()}`} key={item}><span className="text-[9px] text-teal-dark dark:text-teal-light">0{index + 1}</span>{item}</a>)}
           </nav>
         </div>
-        <div>
+        <div data-reveal="up">
           <div id="overview">
             <h2 className="m-0 max-w-[790px] font-serif text-[clamp(34px,4vw,55px)] leading-[1.08] font-normal tracking-[-.035em] text-navy dark:text-paper">{person.bio}</h2>
             <div className="mt-10 grid gap-7 text-[15px] leading-7 text-slate dark:text-paper/85 md:grid-cols-2">

@@ -9,6 +9,7 @@
     <title>Ninewells | Nigerian legal counsel</title>
     <script>
       try {
+        document.documentElement.classList.add('js')
         const savedTheme = localStorage.getItem('ninewells-theme')
         const dark = savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)
         document.documentElement.classList.toggle('dark', dark)

@@ -6,7 +6,7 @@ import { InlineLink } from '../ui/InlineLink'
 export function HeroSection() {
   return (
     <section className="relative grid min-h-[850px] border-b border-navy/15 bg-ivory dark:border-white/15 dark:bg-[#08172a] lg:grid-cols-[minmax(450px,1.38fr)_minmax(340px,.92fr)]" id="about" aria-labelledby="hero-heading">
-      <div className="flex min-w-0 flex-col px-[clamp(22px,6vw,106px)] pt-[clamp(38px,5vw,50px)] pb-11">
+      <div className="flex min-w-0 flex-col px-[clamp(22px,6vw,106px)] pt-[clamp(38px,5vw,50px)] pb-11" data-reveal="left">
         <p className="mb-10 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[.16em] text-navy dark:text-paper lg:mb-12">
           Nigerian legal counsel <span className="h-px w-5 bg-teal" /> Victoria Island · Lagos
         </p>
@@ -30,7 +30,7 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      <figure className="group relative m-0 min-h-[500px] min-w-0 overflow-hidden bg-stone dark:bg-[#101f33] lg:min-h-0">
+      <figure className="group relative m-0 min-h-[500px] min-w-0 overflow-hidden bg-stone dark:bg-[#101f33] lg:min-h-0" data-reveal="fade" data-reveal-delay="1">
         <img className="h-full w-full object-cover object-[62%_center] transition-transform duration-1000 group-hover:scale-[1.025]" src={lagosBridge} alt="Lekki–Ikoyi Link Bridge across the Lagos Lagoon" />
         <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-between gap-2 bg-navy-deep/95 px-6 py-4 text-[9px] uppercase tracking-[.13em] text-ivory">
           <span>Lagos, Nigeria / Built for connected markets</span>

@@ -8,13 +8,13 @@ export function ExpertiseSection() {
   const [openExpertise, setOpenExpertise] = useState<number | null>(0)
   return (
     <section className="grid gap-14 bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,112px)] dark:bg-[#071224] lg:grid-cols-[minmax(300px,.8fr)_minmax(500px,1.35fr)] lg:gap-[clamp(60px,8vw,150px)]" id="expertise" aria-labelledby="expertise-heading">
-      <div className="self-start lg:sticky lg:top-14">
+      <div className="self-start lg:sticky lg:top-14" data-reveal="left">
         <Eyebrow>Our expertise</Eyebrow>
         <h2 className="my-6 font-serif text-[clamp(43px,5vw,70px)] leading-[.98] font-normal tracking-[-.04em] text-navy dark:text-paper" id="expertise-heading">Integrated expertise.<br />Pragmatic solutions.</h2>
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/80">We bring depth, commercial judgement and joined-up thinking to matters where every decision carries weight.</p>
         <InlineLink href="/#expertise">View all expertise</InlineLink>
       </div>
-      <div className="border-t border-navy dark:border-paper">
+      <div className="border-t border-navy dark:border-paper" data-reveal="right" data-reveal-delay="1">
         {expertise.map(([number, title, description], index) => {
           const isOpen = openExpertise === index
           return (
