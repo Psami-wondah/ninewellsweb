@@ -27,7 +27,9 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
             <Eyebrow>{column.label}</Eyebrow>
             {column.links.map((link) => {
               const expertiseHref = expertiseSlugs[link as keyof typeof expertiseSlugs]
-              return <a className="w-fit text-[13px] text-navy no-underline transition-colors hover:text-teal-dark dark:text-paper dark:hover:text-teal-light" href={menu === 'expertise' && expertiseHref ? `/expertise/${expertiseHref}` : `/#${menu}`} key={link}>{link}</a>
+              const href = menu === 'expertise' && expertiseHref ? `/expertise/${expertiseHref}` : `/#${menu}`
+              const isCurrent = window.location.pathname === href
+              return <a className={`w-fit text-[13px] no-underline transition-colors hover:text-teal-dark dark:hover:text-teal-light ${isCurrent ? 'font-semibold text-teal-dark dark:text-teal-light' : 'text-navy dark:text-paper'}`} href={href} key={link} aria-current={isCurrent ? 'page' : undefined}>{link}</a>
             })}
           </div>
         ))}

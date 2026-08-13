@@ -39,7 +39,7 @@ export function MobileMenu({ onClose, onSearch }: { onClose: () => void; onSearc
                   </div>
                 </>
               ) : (
-                <a className={`flex min-h-[60px] items-center justify-between font-serif text-[25px] no-underline ${isCurrent ? 'text-teal-light' : 'text-ivory'}`} href={getNavHref(item)} onClick={onClose} aria-current={isCurrent ? 'page' : undefined}>{label}{item === 'People' ? <ArrowRight size={20} /> : <ArrowDownRight size={20} />}</a>
+                <a className={`flex min-h-[60px] items-center justify-between font-serif text-[25px] no-underline ${isCurrent ? 'text-teal-light' : 'text-ivory'}`} href={getNavHref(item)} onClick={onClose} aria-current={isCurrent ? 'page' : undefined}>{label}{getNavHref(item).startsWith('/#') ? <ArrowDownRight size={20} /> : <ArrowRight size={20} />}</a>
               )}
             </div>
           )
@@ -47,7 +47,7 @@ export function MobileMenu({ onClose, onSearch }: { onClose: () => void; onSearc
       </nav>
       <div className="mt-auto flex flex-col gap-4 px-5 pt-6 pb-9">
         <button className="flex min-h-11 items-center gap-3 border-0 bg-transparent text-left text-[12px] text-ivory" type="button" onClick={onSearch}><MagnifyingGlass className="text-teal" size={18} /> Search Ninewells</button>
-        <a className="flex items-center justify-between text-[12px] text-teal-light no-underline" href="/#contact" onClick={onClose}>Speak with our team <ArrowDownRight size={18} /></a>
+        <a className="flex items-center justify-between text-[12px] text-teal-light no-underline" href="/contact" onClick={onClose}>Speak with our team <ArrowRight size={18} /></a>
         <a className="text-[12px] text-white/85 no-underline" href={LINKEDIN_URL} target="_blank" rel="noreferrer">Ninewells on LinkedIn</a>
       </div>
     </div>

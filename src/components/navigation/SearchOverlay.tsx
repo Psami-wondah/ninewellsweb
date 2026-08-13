@@ -19,7 +19,7 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
       </form>
       <div className="flex flex-wrap gap-7 text-[12px] text-navy dark:text-paper">
         <span className="font-semibold text-teal-dark dark:text-teal-light">Suggested</span>
-        <a className="no-underline" href="/expertise/energy-extractives-foreign-investment">Energy & investment</a><a className="no-underline" href="/people">Find a lawyer</a><a className="no-underline" href="/#insights">Latest insights</a>
+        <a className="no-underline" href="/expertise/energy">Energy</a><a className="no-underline" href="/people">Meet the team</a><a className="no-underline" href="/#insights">Latest insights</a>
       </div>
     </div>
   )

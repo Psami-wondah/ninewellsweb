@@ -1,57 +1,104 @@
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/ninewells/'
 
-export const navItems = ['About', 'Expertise', 'Industries', 'People', 'Insights', 'Careers', 'Contact'] as const
+export const navItems = ['About', 'Expertise', 'Industries', 'People', 'Insights', 'Contact'] as const
 
-export const expertise = [
-  ['01', 'Energy, Extractives & Foreign Investment', 'Commercial, regulatory and investment counsel across energy and natural resources.'],
-  ['02', 'Dispute Resolution', 'Litigation and arbitration strategy for consequential disputes.'],
-  ['03', 'Financial Services & Capital Markets', 'Clear advice for institutions, transactions and evolving markets.'],
-  ['04', 'Corporate & Commercial', 'Practical counsel across transactions, governance and day-to-day business.'],
-  ['05', 'Telecommunications, Technology & Digital Law', 'Navigating technology, data, intellectual property and digital regulation.'],
+export const practiceAreas = [
+  {
+    number: '01',
+    slug: 'energy',
+    title: 'Energy',
+    description: 'Advice across the energy value chain, from operations and regulation to projects, finance and disputes.',
+    introduction: 'The energy sector is undergoing significant transformation. We advise clients across the energy value chain through the different stages of their operations.',
+    overview: 'Our work covers regulatory compliance, project development, financing, commercial transactions, dispute resolution and the acquisition or divestment of interests.',
+    capabilities: ['Upstream, midstream and downstream oil & gas', 'Renewable energy and power projects', 'Project finance', 'Licensing and regulatory compliance', 'ESG and carbon initiatives', 'Energy disputes'],
+  },
+  {
+    number: '02',
+    slug: 'extractives',
+    title: 'Extractives',
+    description: 'Legal and commercial guidance for mining and natural-resources projects throughout their lifecycle.',
+    introduction: 'We advise mining and natural-resources companies throughout the project lifecycle, from licensing to exploration, production and closure.',
+    overview: 'Our multidisciplinary approach connects project development, environmental obligations, commercial structures and fiscal considerations.',
+    capabilities: ['Mining licences', 'Project development', 'Environmental compliance', 'Joint ventures', 'Royalties and taxation'],
+  },
+  {
+    number: '03',
+    slug: 'foreign-investments',
+    title: 'Foreign Investments',
+    description: 'Market-entry, investment-protection and regulatory advice for international businesses investing in Nigeria.',
+    introduction: 'We help multinational companies and foreign investors establish and operate businesses in Nigeria, repatriate profits and protect their investments.',
+    overview: 'Our advice helps clients manage expropriation risk and structure dispute resolution through arbitration while addressing regulatory compliance, immigration, technology transfer and taxation.',
+    capabilities: ['Business establishment and market entry', 'Investment protection', 'Profit repatriation', 'Arbitration strategy', 'Regulatory compliance', 'Immigration', 'Technology transfer', 'Taxation'],
+  },
+  {
+    number: '04',
+    slug: 'financial-services',
+    title: 'Financial Services',
+    description: 'Regulatory and transactional advice for banks, fintechs and other financial institutions.',
+    introduction: 'We advise banks, fintechs and other financial institutions on the regulatory and transactional matters that shape their businesses.',
+    overview: 'We combine financial-sector knowledge with practical structuring advice for institutions, products, transactions and private clients.',
+    capabilities: ['Banking & finance', 'Loan structuring', 'Insurance', 'Private wealth'],
+  },
+  {
+    number: '05',
+    slug: 'corporate-commercial',
+    title: 'Corporate & Commercial',
+    description: 'Commercially focused solutions that support growth, manage risk and enable strategic transactions.',
+    introduction: 'We advise businesses at every stage of their lifecycle, from formation and governance to complex cross-border investments, restructurings and commercial agreements.',
+    overview: 'Our team provides practical, business-oriented counsel tailored to each client’s industry, operating realities and commercial objectives.',
+    capabilities: ['Mergers & acquisitions', 'Regulatory compliance', 'Consumer protection & competition', 'Governance & company secretarial services', 'Real estate & infrastructure', 'Employment & immigration'],
+  },
+  {
+    number: '06',
+    slug: 'capital-markets',
+    title: 'Capital Markets',
+    description: 'Advice on equity and debt offerings, investment structures and securities regulation.',
+    introduction: 'We advise issuers, investors and financial institutions on equity and debt offerings and securities regulation.',
+    overview: 'Our capital-markets work connects transaction execution, fundraising objectives and the regulatory requirements governing Nigerian securities.',
+    capabilities: ['Initial public offerings', 'Bonds', 'Private equity', 'Funds', 'Securities compliance'],
+  },
+  {
+    number: '07',
+    slug: 'disputes',
+    title: 'Disputes',
+    description: 'Strategic representation before courts and arbitral tribunals in high-value disputes.',
+    introduction: 'We represent clients before Nigerian courts and arbitral tribunals in high-value, complex and commercially consequential disputes.',
+    overview: 'Our lawyers act across every tier of the Nigerian courts and in domestic, international commercial and investor-state treaty arbitration, both as counsel and as members of arbitral tribunals.',
+    capabilities: ['Commercial litigation', 'All tiers of Nigerian courts', 'Domestic arbitration', 'International commercial arbitration', 'Investor-state treaty arbitration', 'Arbitral tribunal appointments'],
+  },
+  {
+    number: '08',
+    slug: 'telecommunications-technology-digital-law',
+    title: 'Telecommunications, Technology & Digital Law',
+    description: 'Legal and regulatory guidance for technology-driven businesses operating in the digital economy.',
+    introduction: 'We advise technology-driven businesses on innovation, transactions, intellectual property and regulatory compliance.',
+    overview: 'Our practice supports established companies, financial institutions and emerging businesses as technology reshapes products, markets, risk and regulation.',
+    capabilities: ['Telecommunications', 'Technology', 'Fintech', 'Artificial intelligence', 'E-commerce', 'Data protection and privacy', 'Betting & gaming', 'Cybersecurity', 'Blockchain', 'Intellectual property'],
+  },
 ] as const
 
-export type ExpertiseName = (typeof expertise)[number][1]
+export type ExpertiseName = (typeof practiceAreas)[number]['title']
 
-export const expertiseSlugs: Record<ExpertiseName, string> = {
-  'Energy, Extractives & Foreign Investment': 'energy-extractives-foreign-investment',
-  'Dispute Resolution': 'dispute-resolution',
-  'Financial Services & Capital Markets': 'financial-services-capital-markets',
-  'Corporate & Commercial': 'corporate-commercial',
-  'Telecommunications, Technology & Digital Law': 'telecommunications-technology-digital-law',
-}
+export const expertise = practiceAreas.map(({ number, title, description }) => [number, title, description] as const)
 
-const capabilityMap: Record<ExpertiseName, string[]> = {
-  'Energy, Extractives & Foreign Investment': ['Oil, gas and power', 'Energy projects and transactions', 'Foreign investment', 'Regulatory strategy', 'Project development', 'Energy disputes'],
-  'Dispute Resolution': ['Commercial litigation', 'Domestic and international arbitration', 'Mediation and negotiated resolution', 'Regulatory disputes', 'Investment disputes', 'Enforcement strategy'],
-  'Financial Services & Capital Markets': ['Banking and finance', 'Capital markets', 'Loan documentation and security', 'Financial regulation', 'Fintech and payments', 'Transaction structuring'],
-  'Corporate & Commercial': ['Mergers and acquisitions', 'Commercial contracts', 'Corporate governance', 'Joint ventures', 'Employment advisory', 'Real estate transactions'],
-  'Telecommunications, Technology & Digital Law': ['Technology transactions', 'Data protection and privacy', 'Telecommunications regulation', 'Intellectual property', 'Fintech and digital products', 'Cybersecurity governance'],
-}
+export const expertiseSlugs = Object.fromEntries(practiceAreas.map(({ title, slug }) => [title, slug])) as Record<ExpertiseName, string>
 
-export const expertiseDetails = Object.fromEntries(
-  expertise.map(([number, title, description]) => [
-    expertiseSlugs[title],
-    {
-      number,
-      title,
-      description,
-      introduction: `Ninewells combines Nigerian market knowledge, senior judgement and an integrated commercial perspective on ${title.toLowerCase()} matters.`,
-      capabilities: capabilityMap[title],
-    },
-  ]),
-) as Record<string, {
-  number: string
-  title: ExpertiseName
-  description: string
-  introduction: string
-  capabilities: string[]
-}>
+const canonicalExpertiseDetails = Object.fromEntries(practiceAreas.map((practice) => [practice.slug, practice])) as Record<string, (typeof practiceAreas)[number]>
+
+export const expertiseDetails = {
+  ...canonicalExpertiseDetails,
+  'energy-extractives-foreign-investment': canonicalExpertiseDetails.energy,
+  'dispute-resolution': canonicalExpertiseDetails.disputes,
+  'financial-services-capital-markets': canonicalExpertiseDetails['financial-services'],
+} as Record<string, (typeof practiceAreas)[number]>
 
 export const sectors = [
-  ['Energy & extractives', 'Oil, gas, power and natural resources'],
-  ['Financial services', 'Banks, capital markets and payments'],
-  ['Technology & digital economy', 'Telecommunications, data and innovation'],
-  ['Infrastructure & real estate', 'Projects, investment and development'],
+  ['Energy, oil & gas', 'Operators, investors and projects across the energy value chain'],
+  ['Mining & natural resources', 'Licensing, development, production and closure'],
+  ['Financial services', 'Banks, fintechs, capital markets, insurance and private wealth'],
+  ['Technology & digital economy', 'Telecommunications, data, platforms and innovation'],
+  ['Infrastructure & real estate', 'Projects, development, investment and commercial assets'],
+  ['Regulated businesses', 'Governance, compliance and public-sector engagement'],
 ] as const
 
 export const insightItems = [
@@ -82,19 +129,19 @@ export const megaMenuContent = {
   expertise: {
     eyebrow: 'Our expertise',
     heading: 'Nigerian insight.\nIntegrated thinking.',
-    action: 'View all expertise',
+    action: 'Explore our practices',
     columns: [
-      { label: 'Business & markets', links: ['Corporate & Commercial', 'Financial Services & Capital Markets', 'Telecommunications, Technology & Digital Law'] },
-      { label: 'Investment & risk', links: ['Energy, Extractives & Foreign Investment', 'Dispute Resolution'] },
+      { label: 'Markets & transactions', links: ['Corporate & Commercial', 'Financial Services', 'Capital Markets', 'Foreign Investments'] },
+      { label: 'Projects, risk & innovation', links: ['Energy', 'Extractives', 'Disputes', 'Telecommunications, Technology & Digital Law'] },
     ],
   },
   industries: {
     eyebrow: 'Industries',
     heading: 'Knowledge of your world.',
-    action: 'View all industries',
+    action: 'Explore our industries',
     columns: [
-      { label: 'Core sectors', links: ['Energy & extractives', 'Financial services', 'Technology & digital economy'] },
-      { label: 'Connected markets', links: ['Infrastructure & real estate', 'Foreign investment', 'Regulated businesses'] },
+      { label: 'Core sectors', links: ['Energy, oil & gas', 'Mining & natural resources', 'Financial services'] },
+      { label: 'Connected markets', links: ['Technology & digital economy', 'Infrastructure & real estate', 'Regulated businesses'] },
     ],
   },
 } as const

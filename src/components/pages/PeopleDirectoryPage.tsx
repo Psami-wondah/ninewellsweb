@@ -41,7 +41,7 @@ export function PeopleDirectoryPage() {
             <Eyebrow>People / Directory</Eyebrow>
             <h1 className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper" id="people-directory-heading">Find the right perspective.</h1>
           </div>
-          <p className="m-0 max-w-[490px] text-[15px] leading-7 text-slate dark:text-paper/80">Find a Ninewells lawyer by expertise, sector or market. Every relationship is led by senior people who stay close to the work.</p>
+          <p className="m-0 max-w-[490px] text-[15px] leading-7 text-slate dark:text-paper/80">Meet the lawyers and business professionals behind Ninewells. Search the team by expertise, sector, location or position.</p>
         </div>
       </section>
 
@@ -61,15 +61,15 @@ export function PeopleDirectoryPage() {
         </div>
 
         <div className="flex min-h-[92px] items-center justify-between border-b border-navy px-1 dark:border-paper" aria-live="polite">
-          <p className="m-0 text-[11px] font-semibold uppercase tracking-[.14em] text-navy dark:text-paper">{filteredPeople.length} {filteredPeople.length === 1 ? 'lawyer' : 'lawyers'}</p>
+          <p className="m-0 text-[11px] font-semibold uppercase tracking-[.14em] text-navy dark:text-paper">{filteredPeople.length} {filteredPeople.length === 1 ? 'team member' : 'team members'}</p>
           {hasFilters ? <button className="inline-flex min-h-11 items-center gap-2 border-0 bg-transparent text-[12px] font-semibold text-teal-dark dark:text-teal-light" type="button" onClick={clearFilters}>Clear filters <X size={16} /></button> : null}
         </div>
 
         {filteredPeople.length > 0 ? (
           <div>
             {filteredPeople.map((person, index) => (
-              <a className="group grid gap-5 border-b border-navy/15 py-8 text-navy no-underline dark:border-white/15 dark:text-paper md:grid-cols-[64px_1.1fr_.8fr_52px] md:items-center lg:py-10" href={`/people/${person.slug}`} key={person.slug} data-reveal="up" data-reveal-delay={String((index % 3) + 1)}>
-                <span className="font-serif text-[34px] text-teal-dark dark:text-teal-light">{String(index + 1).padStart(2, '0')}</span>
+              <a className="group grid gap-5 border-b border-navy/15 py-8 text-navy no-underline dark:border-white/15 dark:text-paper md:grid-cols-[92px_1.1fr_.8fr_52px] md:items-center lg:py-9" href={`/people/${person.slug}`} key={person.slug} data-reveal="up" data-reveal-delay={String((index % 3) + 1)}>
+                <span className="relative block h-24 w-20 overflow-hidden bg-stone"><img className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" src={person.image} style={{ objectPosition: person.imagePosition }} alt="" /><small className="absolute bottom-0 left-0 bg-navy-deep px-2 py-1 text-[8px] text-white">{String(index + 1).padStart(2, '0')}</small></span>
                 <span>
                   <small className="text-[9px] font-semibold uppercase tracking-[.13em] text-teal-dark dark:text-teal-light">{person.location} · {person.position}</small>
                   <strong className="mt-3 block font-serif text-[clamp(31px,3vw,45px)] leading-none font-normal">{person.name}</strong>
@@ -82,7 +82,7 @@ export function PeopleDirectoryPage() {
           </div>
         ) : (
           <div className="border-b border-navy/15 py-24 text-center dark:border-white/15">
-            <p className="font-serif text-[34px] text-navy dark:text-paper">No lawyers match those filters.</p>
+            <p className="font-serif text-[34px] text-navy dark:text-paper">No team members match those filters.</p>
             <button className="mt-2 border-0 border-b border-teal bg-transparent pb-1 text-[13px] font-semibold text-navy dark:text-paper" type="button" onClick={clearFilters}>Reset the directory</button>
           </div>
         )}

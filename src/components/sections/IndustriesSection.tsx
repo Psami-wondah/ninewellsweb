@@ -1,5 +1,5 @@
 import { ArrowRight } from '@phosphor-icons/react'
-import lagosIllustration from '../../assets/lagos-bridge-pen-illustration.png'
+import lagosIllustration from '../../assets/lagos-bridge-pen-illustration.webp'
 import { sectors } from '../../data/siteContent'
 import { Eyebrow } from '../ui/Eyebrow'
 
@@ -16,7 +16,7 @@ export function IndustriesSection() {
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/85">Sector fluency changes the quality of legal advice. We connect Nigerian law with the commercial, regulatory and operational realities around it.</p>
         <div className="mt-12 border-t border-navy dark:border-paper">
           {sectors.map(([title, detail], index) => (
-            <a className="group grid min-h-[88px] grid-cols-[34px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper sm:grid-cols-[38px_minmax(140px,1fr)_minmax(140px,.9fr)_24px]" href="#contact" key={title}>
+            <a className="group grid min-h-[88px] grid-cols-[34px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper sm:grid-cols-[38px_minmax(140px,1fr)_minmax(140px,.9fr)_24px]" href="/contact" key={title}>
               <span className="text-[12px] font-semibold text-teal-dark dark:text-teal-light">0{index + 1}</span>
               <strong className="font-serif text-[21px] font-normal">{title}</strong>
               <small className="hidden text-[11px] leading-4 text-slate dark:text-paper/80 sm:block">{detail}</small>

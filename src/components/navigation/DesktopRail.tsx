@@ -1,4 +1,4 @@
-import { ArrowDownRight, CaretRight, MagnifyingGlass } from '@phosphor-icons/react'
+import { ArrowRight, CaretRight, MagnifyingGlass } from '@phosphor-icons/react'
 import { navItems } from '../../data/siteContent'
 import { useActiveNavigation } from '../../hooks/useActiveNavigation'
 import type { MenuName, Theme } from '../../types/navigation'
@@ -40,7 +40,7 @@ export function DesktopRail({ activeMenu, setActiveMenu, theme, onToggleTheme }:
               aria-current={isCurrent ? 'page' : undefined}
             >
               <span>{item}</span>
-              <CaretRight className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} size={15} aria-hidden="true" />
+              <CaretRight className={`transition-transform ${isOpen ? 'rotate-90' : ''}`} size={15} aria-hidden="true" />
             </button>
           ) : (
             <a className={`${baseClass} ${currentClass}`} key={item} href={getNavHref(item)} aria-current={isCurrent ? 'page' : undefined}>{item}</a>
@@ -52,8 +52,8 @@ export function DesktopRail({ activeMenu, setActiveMenu, theme, onToggleTheme }:
         <button className="flex min-h-11 items-center gap-3 border-0 bg-transparent text-[13px] text-navy transition-colors hover:text-teal-dark dark:text-paper dark:hover:text-teal-light" type="button" onClick={() => setActiveMenu('search')}>
           <MagnifyingGlass size={19} aria-hidden="true" /> Search
         </button>
-        <a className="flex min-h-11 items-center gap-3 text-[13px] font-semibold text-teal-dark no-underline dark:text-teal-light" href="/#contact">
-          <ArrowDownRight size={19} aria-hidden="true" /> Speak with our team
+        <a className="flex min-h-11 items-center gap-3 text-[13px] font-semibold text-teal-dark no-underline dark:text-teal-light" href="/contact">
+          <ArrowRight size={19} aria-hidden="true" /> Speak with our team
         </a>
       </div>
     </aside>

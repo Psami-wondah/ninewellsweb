@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowRight } from '@phosphor-icons/react'
-import lagosBridge from '../../assets/lagos-lekki-ikoyi.jpg'
+import lagosBridge from '../../assets/lagos-lekki-ikoyi.webp'
 import { Eyebrow } from '../ui/Eyebrow'
 import { InlineLink } from '../ui/InlineLink'
 
@@ -18,7 +18,7 @@ export function HeroSection() {
           <a className="group inline-flex min-h-[52px] items-center gap-6 bg-navy px-6 text-[13px] font-semibold text-ivory no-underline transition-colors hover:bg-teal-dark dark:bg-teal dark:text-navy-deep dark:hover:bg-[#54bbbb]" href="#expertise">
             Explore our expertise <ArrowRight className="transition-transform group-hover:translate-x-1" size={19} />
           </a>
-          <InlineLink href="/people">Find a lawyer</InlineLink>
+          <InlineLink href="/people">Meet the team</InlineLink>
         </div>
         <div className="mt-14 grid max-w-[560px] grid-cols-[72px_1fr] border-t border-navy/15 pt-6 dark:border-white/15 lg:mt-auto lg:grid-cols-[100px_1fr]">
           <span className="font-serif text-[46px] leading-none text-teal lg:text-[57px]">01</span>

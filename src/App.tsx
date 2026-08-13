@@ -7,6 +7,8 @@ import { SearchOverlay } from './components/navigation/SearchOverlay'
 import { ExpertiseDetailPage } from './components/pages/ExpertiseDetailPage'
 import { LawyerProfilePage } from './components/pages/LawyerProfilePage'
 import { PeopleDirectoryPage } from './components/pages/PeopleDirectoryPage'
+import { AboutPage } from './components/pages/AboutPage'
+import { ContactPage } from './components/pages/ContactPage'
 import { ContactSection } from './components/sections/ContactSection'
 import { ExpertiseSection } from './components/sections/ExpertiseSection'
 import { HeroSection } from './components/sections/HeroSection'
@@ -69,17 +71,22 @@ function App() {
   const expertiseDetail = expertiseSlug ? expertiseDetails[expertiseSlug] : null
 
   useEffect(() => {
-    const pageName = person?.name || expertiseDetail?.title || (pathname === '/people' ? 'People' : null)
+    const routeName = pathname === '/people' ? 'People' : pathname === '/about' ? 'About' : pathname === '/contact' ? 'Contact' : null
+    const pageName = person?.name || expertiseDetail?.title || routeName
     document.title = pageName ? `${pageName} | Ninewells` : 'Ninewells | Nigerian legal counsel'
   }, [expertiseDetail?.title, pathname, person?.name])
 
-  const page = pathname === '/people'
-    ? <><PeopleDirectoryPage /><ContactSection /><SiteFooter /></>
-    : person
-      ? <><LawyerProfilePage person={person} /><SiteFooter /></>
-      : expertiseDetail
-        ? <><ExpertiseDetailPage detail={expertiseDetail} /><SiteFooter /></>
-        : <HomePage />
+  const page = pathname === '/about'
+    ? <><AboutPage /><SiteFooter /></>
+    : pathname === '/contact'
+      ? <><ContactPage /><SiteFooter /></>
+      : pathname === '/people'
+        ? <><PeopleDirectoryPage /><ContactSection /><SiteFooter /></>
+        : person
+          ? <><LawyerProfilePage person={person} /><SiteFooter /></>
+          : expertiseDetail
+            ? <><ExpertiseDetailPage detail={expertiseDetail} /><SiteFooter /></>
+            : <HomePage />
 
   return (
     <div className="min-h-screen overflow-x-clip bg-paper text-navy transition-colors duration-300 dark:bg-[#071224] dark:text-paper" id="top">

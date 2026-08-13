@@ -1,4 +1,6 @@
 import { Eyebrow } from '../ui/Eyebrow'
+import { company } from '../../data/company'
+import { practiceAreas } from '../../data/siteContent'
 
 export function ProofSection() {
   return (
@@ -9,7 +11,7 @@ export function ProofSection() {
       </div>
       <p className="m-0 self-center font-serif text-[clamp(27px,2.7vw,42px)] leading-tight" data-reveal="right" data-reveal-delay="1">Ninewells brings interconnected practices together for complex mandates—combining precision, commercial judgement and a clear understanding of regulatory obligations.</p>
       <div className="grid border-t border-white/25 lg:col-span-2 lg:grid-cols-3" data-reveal="up" data-reveal-delay="2">
-        {[['05', 'publicly listed core practices'], ['VI', 'Victoria Island headquarters'], ['01', 'integrated Nigerian firm']].map(([value, label]) => (
+        {[[String(practiceAreas.length).padStart(2, '0'), 'integrated practice areas'], [company.professionalBodies, 'local and international professional bodies'], [String(company.offices.length).padStart(2, '0'), 'Nigerian office locations']].map(([value, label]) => (
           <span className="border-b border-white/20 py-5 text-[12px] text-white/85 last:border-b-0 lg:border-b-0 lg:pt-7" key={label}><strong className="block font-serif text-[48px] font-normal text-teal-light">{value}</strong>{label}</span>
         ))}
       </div>
