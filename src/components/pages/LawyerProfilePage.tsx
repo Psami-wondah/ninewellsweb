@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight, ArrowSquareOut, EnvelopeSimple, Phone } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import type { Person } from '../../data/people'
 import { people } from '../../data/people'
 import { expertiseSlugs, insightItems } from '../../data/siteContent'
@@ -20,7 +21,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
     <>
       <section className="grid min-h-[760px] border-b border-navy/15 bg-ivory dark:border-white/15 dark:bg-[#08172a] lg:grid-cols-[1.08fr_.92fr]" aria-labelledby="profile-heading">
         <div className="flex flex-col px-[clamp(22px,7vw,118px)] pt-[clamp(42px,6vw,72px)] pb-[clamp(56px,7vw,84px)]" data-reveal="left">
-          <a className="mb-16 inline-flex w-fit items-center gap-3 text-[11px] font-semibold uppercase tracking-[.1em] text-slate no-underline dark:text-paper/80" href="/people"><ArrowLeft size={16} /> All people</a>
+          <Link className="mb-16 inline-flex w-fit items-center gap-3 text-[11px] font-semibold uppercase tracking-[.1em] text-slate no-underline dark:text-paper/80" to="/people"><ArrowLeft size={16} /> All people</Link>
           <Eyebrow>{person.location} / {person.position}</Eyebrow>
           <h1 className="mt-6 mb-5 max-w-[760px] font-serif text-[clamp(55px,7vw,100px)] leading-[.88] font-normal tracking-[-.055em] text-navy dark:text-paper" id="profile-heading">{person.name}</h1>
           <p className="m-0 font-serif text-[clamp(21px,2.2vw,30px)] leading-tight text-slate dark:text-paper/85">{person.role}</p>
@@ -82,10 +83,10 @@ export function LawyerProfilePage({ person }: { person: Person }) {
       <section className="bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(70px,8vw,100px)] dark:bg-[#0a192c]" aria-labelledby="related-people-heading">
         <div className="flex items-end justify-between gap-8 border-b border-navy pb-7 dark:border-paper">
           <div><Eyebrow>Related people</Eyebrow><h2 className="mt-5 mb-0 font-serif text-[clamp(39px,5vw,64px)] leading-none font-normal text-navy dark:text-paper" id="related-people-heading">A joined-up team.</h2></div>
-          <a className="hidden border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline sm:inline-flex dark:text-paper" href="/people">View all people</a>
+          <Link className="hidden border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline sm:inline-flex dark:text-paper" to="/people">View all people</Link>
         </div>
         <div className="grid md:grid-cols-2">
-          {relatedPeople.map((entry) => <a className="group grid min-h-[132px] grid-cols-[76px_1fr_28px] items-center gap-5 border-b border-navy/15 py-5 text-navy no-underline md:first:border-r md:first:pr-8 md:last:pl-8 dark:border-white/15 dark:text-paper" href={`/people/${entry.slug}`} key={entry.slug}><img className="h-20 w-[68px] object-cover" src={entry.image} style={{ objectPosition: entry.imagePosition }} alt="" /><span><strong className="block font-serif text-[25px] font-normal">{entry.name}</strong><small className="mt-2 block text-[10px] font-semibold uppercase tracking-[.08em] text-slate dark:text-paper/75">{entry.position} · {entry.role}</small></span><ArrowRight className="transition-transform group-hover:translate-x-1" size={19} /></a>)}
+          {relatedPeople.map((entry) => <Link className="group grid min-h-[132px] grid-cols-[76px_1fr_28px] items-center gap-5 border-b border-navy/15 py-5 text-navy no-underline md:first:border-r md:first:pr-8 md:last:pl-8 dark:border-white/15 dark:text-paper" to={`/people/${entry.slug}`} key={entry.slug}><img className="h-20 w-[68px] object-cover" src={entry.image} style={{ objectPosition: entry.imagePosition }} alt="" /><span><strong className="block font-serif text-[25px] font-normal">{entry.name}</strong><small className="mt-2 block text-[10px] font-semibold uppercase tracking-[.08em] text-slate dark:text-paper/75">{entry.position} · {entry.role}</small></span><ArrowRight className="transition-transform group-hover:translate-x-1" size={19} /></Link>)}
         </div>
       </section>
       <ContactSection />
@@ -102,7 +103,7 @@ function ProfileList({ title, id, items, linkItems = false }: { title: string; i
           const slug = expertiseSlugs[item as keyof typeof expertiseSlugs]
           const content = <><span className="text-[10px] font-semibold text-teal-dark dark:text-teal-light">{String(index + 1).padStart(2, '0')}</span><strong className="font-serif text-[21px] font-normal">{item}</strong>{linkItems && slug ? <ArrowRight size={17} /> : null}</>
           const className = 'grid min-h-[72px] grid-cols-[38px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline sm:odd:pr-6 sm:even:pl-6 dark:border-white/15 dark:text-paper'
-          return linkItems && slug ? <a className={className} href={`/expertise/${slug}`} key={item}>{content}</a> : <div className={className} key={item}>{content}</div>
+          return linkItems && slug ? <Link className={className} to={`/expertise/${slug}`} key={item}>{content}</Link> : <div className={className} key={item}>{content}</div>
         })}
       </div>
     </section>

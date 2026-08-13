@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import lagosBridge from '../../assets/lagos-lekki-ikoyi.webp'
 import { company } from '../../data/company'
 import { people } from '../../data/people'
@@ -57,7 +58,7 @@ export function AboutPage() {
       </section>
 
       <section className="bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(72px,8vw,104px)] dark:bg-[#08172a]" aria-labelledby="locations-heading">
-        <div className="flex flex-wrap items-end justify-between gap-8 border-b border-navy pb-7 dark:border-paper"><div><Eyebrow>Our locations</Eyebrow><h2 className="mt-5 mb-0 font-serif text-[clamp(40px,5vw,66px)] leading-none font-normal text-navy dark:text-paper" id="locations-heading">Close to commerce and government.</h2></div><a className="inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper" href="/contact">Contact Ninewells <ArrowRight size={17} /></a></div>
+        <div className="flex flex-wrap items-end justify-between gap-8 border-b border-navy pb-7 dark:border-paper"><div><Eyebrow>Our locations</Eyebrow><h2 className="mt-5 mb-0 font-serif text-[clamp(40px,5vw,66px)] leading-none font-normal text-navy dark:text-paper" id="locations-heading">Close to commerce and government.</h2></div><Link className="inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper" to="/contact">Contact Ninewells <ArrowRight size={17} /></Link></div>
         <div className="grid md:grid-cols-2">
           {company.offices.map((office, index) => <a className="group grid min-h-[240px] grid-cols-[48px_1fr_28px] border-b border-navy/15 py-8 text-navy no-underline md:first:border-r md:first:pr-10 md:last:pl-10 dark:border-white/15 dark:text-paper" href={office.mapUrl} target="_blank" rel="noreferrer" key={office.city}><span className="font-serif text-[30px] text-teal-dark dark:text-teal-light">0{index + 1}</span><span><strong className="block font-serif text-[36px] font-normal">{office.city}</strong><small className="mt-2 block text-[10px] font-semibold uppercase tracking-[.1em] text-teal-dark dark:text-teal-light">{office.area}</small><span className="mt-6 block max-w-[430px] text-[13px] leading-6 text-slate dark:text-paper/78">{office.address}<br />{office.description}</span></span><ArrowRight className="mt-2 transition-transform group-hover:translate-x-1" size={20} /></a>)}
         </div>

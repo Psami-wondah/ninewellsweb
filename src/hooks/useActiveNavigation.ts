@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { navItems } from '../data/siteContent'
 
 export type NavItem = (typeof navItems)[number]
@@ -33,16 +34,17 @@ function getHomeItem(): NavItem {
 }
 
 export function useActiveNavigation() {
-  const [activeItem, setActiveItem] = useState<NavItem>(() => getRouteItem(window.location.pathname) ?? 'About')
+  const { pathname } = useLocation()
+  const routeItem = getRouteItem(pathname)
+  const [homeItem, setHomeItem] = useState<NavItem>('About')
 
   useEffect(() => {
-    const routeItem = getRouteItem(window.location.pathname)
     if (routeItem) return
 
     let frame = 0
     const update = () => {
       cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(() => setActiveItem(getHomeItem()))
+      frame = requestAnimationFrame(() => setHomeItem(getHomeItem()))
     }
 
     update()
@@ -56,7 +58,7 @@ export function useActiveNavigation() {
       window.removeEventListener('resize', update)
       window.removeEventListener('hashchange', update)
     }
-  }, [])
+  }, [routeItem])
 
-  return activeItem
+  return routeItem ?? homeItem
 }

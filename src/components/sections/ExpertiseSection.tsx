@@ -1,5 +1,6 @@
 import { ArrowRight, Minus, Plus } from '@phosphor-icons/react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { expertise, expertiseSlugs } from '../../data/siteContent'
 import { Eyebrow } from '../ui/Eyebrow'
 import { InlineLink } from '../ui/InlineLink'
@@ -26,7 +27,7 @@ export function ExpertiseSection() {
               </button>
               <div className={`grid overflow-hidden pl-[42px] transition-all duration-300 lg:grid-cols-[1fr_auto] lg:pl-[58px] ${isOpen ? 'max-h-36 gap-3 pb-6 pr-7 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <p className="m-0 text-[13px] text-slate dark:text-paper/75">{description}</p>
-                <a className="flex items-center gap-3 text-[12px] font-semibold text-teal-dark no-underline dark:text-teal-light" href={`/expertise/${expertiseSlugs[title]}`}>Explore this practice <ArrowRight size={17} /></a>
+                <Link className="flex items-center gap-3 text-[12px] font-semibold text-teal-dark no-underline dark:text-teal-light" to={`/expertise/${expertiseSlugs[title]}`}>Explore this practice <ArrowRight size={17} /></Link>
               </div>
             </article>
           )

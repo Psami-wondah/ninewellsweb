@@ -1,4 +1,5 @@
 import { ArrowRight, CaretRight, MagnifyingGlass } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import { navItems } from '../../data/siteContent'
 import { useActiveNavigation } from '../../hooks/useActiveNavigation'
 import type { MenuName, Theme } from '../../types/navigation'
@@ -18,9 +19,9 @@ export function DesktopRail({ activeMenu, setActiveMenu, theme, onToggleTheme }:
 
   return (
     <aside className="fixed inset-y-0 left-0 z-50 hidden w-[232px] flex-col border-r border-navy/15 bg-ivory dark:border-white/15 dark:bg-[#071224] lg:flex" aria-label="Primary navigation">
-      <a className="flex min-h-[136px] items-center border-b border-navy/15 px-7 dark:border-white/15" href="/" aria-label="Ninewells home">
+      <Link className="flex min-h-[136px] items-center border-b border-navy/15 px-7 dark:border-white/15" to="/" aria-label="Ninewells home">
         <BrandLogo />
-      </a>
+      </Link>
       <nav className="flex flex-col gap-0.5 px-6 py-9">
         {navItems.map((item) => {
           const expandable = item === 'Expertise' || item === 'Industries'
@@ -43,7 +44,7 @@ export function DesktopRail({ activeMenu, setActiveMenu, theme, onToggleTheme }:
               <CaretRight className={`transition-transform ${isOpen ? 'rotate-90' : ''}`} size={15} aria-hidden="true" />
             </button>
           ) : (
-            <a className={`${baseClass} ${currentClass}`} key={item} href={getNavHref(item)} aria-current={isCurrent ? 'page' : undefined}>{item}</a>
+            <Link className={`${baseClass} ${currentClass}`} key={item} to={getNavHref(item)} aria-current={isCurrent ? 'page' : undefined}>{item}</Link>
           )
         })}
       </nav>
@@ -52,9 +53,9 @@ export function DesktopRail({ activeMenu, setActiveMenu, theme, onToggleTheme }:
         <button className="flex min-h-11 items-center gap-3 border-0 bg-transparent text-[13px] text-navy transition-colors hover:text-teal-dark dark:text-paper dark:hover:text-teal-light" type="button" onClick={() => setActiveMenu('search')}>
           <MagnifyingGlass size={19} aria-hidden="true" /> Search
         </button>
-        <a className="flex min-h-11 items-center gap-3 text-[13px] font-semibold text-teal-dark no-underline dark:text-teal-light" href="/contact">
+        <Link className="flex min-h-11 items-center gap-3 text-[13px] font-semibold text-teal-dark no-underline dark:text-teal-light" to="/contact">
           <ArrowRight size={19} aria-hidden="true" /> Speak with our team
-        </a>
+        </Link>
       </div>
     </aside>
   )

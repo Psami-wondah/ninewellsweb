@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight, Check } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import { people } from '../../data/people'
 import { expertiseDetails, insightItems, sectors } from '../../data/siteContent'
 import { ContactSection } from '../sections/ContactSection'
@@ -15,7 +16,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
   return (
     <>
       <section className="relative overflow-hidden bg-navy px-[clamp(22px,7vw,118px)] pt-[clamp(46px,6vw,72px)] pb-[clamp(72px,9vw,118px)] text-ivory dark:bg-[#030d1d]" aria-labelledby="expertise-detail-heading">
-        <a className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.12em] text-white/80 no-underline" href="/#expertise"><ArrowLeft size={16} /> All expertise</a>
+        <Link className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.12em] text-white/80 no-underline" to="/#expertise"><ArrowLeft size={16} /> All expertise</Link>
         <div className="mt-[clamp(72px,10vw,138px)] grid gap-12 lg:grid-cols-[.25fr_1.15fr_.6fr] lg:items-end" data-reveal="up">
           <span className="font-serif text-[clamp(62px,7vw,92px)] leading-none text-teal">{detail.number}</span>
           <h1 className="m-0 max-w-[820px] font-serif text-[clamp(58px,7.5vw,108px)] leading-[.86] font-normal tracking-[-.055em] text-ivory" id="expertise-detail-heading">{detail.title}</h1>
@@ -67,10 +68,10 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
       <section className="bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(72px,8vw,104px)] dark:bg-[#0a192c]" aria-labelledby="expertise-people-heading">
         <div className="flex items-end justify-between gap-8 border-b border-navy pb-7 dark:border-paper">
           <div><Eyebrow>Relevant lawyers</Eyebrow><h2 className="mt-5 mb-0 font-serif text-[clamp(40px,5vw,66px)] leading-none font-normal text-navy dark:text-paper" id="expertise-people-heading">People who know the terrain.</h2></div>
-          <a className="hidden border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline sm:inline-flex dark:text-paper" href="/people">Meet the team</a>
+          <Link className="hidden border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline sm:inline-flex dark:text-paper" to="/people">Meet the team</Link>
         </div>
         <div className="grid md:grid-cols-2">
-          {displayedPeople.map((person, index) => <a className="group grid min-h-[118px] grid-cols-[48px_1fr_28px] items-center gap-5 border-b border-navy/15 py-6 text-navy no-underline md:first:border-r md:first:pr-7 md:last:pl-7 dark:border-white/15 dark:text-paper" href={`/people/${person.slug}`} key={person.slug}><span className="font-serif text-[30px] text-teal-dark dark:text-teal-light">0{index + 1}</span><span><strong className="block font-serif text-[25px] font-normal">{person.name}</strong><small className="mt-2 block text-[9px] font-semibold uppercase tracking-[.1em] text-slate dark:text-paper/75">{person.position} · {person.role}</small></span><ArrowRight className="transition-transform group-hover:translate-x-1" size={19} /></a>)}
+          {displayedPeople.map((person, index) => <Link className="group grid min-h-[118px] grid-cols-[48px_1fr_28px] items-center gap-5 border-b border-navy/15 py-6 text-navy no-underline md:first:border-r md:first:pr-7 md:last:pl-7 dark:border-white/15 dark:text-paper" to={`/people/${person.slug}`} key={person.slug}><span className="font-serif text-[30px] text-teal-dark dark:text-teal-light">0{index + 1}</span><span><strong className="block font-serif text-[25px] font-normal">{person.name}</strong><small className="mt-2 block text-[9px] font-semibold uppercase tracking-[.1em] text-slate dark:text-paper/75">{person.position} · {person.role}</small></span><ArrowRight className="transition-transform group-hover:translate-x-1" size={19} /></Link>)}
         </div>
       </section>
 
@@ -83,7 +84,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
 
       <section className="grid gap-12 border-t border-navy/15 bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(70px,8vw,100px)] dark:border-white/15 dark:bg-[#071224] lg:grid-cols-[.55fr_1.15fr]" aria-labelledby="related-industries-heading">
         <div><Eyebrow>Related industries</Eyebrow><h2 className="mt-5 mb-0 font-serif text-[clamp(38px,4.5vw,58px)] leading-none font-normal text-navy dark:text-paper" id="related-industries-heading">Context changes everything.</h2></div>
-        <div className="border-t border-navy dark:border-paper">{sectors.map(([sector], index) => <a className="group grid min-h-[72px] grid-cols-[42px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper" href="/#industries" key={sector}><span className="text-[10px] font-semibold text-teal-dark dark:text-teal-light">0{index + 1}</span><strong className="font-serif text-[20px] font-normal">{sector}</strong><ArrowRight className="transition-transform group-hover:translate-x-1" size={17} /></a>)}</div>
+        <div className="border-t border-navy dark:border-paper">{sectors.map(([sector], index) => <Link className="group grid min-h-[72px] grid-cols-[42px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper" to="/#industries" key={sector}><span className="text-[10px] font-semibold text-teal-dark dark:text-teal-light">0{index + 1}</span><strong className="font-serif text-[20px] font-normal">{sector}</strong><ArrowRight className="transition-transform group-hover:translate-x-1" size={17} /></Link>)}</div>
       </section>
       <ContactSection />
     </>

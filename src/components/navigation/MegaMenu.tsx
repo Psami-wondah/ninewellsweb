@@ -1,4 +1,5 @@
 import { ArrowRight, X } from '@phosphor-icons/react'
+import { Link, useLocation } from 'react-router-dom'
 import { expertiseSlugs, megaMenuContent } from '../../data/siteContent'
 import { Eyebrow } from '../ui/Eyebrow'
 import { InlineLink } from '../ui/InlineLink'
@@ -10,6 +11,7 @@ type MegaMenuProps = {
 
 export function MegaMenu({ menu, onClose }: MegaMenuProps) {
   const content = megaMenuContent[menu]
+  const { pathname } = useLocation()
   return (
     <div className="fixed top-0 right-0 left-[232px] z-[70] hidden border-b border-navy/15 bg-ivory px-[clamp(40px,6vw,95px)] pt-7 pb-11 shadow-[0_24px_60px_rgba(0,22,65,.12)] animate-[menu-in_260ms_cubic-bezier(.2,.7,.2,1)] dark:border-white/15 dark:bg-[#08172a] dark:shadow-black/30 lg:block" role="region" aria-label={`${menu} menu`}>
       <div className="flex items-center justify-between border-b border-navy/15 pb-5 dark:border-white/15">
@@ -20,7 +22,7 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
         <div>
           <Eyebrow>Navigate</Eyebrow>
           <h2 className="my-3 whitespace-pre-line font-serif text-[42px] leading-[.98] font-normal tracking-[-.035em] text-navy dark:text-paper">{content.heading}</h2>
-          <InlineLink href={`/#${menu}`}>{content.action}</InlineLink>
+          <InlineLink href={`/#${menu}`} onClick={onClose}>{content.action}</InlineLink>
         </div>
         {content.columns.map((column) => (
           <div className="flex flex-col gap-3.5" key={column.label}>
@@ -28,17 +30,17 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
             {column.links.map((link) => {
               const expertiseHref = expertiseSlugs[link as keyof typeof expertiseSlugs]
               const href = menu === 'expertise' && expertiseHref ? `/expertise/${expertiseHref}` : `/#${menu}`
-              const isCurrent = window.location.pathname === href
-              return <a className={`w-fit text-[13px] no-underline transition-colors hover:text-teal-dark dark:hover:text-teal-light ${isCurrent ? 'font-semibold text-teal-dark dark:text-teal-light' : 'text-navy dark:text-paper'}`} href={href} key={link} aria-current={isCurrent ? 'page' : undefined}>{link}</a>
+              const isCurrent = pathname === href
+              return <Link className={`w-fit text-[13px] no-underline transition-colors hover:text-teal-dark dark:hover:text-teal-light ${isCurrent ? 'font-semibold text-teal-dark dark:text-teal-light' : 'text-navy dark:text-paper'}`} to={href} key={link} onClick={onClose} aria-current={isCurrent ? 'page' : undefined}>{link}</Link>
             })}
           </div>
         ))}
       </div>
-      <a className="grid grid-cols-[160px_1fr_30px] items-center border-t border-navy/15 pt-6 text-navy no-underline dark:border-white/15 dark:text-paper" href="/#insights">
+      <Link className="grid grid-cols-[160px_1fr_30px] items-center border-t border-navy/15 pt-6 text-navy no-underline dark:border-white/15 dark:text-paper" to="/#insights" onClick={onClose}>
         <Eyebrow>Featured perspective</Eyebrow>
         <strong className="font-serif text-[22px] font-normal">Nigeria’s energy recovery—and what reform must unlock next</strong>
         <ArrowRight size={20} aria-hidden="true" />
-      </a>
+      </Link>
     </div>
   )
 }
