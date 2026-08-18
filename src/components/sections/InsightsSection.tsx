@@ -1,5 +1,6 @@
 import { ArrowRight } from "@phosphor-icons/react";
-import { insightItems } from "../../data/siteContent";
+import { Link } from "react-router-dom";
+import { featuredInsight, insightItems } from "../../data/siteContent";
 import { Eyebrow } from "../ui/Eyebrow";
 import { InlineLink } from "../ui/InlineLink";
 
@@ -32,25 +33,21 @@ export function InsightsSection() {
         data-reveal-delay="1"
       >
         <Eyebrow className="text-teal">
-          Featured insight · Energy outlook
+          Featured insight · {featuredInsight.category}
         </Eyebrow>
         <h3 className="mt-24 mb-5 max-w-[560px] font-serif text-[clamp(38px,3.5vw,55px)] leading-none font-normal tracking-[-.035em]">
-          Nigeria’s energy recovery—and what reform must unlock next
+          {featuredInsight.title}
         </h3>
         <p className="max-w-[510px] text-[13px] leading-6 text-white/85">
-          Managing Associate Abdulmajeed Abolaji considers production recovery,
-          investor interest, upstream divestments and host-community
-          participation.
+          {featuredInsight.summary}
         </p>
-        <a
+        <Link
           className="absolute right-7 bottom-7 flex size-[52px] items-center justify-center bg-teal text-navy-deep transition-colors hover:bg-teal"
-          href="https://www.linkedin.com/company/ninewells/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="View the featured insight on LinkedIn"
+          to={`/insights/${featuredInsight.slug}`}
+          aria-label={`Read ${featuredInsight.title}`}
         >
           <ArrowRight size={25} />
-        </a>
+        </Link>
       </article>
       <div
         className="border-t border-navy dark:border-paper lg:col-span-2"
@@ -58,11 +55,9 @@ export function InsightsSection() {
         data-reveal-delay="2"
       >
         {insightItems.map((item, index) => (
-          <a
+          <Link
             className="group grid min-h-[120px] grid-cols-[36px_minmax(0,1fr)_24px] items-center gap-3 border-b border-navy/15 px-2 py-6 text-navy no-underline transition-colors hover:bg-teal/5 dark:border-white/15 dark:text-paper dark:hover:bg-teal/10 lg:grid-cols-[60px_minmax(0,1fr)_30px] lg:px-0"
-            href={item.href}
-            target="_blank"
-            rel="noreferrer"
+            to={`/insights/${item.slug}`}
             key={item.title}
           >
             <span className="text-[12px] font-semibold text-teal-dark dark:text-teal">
@@ -86,7 +81,7 @@ export function InsightsSection() {
               className="transition-transform group-hover:translate-x-1"
               size={20}
             />
-          </a>
+          </Link>
         ))}
       </div>
     </section>

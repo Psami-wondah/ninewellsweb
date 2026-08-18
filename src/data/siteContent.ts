@@ -1,3 +1,9 @@
+import insightBayoLeadPartner from "../assets/insight-bayo-lead-partner.jpg";
+import insightEnergyOutlook from "../assets/insight-energy-outlook.jpg";
+import insightJambVisit from "../assets/insight-jamb-visit.jpg";
+import insightLeica2026 from "../assets/insight-leica-2026.jpg";
+import insightVirtualAssets from "../assets/insight-virtual-assets.jpg";
+
 export const LINKEDIN_URL = "https://www.linkedin.com/company/ninewells/";
 
 export const navItems = [
@@ -353,31 +359,221 @@ export const expertiseDetails = {
 
 export const insightItems = [
   {
-    category: "Firm news",
-    date: "05 August 2026",
-    title: "Ninewells recognised for its support of LEICA 2026",
+    slug: "jamb-registrar-visit-digital-reform-priorities",
+    category: "Firm update",
+    date: "14 August 2026",
+    dateTime: "2026-08-14",
+    title: "JAMB Registrar outlines reform priorities during Ninewells visit",
     summary:
-      "A shared commitment to collaboration, knowledge and innovation in the energy profession.",
-    href: LINKEDIN_URL,
+      "Professor Segun Aina discussed technology-led admissions, examination integrity and candidate support during a courtesy visit to Ninewells.",
+    author: "Ninewells Law Practice",
+    readTime: "2 min read",
+    image: insightJambVisit,
+    imageAlt:
+      "The Ninewells team with JAMB Registrar Professor Segun Aina during his Lagos office visit",
+    sourceUrl:
+      "https://www.linkedin.com/posts/ninewells_ninewells-jamb-education-activity-7494053517540773888-aJWg",
+    lede:
+      "The newly appointed Registrar of the Joint Admissions and Matriculation Board, Professor Segun Aina, visited Ninewells’ Lagos office to share his priorities for the institution’s next chapter.",
+    sections: [
+      {
+        id: "reform-agenda",
+        heading: "A reform agenda built around trust and technology",
+        paragraphs: [
+          "Professor Aina described an agenda focused on institutional integrity, digital transformation and a more effective experience for candidates. The discussion considered how technology and operational discipline can support confidence in Nigeria’s admissions system.",
+        ],
+        points: [
+          "A zero-tolerance approach to examination malpractice and certificate forgery.",
+          "Greater use of advanced technology and digital systems in admissions.",
+          "More streamlined candidate support and complaint resolution.",
+        ],
+      },
+      {
+        id: "institutional-progress",
+        heading: "A shared interest in institutional progress",
+        paragraphs: [
+          "The visit created an opportunity for Ninewells and JAMB’s leadership to exchange views on private-sector engagement, innovation and the practical work required to sustain public-institution reform.",
+          "Ninewells congratulated Professor Aina on his appointment and expressed its support for a successful tenure defined by innovation and measurable impact.",
+        ],
+      },
+    ],
   },
   {
+    slug: "professor-bayo-adaralegbe-lead-partner",
+    category: "Leadership",
+    date: "12 August 2026",
+    dateTime: "2026-08-12",
+    title: "Professor Bayo Adaralegbe announced as Lead Partner",
+    summary:
+      "Ninewells welcomes an energy, investment and disputes practitioner with almost four decades of private-practice and governance experience.",
+    author: "Ninewells Law Practice",
+    readTime: "3 min read",
+    image: insightBayoLeadPartner,
+    imageAlt:
+      "Ninewells Lead Partner announcement featuring Professor Bayo Adaralegbe",
+    sourceUrl:
+      "https://www.linkedin.com/posts/ninewells_ninewells-is-very-excited-to-announce-professor-activity-7493277804881608704-Dp1d",
+    lede:
+      "Ninewells has announced Professor Bayo Adaralegbe as Lead Partner, bringing almost forty years of experience across energy, extractives, foreign investment, disputes and corporate governance.",
+    sections: [
+      {
+        id: "sector-experience",
+        heading: "Deep sector and disputes experience",
+        paragraphs: [
+          "Professor Adaralegbe’s career combines long-standing private practice with six years as company secretary and legal adviser in a bank. His work spans regulatory advice, asset transactions, contract negotiation, litigation and domestic and international arbitration.",
+          "His public-sector experience includes work for the National Assembly, the Nigerian Content Monitoring and Development Board and the Nigerian Midstream and Downstream Petroleum Regulatory Authority.",
+        ],
+        points: [
+          "Energy, extractives and foreign-investment advice.",
+          "Complex litigation and commercial arbitration.",
+          "Upstream asset acquisitions and divestments.",
+          "Corporate governance and company-secretarial work.",
+        ],
+      },
+      {
+        id: "practice-and-scholarship",
+        heading: "Practice informed by scholarship",
+        paragraphs: [
+          "Alongside practice, Professor Adaralegbe has published extensively in peer-reviewed international journals and serves as Adjunct Professor of Energy and International Investment Law at the University of Ibadan.",
+          "His work has also included expert evidence on Nigerian law before courts in the United States and England and before an ICSID tribunal in France.",
+        ],
+      },
+      {
+        id: "next-phase",
+        heading: "Leadership for the firm’s next phase",
+        paragraphs: [
+          "The appointment strengthens Ninewells’ senior leadership as the firm develops its integrated offering for clients operating in complex Nigerian and cross-border markets.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "taxing-virtual-assets-nigeria-nrs-guidelines-2026",
+    category: "Tax & technology",
+    date: "10 August 2026",
+    dateTime: "2026-08-10",
+    title: "Taxing virtual assets in Nigeria: reviewing the NRS 2026 guidelines",
+    summary:
+      "Esther Gbenro and Babatunde Badejo consider how Nigeria’s latest guidance approaches the taxation of a rapidly evolving asset class.",
+    author: "Esther Gbenro and Babatunde Badejo",
+    readTime: "3 min read",
+    image: insightVirtualAssets,
+    imageAlt:
+      "Ninewells illustration for Taxing Virtual Assets in Nigeria and the NRS Guidelines of 2026",
+    sourceUrl:
+      "https://www.linkedin.com/posts/ninewells_ninewells-taxlaw-virtualassets-activity-7492571478081748993-L_I4",
+    lede:
+      "As Nigeria’s digital-asset ecosystem develops, the tax treatment of virtual assets is becoming increasingly important for investors, businesses and the wider market.",
+    sections: [
+      {
+        id: "why-it-matters",
+        heading: "Why the tax question matters",
+        paragraphs: [
+          "Virtual assets sit at the intersection of technology, finance and regulation. Changes in their tax treatment can affect investment decisions, operating models, transaction structures and compliance planning.",
+          "For market participants, the practical question is not only whether a transaction is taxable, but how new guidance interacts with an asset class that continues to change quickly.",
+        ],
+      },
+      {
+        id: "guidelines-review",
+        heading: "A review of the 2026 guidelines",
+        paragraphs: [
+          "In their contribution, Senior Associate Esther Gbenro and Associate Babatunde Badejo examine the Nigeria Revenue Service’s 2026 guidelines and the framework they introduce for virtual assets.",
+          "Their analysis is directed at the legal and commercial significance of the guidance for investors, businesses and participants in Nigeria’s digital-asset market.",
+        ],
+      },
+      {
+        id: "read-the-analysis",
+        heading: "Continue with the original analysis",
+        paragraphs: [
+          "Ninewells published the contribution through its LinkedIn page. Use the source link below to view the original post and accompanying materials.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ninewells-leica-2026-appreciation-award",
+    category: "Firm update",
+    date: "05 August 2026",
+    dateTime: "2026-08-05",
+    title: "Ninewells recognised for its support of LEICA 2026",
+    summary:
+      "The firm received an Appreciation Award for supporting a platform focused on knowledge, innovation and the energy profession.",
+    author: "Ninewells Law Practice",
+    readTime: "2 min read",
+    image: insightLeica2026,
+    imageAlt:
+      "Ninewells appreciation award announcement for the Lawyers in Energy International Conference 2026",
+    sourceUrl:
+      "https://www.linkedin.com/posts/ninewells_ninewells-leica2026-lawyersinenergy-activity-7490736160282066945-s_ef",
+    lede:
+      "Ninewells received an Appreciation Award from the Lawyers in Energy International Conference 2026 in recognition of the firm’s support for the conference.",
+    sections: [
+      {
+        id: "recognition",
+        heading: "Recognition for sustained support",
+        paragraphs: [
+          "The award reflects Ninewells’ commitment to initiatives that strengthen professional knowledge, encourage collaboration and support innovation across the energy sector.",
+        ],
+      },
+      {
+        id: "shared-platforms",
+        heading: "Why shared platforms matter",
+        paragraphs: [
+          "Ninewells views conferences and professional communities as important places for practitioners and industry participants to exchange knowledge and develop practical responses to evolving market needs.",
+          "The firm thanked LEICA for the recognition and reaffirmed its commitment to the development of the legal profession and the broader business community.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "nigeria-energy-recovery-reform-outlook",
     category: "Energy outlook",
     date: "31 July 2026",
+    dateTime: "2026-07-31",
     title: "Nigeria’s production recovery and the next phase of energy reform",
     summary:
       "Abdulmajeed Abolaji discusses investor interest, upstream divestments and host-community participation.",
-    href: LINKEDIN_URL,
-  },
-  {
-    category: "Technology",
-    date: "28 July 2026",
-    title:
-      "Building a practice for telecommunications, technology and digital law",
-    summary:
-      "Ninewells announces Esther Gbenro’s arrival as Senior Associate in its specialist digital practice.",
-    href: LINKEDIN_URL,
+    author: "Abdulmajeed Abolaji",
+    readTime: "3 min read",
+    image: insightEnergyOutlook,
+    imageAlt:
+      "Energy Outlook feature announcing Abdulmajeed Abolaji’s discussion of Nigeria’s oil and gas business",
+    sourceUrl:
+      "https://www.linkedin.com/posts/ninewells_ninewells-energyoutlook-oilandgas-activity-7488917817275154432-E-_h",
+    lede:
+      "Nigeria’s recent oil-production recovery is prompting renewed attention from investors while reforms, upstream divestments and host-community participation reshape the sector.",
+    sections: [
+      {
+        id: "production-and-investment",
+        heading: "Production recovery and renewed investor interest",
+        paragraphs: [
+          "In an Energy Outlook conversation with UpgradeTV, Ninewells Managing Associate Abdulmajeed Abolaji considered the factors behind Nigeria’s recent production recovery and the return of investor attention to the sector.",
+        ],
+      },
+      {
+        id: "reform-and-divestment",
+        heading: "Reform, divestment and economic impact",
+        paragraphs: [
+          "The discussion addressed recent government reforms, the continuing divestment of upstream assets by international oil companies and the implications of those transactions for Nigeria’s economy.",
+        ],
+        points: [
+          "The relationship between regulatory reform and investment confidence.",
+          "What upstream divestments may mean for indigenous participation.",
+          "How host communities could participate in upstream-asset ownership.",
+        ],
+      },
+      {
+        id: "full-conversation",
+        heading: "Watch the full conversation",
+        paragraphs: [
+          "Ninewells shared the key themes and a link to the complete UpgradeTV conversation through its LinkedIn post.",
+        ],
+      },
+    ],
   },
 ] as const;
+
+export const featuredInsight = insightItems[2];
 
 export const megaMenuContent = {
   expertise: {

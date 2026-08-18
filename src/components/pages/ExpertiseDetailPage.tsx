@@ -238,11 +238,9 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
         </div>
         <div className="border-t border-navy dark:border-paper">
           {insightItems.slice(0, 2).map((item, index) => (
-            <a
+            <Link
               className="group grid min-h-[92px] grid-cols-[42px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper"
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
+              to={`/insights/${item.slug}`}
               key={item.title}
             >
               <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
@@ -260,7 +258,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
                 className="transition-transform group-hover:translate-x-1"
                 size={17}
               />
-            </a>
+            </Link>
           ))}
         </div>
       </section>

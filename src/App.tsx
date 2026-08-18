@@ -16,6 +16,7 @@ import { LawyerProfilePage } from "./components/pages/LawyerProfilePage";
 import { PeopleDirectoryPage } from "./components/pages/PeopleDirectoryPage";
 import { AboutPage } from "./components/pages/AboutPage";
 import { ContactPage } from "./components/pages/ContactPage";
+import { InsightDetailPage } from "./components/pages/InsightDetailPage";
 import { ContactSection } from "./components/sections/ContactSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";
 import { HeroSection } from "./components/sections/HeroSection";
@@ -24,7 +25,7 @@ import { PeopleSection } from "./components/sections/PeopleSection";
 import { ProofSection } from "./components/sections/ProofSection";
 import { SiteFooter } from "./components/sections/SiteFooter";
 import { people } from "./data/people";
-import { expertiseDetails } from "./data/siteContent";
+import { expertiseDetails, insightItems } from "./data/siteContent";
 import { useTheme } from "./hooks/useTheme";
 import type { MenuName } from "./types/navigation";
 
@@ -165,6 +166,7 @@ function App() {
             path="/expertise/:expertiseSlug"
             element={<ExpertiseRoute />}
           />
+          <Route path="/insights/:insightSlug" element={<InsightRoute />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
@@ -227,6 +229,19 @@ function ExpertiseRoute() {
     <>
       <PageTitle title={detail.title} />
       <ExpertiseDetailPage detail={detail} />
+      <SiteFooter />
+    </>
+  );
+}
+
+function InsightRoute() {
+  const { insightSlug } = useParams();
+  const insight = insightItems.find((item) => item.slug === insightSlug);
+  if (!insight) return <Navigate to="/#insights" replace />;
+  return (
+    <>
+      <PageTitle title={insight.title} />
+      <InsightDetailPage insight={insight} />
       <SiteFooter />
     </>
   );

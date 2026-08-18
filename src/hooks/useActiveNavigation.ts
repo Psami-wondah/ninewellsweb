@@ -16,6 +16,7 @@ function getRouteItem(pathname: string): NavItem | null {
   if (pathname === '/about') return 'About'
   if (pathname === '/contact') return 'Contact'
   if (pathname.startsWith('/expertise/')) return 'Expertise'
+  if (pathname.startsWith('/insights/')) return 'Insights'
   if (pathname === '/people' || pathname.startsWith('/people/')) return 'People'
   return null
 }

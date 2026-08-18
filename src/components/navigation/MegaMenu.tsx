@@ -1,6 +1,10 @@
 import { ArrowRight, X } from "@phosphor-icons/react";
 import { Link, useLocation } from "react-router-dom";
-import { expertiseSlugs, megaMenuContent } from "../../data/siteContent";
+import {
+  expertiseSlugs,
+  featuredInsight,
+  megaMenuContent,
+} from "../../data/siteContent";
 import { Eyebrow } from "../ui/Eyebrow";
 
 type MegaMenuProps = {
@@ -68,12 +72,12 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
         </div>
         <Link
           className="grid grid-cols-[160px_1fr_30px] items-center border-t border-navy/15 pt-6 text-navy no-underline dark:border-white/15 dark:text-paper"
-          to="/#insights"
+          to={`/insights/${featuredInsight.slug}`}
           onClick={onClose}
         >
           <Eyebrow>Featured insight</Eyebrow>
           <strong className="font-serif text-[22px] font-normal">
-            Nigeria’s energy recovery—and what reform must unlock next
+            {featuredInsight.title}
           </strong>
           <ArrowRight size={20} aria-hidden="true" />
         </Link>
