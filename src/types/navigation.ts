@@ -1,3 +1,3 @@
-export type MenuName = 'expertise' | 'industries' | 'search' | 'mobile' | null
+export type MenuName = "expertise" | "search" | "mobile" | null;
 
-export type Theme = 'light' | 'dark'
+export type Theme = "light" | "dark";
