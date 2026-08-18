@@ -178,7 +178,6 @@ function HomePage() {
       <PageTitle />
       <HeroSection />
       <ExpertiseSection />
-      {/* <IndustriesSection /> */}
       <ProofSection />
       <PeopleSection />
       <InsightsSection />

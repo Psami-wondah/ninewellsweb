@@ -20,7 +20,7 @@ export function PeopleDirectoryPage() {
               className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper"
               id="people-directory-heading"
             >
-              Find the right perspective.
+              Find the right adviser.
             </h1>
           </div>
           <p className="m-0 max-w-[490px] text-[15px] leading-7 text-slate dark:text-paper/80">

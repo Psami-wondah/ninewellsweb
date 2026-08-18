@@ -26,9 +26,6 @@ export function SiteFooter() {
         <Link className="no-underline" to="/#expertise">
           Expertise
         </Link>
-        <Link className="no-underline" to="/#industries">
-          Industries
-        </Link>
         <Link className="no-underline" to="/people">
           People
         </Link>

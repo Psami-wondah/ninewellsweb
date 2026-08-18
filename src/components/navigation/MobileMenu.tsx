@@ -13,7 +13,6 @@ import {
   expertiseSlugs,
   LINKEDIN_URL,
   navItems,
-  sectors,
 } from "../../data/siteContent";
 import { useDialogFocus } from "../../hooks/useDialogFocus";
 import { useActiveNavigation } from "../../hooks/useActiveNavigation";
@@ -30,9 +29,7 @@ export function MobileMenu({
   const activeItem = useActiveNavigation();
   const { pathname } = useLocation();
   const [openGroup, setOpenGroup] = useState<string | null>(() =>
-    activeItem === "Expertise" || activeItem === "Industries"
-      ? activeItem
-      : null,
+    activeItem === "Expertise" ? activeItem : null,
   );
   const dialogRef = useDialogFocus();
   return (
@@ -56,7 +53,7 @@ export function MobileMenu({
       </div>
       <nav className="px-5 py-6">
         {navItems.map((item, index) => {
-          const expandable = item === "Expertise" || item === "Industries";
+          const expandable = item === "Expertise";
           const isOpen = openGroup === item;
           const isCurrent = activeItem === item;
           const label = (
@@ -85,16 +82,13 @@ export function MobileMenu({
                     className={`flex flex-col overflow-hidden pl-9 transition-all duration-300 ${isOpen ? "max-h-[340px] pb-4 opacity-100" : "max-h-0 opacity-0"}`}
                     aria-hidden={!isOpen}
                   >
-                    {(item === "Expertise"
-                      ? expertise.map((entry) => entry[1])
-                      : sectors.map((entry) => entry[0])
-                    ).map((link) => {
+                    {expertise.map((entry) => entry[1]).map((link) => {
                       const expertiseHref =
                         expertiseSlugs[link as keyof typeof expertiseSlugs];
                       const href =
                         item === "Expertise" && expertiseHref
                           ? `/expertise/${expertiseHref}`
-                          : "/#industries";
+                          : "/#expertise";
                       const isSubpageCurrent = pathname === href;
                       return (
                         <Link

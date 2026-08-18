@@ -48,20 +48,15 @@ export function HeroSection() {
             Meet the team
           </InlineLink>
         </div>
-        <div className="mt-14 grid max-w-[560px] grid-cols-[72px_1fr] border-t  pt-6 border-white/15 lg:mt-auto lg:grid-cols-[100px_1fr]">
-          <span className="font-serif text-[46px] leading-none text-teal lg:text-[57px]">
-            01
-          </span>
-          <div className="border-l pl-5 border-white/15 lg:pl-6">
-            <Eyebrow>Firm perspective</Eyebrow>
-            <a
-              className="mt-2 flex max-w-[350px] items-end justify-between gap-5 font-serif text-[18px] leading-tight  no-underline text-paper lg:text-[20px]"
-              href="#insights"
-            >
-              Experience. Innovation. Trust.{" "}
-              <ArrowRight className="shrink-0" size={18} />
-            </a>
-          </div>
+        <div className="mt-14 max-w-[560px] border-t border-white/15 pt-6 lg:mt-auto">
+          <Eyebrow>Featured insight</Eyebrow>
+          <a
+            className="mt-2 flex max-w-[450px] items-end justify-between gap-5 font-serif text-[18px] leading-tight no-underline text-paper lg:text-[20px]"
+            href="#insights"
+          >
+            Experience. Innovation. Trust.{" "}
+            <ArrowRight className="shrink-0" size={18} />
+          </a>
         </div>
       </div>
       <figure

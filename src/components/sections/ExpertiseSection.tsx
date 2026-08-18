@@ -26,7 +26,6 @@ export function ExpertiseSection() {
           We bring depth, commercial judgement and joined-up thinking to matters
           where every decision carries weight.
         </p>
-        {/* <InlineLink href="/#expertise">View all expertise</InlineLink> */}
       </div>
       <div
         className="border-t border-navy dark:border-paper"

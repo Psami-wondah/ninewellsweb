@@ -37,7 +37,7 @@ export function DesktopRail({
       <nav className="flex flex-col gap-0.5 px-6 py-9">
         {navItems.map((item) => {
           const expandable = item === "Expertise";
-          const menuName = item.toLowerCase() as "expertise";
+          const menuName = "expertise" as const;
           const isCurrent = activeItem === item;
           const isOpen = activeMenu === menuName;
           const baseClass =

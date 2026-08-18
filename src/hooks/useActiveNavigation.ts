@@ -7,7 +7,6 @@ export type NavItem = (typeof navItems)[number]
 const homeSections: Array<[NavItem, string]> = [
   ['About', 'about'],
   ['Expertise', 'expertise'],
-  ['Industries', 'industries'],
   ['People', 'people'],
   ['Insights', 'insights'],
   ['Contact', 'contact'],

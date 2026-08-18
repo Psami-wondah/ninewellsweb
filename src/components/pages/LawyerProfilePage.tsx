@@ -8,7 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import type { Person } from "../../data/people";
 import { people } from "../../data/people";
-import { expertiseSlugs, insightItems } from "../../data/siteContent";
+import { expertiseSlugs } from "../../data/siteContent";
 import { ContactSection } from "../sections/ContactSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
@@ -18,12 +18,17 @@ export function LawyerProfilePage({ person }: { person: Person }) {
     .slice(0, 2);
   const navigation = [
     ["Overview", "overview"],
-    ...(person.expertise.length ? [["Expertise", "expertise"]] : []),
+    ...(person.expertise.length
+      ? [["Practice areas", "practice-areas"]]
+      : []),
     ...(person.representativeWorks.length
       ? [["Representative work", "representative-work"]]
       : []),
     ["Qualifications", "qualifications"],
     ...(person.honours.length ? [["Honours", "honours"]] : []),
+    ...(person.careerHighlights.length
+      ? [["Career highlights", "career"]]
+      : []),
     ["Memberships", "memberships"],
   ];
 
@@ -131,10 +136,17 @@ export function LawyerProfilePage({ person }: { person: Person }) {
           </nav>
         </div>
         <div data-reveal="up">
-          <div id="overview">
-            <h2 className="m-0 max-w-[860px] font-serif text-[clamp(34px,4vw,55px)] leading-[1.08] font-normal tracking-[-.035em] text-navy dark:text-paper">
-              {person.bio}
+          <section aria-labelledby="overview">
+            <Eyebrow>Biography</Eyebrow>
+            <h2
+              className="mt-5 mb-0 scroll-mt-24 font-serif text-[clamp(34px,4vw,52px)] leading-none font-normal text-navy lg:scroll-mt-8 dark:text-paper"
+              id="overview"
+            >
+              Overview
             </h2>
+            <p className="mt-7 mb-0 max-w-[860px] font-serif text-[clamp(30px,3.5vw,46px)] leading-[1.08] font-normal tracking-[-.03em] text-navy dark:text-paper">
+              {person.bio}
+            </p>
             <div className="mt-10 grid gap-7 text-[15px] leading-7 text-slate dark:text-paper/85 md:grid-cols-2">
               {person.background.map((paragraph) => (
                 <p className="m-0" key={paragraph}>
@@ -142,21 +154,14 @@ export function LawyerProfilePage({ person }: { person: Person }) {
                 </p>
               ))}
             </div>
-          </div>
+          </section>
 
           {person.expertise.length ? (
             <ProfileList
               title="Practice areas"
-              id="expertise"
+              id="practice-areas"
               items={person.expertise}
               linkItems
-            />
-          ) : null}
-          {person.industries.length ? (
-            <ProfileList
-              title="Industries and functions"
-              id="industries"
-              items={person.industries}
             />
           ) : null}
           {person.representativeWorks.length ? (
@@ -170,9 +175,15 @@ export function LawyerProfilePage({ person }: { person: Person }) {
 
           <section
             className="mt-20 border-t border-navy pt-8 dark:border-paper"
-            id="qualifications"
+            aria-labelledby="qualifications"
           >
-            <Eyebrow>Qualifications</Eyebrow>
+            <Eyebrow>Credentials</Eyebrow>
+            <h2
+              className="mt-5 mb-0 scroll-mt-24 font-serif text-[clamp(34px,4vw,52px)] leading-none font-normal text-navy lg:scroll-mt-8 dark:text-paper"
+              id="qualifications"
+            >
+              Qualifications
+            </h2>
             <div
               className={`mt-7 grid gap-10 ${person.professionalQualifications.length ? "lg:grid-cols-2" : "max-w-[720px]"}`}
             >
@@ -214,38 +225,6 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             compact
           />
 
-          {person.teamType === "Lawyer" ? (
-            <section
-              className="mt-20 border-t border-navy pt-8 dark:border-paper"
-              id="perspectives"
-            >
-              <Eyebrow>Firm perspectives</Eyebrow>
-              <div className="mt-6">
-                {insightItems.slice(0, 2).map((item) => (
-                  <a
-                    className="group grid min-h-[92px] grid-cols-[1fr_30px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper"
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={item.title}
-                  >
-                    <span>
-                      <small className="mb-2 block text-[9px] font-semibold uppercase tracking-[.12em] text-teal-dark dark:text-teal">
-                        {item.category} · {item.date}
-                      </small>
-                      <strong className="font-serif text-[22px] font-normal">
-                        {item.title}
-                      </strong>
-                    </span>
-                    <ArrowRight
-                      className="transition-transform group-hover:translate-x-1"
-                      size={19}
-                    />
-                  </a>
-                ))}
-              </div>
-            </section>
-          ) : null}
         </div>
       </section>
 
@@ -318,10 +297,16 @@ function ProfileList({
   return (
     <section
       className="mt-20 border-t border-navy pt-8 dark:border-paper"
-      id={id}
+      aria-labelledby={id}
     >
-      <Eyebrow>{title}</Eyebrow>
-      <div className="mt-5 grid sm:grid-cols-2">
+      <Eyebrow>Focus</Eyebrow>
+      <h2
+        className="mt-5 mb-0 scroll-mt-24 font-serif text-[clamp(34px,4vw,52px)] leading-none font-normal text-navy lg:scroll-mt-8 dark:text-paper"
+        id={id}
+      >
+        {title}
+      </h2>
+      <div className="mt-8 grid sm:grid-cols-2">
         {items.map((item, index) => {
           const slug = expertiseSlugs[item as keyof typeof expertiseSlugs];
           const content = (
@@ -368,10 +353,13 @@ function ProfileCollection({
   return (
     <section
       className="mt-20 border-t border-navy pt-8 dark:border-paper"
-      id={id}
+      aria-labelledby={id}
     >
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="mt-5 mb-0 font-serif text-[clamp(34px,4vw,52px)] leading-none font-normal text-navy dark:text-paper">
+      <h2
+        className="mt-5 mb-0 scroll-mt-24 font-serif text-[clamp(34px,4vw,52px)] leading-none font-normal text-navy lg:scroll-mt-8 dark:text-paper"
+        id={id}
+      >
         {title}
       </h2>
       <ol

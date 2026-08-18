@@ -27,6 +27,24 @@ export const practiceAreas = [
       "ESG and carbon initiatives",
       "Energy disputes",
     ],
+    industries: [
+      [
+        "Oil & gas",
+        "Upstream, midstream and downstream operators, projects and transactions",
+      ],
+      [
+        "Power & utilities",
+        "Generation, transmission, distribution and energy services",
+      ],
+      [
+        "Renewable energy",
+        "Solar, wind and other energy-transition projects",
+      ],
+      [
+        "Energy infrastructure",
+        "Pipelines, facilities and supporting assets",
+      ],
+    ],
   },
   {
     number: "02",
@@ -44,6 +62,24 @@ export const practiceAreas = [
       "Environmental compliance",
       "Joint ventures",
       "Royalties and taxation",
+    ],
+    industries: [
+      [
+        "Mining & minerals",
+        "Licensing, exploration, production and closure",
+      ],
+      [
+        "Natural resources",
+        "Resource development and commercial arrangements",
+      ],
+      [
+        "Energy & utilities",
+        "Projects connected to power, fuels and infrastructure",
+      ],
+      [
+        "Regulated businesses",
+        "Public-sector engagement and compliance",
+      ],
     ],
   },
   {
@@ -66,6 +102,28 @@ export const practiceAreas = [
       "Technology transfer",
       "Taxation",
     ],
+    industries: [
+      [
+        "Energy & natural resources",
+        "Cross-border investments, acquisitions and project development",
+      ],
+      [
+        "Financial services & fintech",
+        "Market entry, investment structures and regulatory permissions",
+      ],
+      [
+        "Technology & digital economy",
+        "International growth, technology transfer and operating models",
+      ],
+      [
+        "Infrastructure & real estate",
+        "Development, investment and strategic partnerships",
+      ],
+      [
+        "Regulated and public-sector markets",
+        "Government engagement, approvals and investment protection",
+      ],
+    ],
   },
   {
     number: "04",
@@ -82,6 +140,28 @@ export const practiceAreas = [
       "Loan structuring",
       "Insurance",
       "Private wealth",
+    ],
+    industries: [
+      [
+        "Banks & financial institutions",
+        "Regulatory, transactional and financing matters",
+      ],
+      [
+        "Fintech & digital finance",
+        "Products, platforms, payments and innovation",
+      ],
+      [
+        "Insurance & pensions",
+        "Regulatory compliance, transactions and governance",
+      ],
+      [
+        "Capital markets & investment funds",
+        "Fundraising, securities and investment structures",
+      ],
+      [
+        "Private wealth",
+        "Structures and advice for private clients and family offices",
+      ],
     ],
   },
   {
@@ -102,6 +182,28 @@ export const practiceAreas = [
       "Real estate & infrastructure",
       "Employment & immigration",
     ],
+    industries: [
+      [
+        "Infrastructure & real estate",
+        "Development, investment, construction and commercial assets",
+      ],
+      [
+        "Financial services",
+        "Institutions, investors, products and strategic transactions",
+      ],
+      [
+        "Technology & digital economy",
+        "Platforms, innovation, data and commercial agreements",
+      ],
+      [
+        "Consumer & commercial businesses",
+        "Growth, operations, governance and risk management",
+      ],
+      [
+        "Regulated businesses",
+        "Compliance, licensing and public-sector engagement",
+      ],
+    ],
   },
   {
     number: "06",
@@ -119,6 +221,24 @@ export const practiceAreas = [
       "Private equity",
       "Funds",
       "Securities compliance",
+    ],
+    industries: [
+      [
+        "Financial institutions & funds",
+        "Issuers, investors, banks and investment managers",
+      ],
+      [
+        "Energy & natural resources",
+        "Fundraising, acquisitions and project investment",
+      ],
+      [
+        "Infrastructure & real assets",
+        "Development, ownership and long-term investment structures",
+      ],
+      [
+        "Technology & high-growth businesses",
+        "Growth capital, strategic investment and securities compliance",
+      ],
     ],
   },
   {
@@ -138,6 +258,28 @@ export const practiceAreas = [
       "International commercial arbitration",
       "Investor-state treaty arbitration",
       "Arbitral tribunal appointments",
+    ],
+    industries: [
+      [
+        "Energy & natural resources",
+        "Commercial, regulatory, project and investment disputes",
+      ],
+      [
+        "Financial services",
+        "Banking, financing, investment and governance disputes",
+      ],
+      [
+        "Technology & digital businesses",
+        "Contracts, data, intellectual property and platform disputes",
+      ],
+      [
+        "Infrastructure & real estate",
+        "Projects, development, construction and asset disputes",
+      ],
+      [
+        "Regulated and public-sector markets",
+        "Public law, procurement and stakeholder disputes",
+      ],
     ],
   },
   {
@@ -161,6 +303,28 @@ export const practiceAreas = [
       "Cybersecurity",
       "Blockchain",
       "Intellectual property",
+    ],
+    industries: [
+      [
+        "Technology & platforms",
+        "Digital products, software, data and innovation",
+      ],
+      [
+        "Telecommunications",
+        "Networks, infrastructure, licensing and regulation",
+      ],
+      [
+        "Fintech & digital finance",
+        "Payments, financial products and technology-enabled services",
+      ],
+      [
+        "E-commerce & consumer businesses",
+        "Platforms, marketplaces, advertising and commercial operations",
+      ],
+      [
+        "Sports, media & entertainment",
+        "Rights, content, sponsorships and digital distribution",
+      ],
     ],
   },
 ] as const;
@@ -186,33 +350,6 @@ export const expertiseDetails = {
   "financial-services-capital-markets":
     canonicalExpertiseDetails["financial-services"],
 } as Record<string, (typeof practiceAreas)[number]>;
-
-export const sectors = [
-  [
-    "Energy, oil & gas",
-    "Operators, investors and projects across the energy value chain",
-  ],
-  [
-    "Mining & natural resources",
-    "Licensing, development, production and closure",
-  ],
-  [
-    "Financial services",
-    "Banks, fintechs, capital markets, insurance and private wealth",
-  ],
-  [
-    "Technology & digital economy",
-    "Telecommunications, data, platforms and innovation",
-  ],
-  [
-    "Infrastructure & real estate",
-    "Projects, development, investment and commercial assets",
-  ],
-  [
-    "Regulated businesses",
-    "Governance, compliance and public-sector engagement",
-  ],
-] as const;
 
 export const insightItems = [
   {
@@ -249,20 +386,10 @@ export const megaMenuContent = {
     action: "Explore our practices",
     columns: [
       {
-        links: [
-          "Energy",
-          "Extractives",
-          "Foreign Investments",
-          "Financial Services",
-        ],
+        links: practiceAreas.slice(0, 4).map(({ title }) => title),
       },
       {
-        links: [
-          "Corporate & Commercial",
-          "Capital Markets",
-          "Disputes",
-          "Telecommunications, Technology & Digital Law",
-        ],
+        links: practiceAreas.slice(4).map(({ title }) => title),
       },
     ],
   },

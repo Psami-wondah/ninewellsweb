@@ -36,7 +36,7 @@ export function ProofSection() {
         {[
           [
             String(practiceAreas.length).padStart(2, "0"),
-            "integrated practice areas",
+            "integrated expertise",
           ],
           [
             company.professionalBodies,

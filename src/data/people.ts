@@ -18,7 +18,6 @@ export type Person = {
   image: string
   imagePosition?: string
   expertise: string[]
-  industries: string[]
   bio: string
   background: string[]
   representativeWorks: string[]
@@ -45,7 +44,6 @@ export const people: Person[] = [
     image: bayoImage,
     imagePosition: 'center 28%',
     expertise: ['Energy', 'Extractives', 'Foreign Investments', 'Disputes', 'Corporate & Commercial'],
-    industries: ['Energy, oil & gas', 'Mining & natural resources', 'Regulated businesses'],
     bio: 'Bayo Adaralegbe is the Lead Partner at Ninewells Law Practice and has been a member of the Nigerian Bar for almost forty years.',
     background: [
       'He was until recently Group Head of the Energy and Extractives Group at Babalakin & Co, where he led advisory work in oil, gas and power and was actively involved in complex commercial litigation and domestic and international commercial arbitration, both as arbitrator and counsel.',
@@ -121,11 +119,10 @@ export const people: Person[] = [
     image: adejokeImage,
     imagePosition: 'center 24%',
     expertise: ['Corporate & Commercial'],
-    industries: ['Infrastructure & real estate', 'Financial services', 'Regulated businesses'],
     bio: 'Adejoke Odocha is a Partner in the Corporate & Commercial Practice Group of Ninewells and a commercially astute business lawyer with more than 20 years of experience.',
     background: [
       'She advises multinational corporations, financial institutions, investors, private-equity sponsors, government agencies and indigenous businesses on complex corporate transactions, strategic investments, regulatory compliance, governance and cross-border commercial matters across Africa.',
-      'Her practice combines top-tier private-practice expertise with extensive in-house legal leadership. Before joining Ninewells, she worked at Templars and served as legal counsel to Rendeavour, Africa’s largest new-city developer, Atlantic Energy and Schlumberger. This perspective enables her to align legal strategy with clients’ broader commercial objectives.',
+      'Her practice combines top-tier private-practice expertise with extensive in-house legal leadership. Before joining Ninewells, she worked at Templars and served as legal counsel to Rendeavour, Africa’s largest new-city developer, Atlantic Energy and Schlumberger. This breadth of experience enables her to align legal strategy with clients’ broader commercial objectives.',
     ],
     representativeWorks: [],
     academicQualifications: [
@@ -156,7 +153,6 @@ export const people: Person[] = [
     image: abdulmajeedImage,
     imagePosition: 'center 18%',
     expertise: ['Energy', 'Extractives', 'Financial Services', 'Foreign Investments'],
-    industries: ['Energy, oil & gas', 'Mining & natural resources', 'Financial services'],
     bio: 'Abdulmajeed Abolaji is a Managing Associate in the Energy, Extractives and Foreign Investments Practice Group of Ninewells.',
     background: [
       'He is an energy and finance lawyer with extensive experience advising on complex, high-value transactions in Nigeria’s oil, gas, power and broader financial sectors. His market-facing practice focuses on energy-asset acquisitions, structured and project finance and regulatory advisory work.',
@@ -203,7 +199,6 @@ export const people: Person[] = [
     image: estherImage,
     imagePosition: 'center 22%',
     expertise: ['Telecommunications, Technology & Digital Law'],
-    industries: ['Technology & digital economy', 'Financial services', 'Regulated businesses'],
     bio: 'Esther Gbenro is a Senior Associate in the Telecommunications, Technology & Digital Law Practice at Ninewells.',
     background: [
       'She advises multinational corporations, technology companies, financial institutions, public institutions, startups and local businesses on legal and regulatory issues arising from the digital economy. Her work includes technology transactions, commercial contracts, regulatory compliance, digital-business operations, cross-border transactions and intellectual-property protection.',
@@ -249,7 +244,6 @@ export const people: Person[] = [
     image: adebimpeImage,
     imagePosition: 'center 18%',
     expertise: [],
-    industries: ['Legal operations', 'Business services'],
     bio: 'Adebimpe Fajemisin is the Chief Operating Officer at Ninewells Law Practice.',
     background: [
       'Her academic qualifications, professional training and experience help Ninewells organise its people, technology and legal resources so its lawyers can provide immediate, effective and cost-conscious solutions to clients’ problems.',

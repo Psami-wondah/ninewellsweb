@@ -11,7 +11,7 @@ export function InsightsSection() {
       aria-labelledby="insights-heading"
     >
       <div data-reveal="left">
-        <Eyebrow>Perspective</Eyebrow>
+        <Eyebrow>Insights</Eyebrow>
         <h2
           className="my-6 font-serif text-[clamp(43px,5vw,70px)] leading-[.98] font-normal tracking-[-.04em] text-navy dark:text-paper"
           id="insights-heading"
@@ -32,7 +32,7 @@ export function InsightsSection() {
         data-reveal-delay="1"
       >
         <Eyebrow className="text-teal">
-          Featured perspective · Energy outlook
+          Featured insight · Energy outlook
         </Eyebrow>
         <h3 className="mt-24 mb-5 max-w-[560px] font-serif text-[clamp(38px,3.5vw,55px)] leading-none font-normal tracking-[-.035em]">
           Nigeria’s energy recovery—and what reform must unlock next
@@ -47,7 +47,7 @@ export function InsightsSection() {
           href="https://www.linkedin.com/company/ninewells/"
           target="_blank"
           rel="noreferrer"
-          aria-label="View the featured perspective on LinkedIn"
+          aria-label="View the featured insight on LinkedIn"
         >
           <ArrowRight size={25} />
         </a>

@@ -1,11 +1,8 @@
 import { ArrowLeft, ArrowRight, Check } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import lagosIllustration from "../../assets/lagos-bridge-pen-illustration.webp";
 import { people } from "../../data/people";
-import {
-  expertiseDetails,
-  insightItems,
-  sectors,
-} from "../../data/siteContent";
+import { expertiseDetails, insightItems } from "../../data/siteContent";
 import { ContactSection } from "../sections/ContactSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
@@ -231,7 +228,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
         aria-labelledby="expertise-insights-heading"
       >
         <div>
-          <Eyebrow>Related perspectives</Eyebrow>
+          <Eyebrow>Related insights</Eyebrow>
           <h2
             className="mt-5 mb-0 font-serif text-[clamp(38px,4.5vw,58px)] leading-none font-normal text-navy dark:text-paper"
             id="expertise-insights-heading"
@@ -269,37 +266,51 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
       </section>
 
       <section
-        className="grid gap-12 border-t border-navy/15 bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(70px,8vw,100px)] dark:border-white/15 dark:bg-[#071224] lg:grid-cols-[.55fr_1.15fr]"
-        aria-labelledby="related-industries-heading"
+        className="grid gap-12 border-t border-navy/15 bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(70px,8vw,100px)] dark:border-white/15 dark:bg-[#071224] lg:grid-cols-[.9fr_1.1fr]"
+        aria-labelledby="relevant-industries-heading"
       >
+        <figure className="relative m-0 min-h-[360px] overflow-hidden bg-[#eef0f5] lg:min-h-[510px]">
+          <img
+            className="h-full w-full object-cover object-center mix-blend-multiply"
+            src={lagosIllustration}
+            alt="Original blue pen-and-ink illustration of the Lekki–Ikoyi Link Bridge and Lagos skyline"
+          />
+          <figcaption className="absolute bottom-0 left-0 bg-navy-deep/95 px-5 py-3 text-[9px] uppercase tracking-[.13em] text-ivory">
+            Lagos in line / Original Ninewells study
+          </figcaption>
+        </figure>
         <div>
-          <Eyebrow>Related industries</Eyebrow>
+          <Eyebrow>Relevant industries</Eyebrow>
           <h2
             className="mt-5 mb-0 font-serif text-[clamp(38px,4.5vw,58px)] leading-none font-normal text-navy dark:text-paper"
-            id="related-industries-heading"
+            id="relevant-industries-heading"
           >
             Context changes everything.
           </h2>
-        </div>
-        <div className="border-t border-navy dark:border-paper">
-          {sectors.map(([sector], index) => (
-            <Link
-              className="group grid min-h-[72px] grid-cols-[42px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper"
-              to="/#industries"
-              key={sector}
-            >
-              <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
-                0{index + 1}
-              </span>
-              <strong className="font-serif text-[20px] font-normal">
-                {sector}
-              </strong>
-              <ArrowRight
-                className="transition-transform group-hover:translate-x-1"
-                size={17}
-              />
-            </Link>
-          ))}
+          <p className="mt-6 max-w-[520px] text-[14px] leading-6 text-slate dark:text-paper/80">
+            Our advice is shaped by the commercial and regulatory realities of
+            the industries this practice serves.
+          </p>
+          <div className="mt-10 border-t border-navy dark:border-paper">
+            {detail.industries.map(([industry, description], index) => (
+              <div
+                className="grid min-h-[84px] grid-cols-[42px_1fr] items-center gap-4 border-b border-navy/15 py-4 text-navy dark:border-white/15 dark:text-paper"
+                key={industry}
+              >
+                <span className="self-start pt-1 text-[10px] font-semibold text-teal-dark dark:text-teal">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span>
+                  <strong className="block font-serif text-[20px] font-normal">
+                    {industry}
+                  </strong>
+                  <small className="mt-1 block text-[11px] leading-5 text-slate dark:text-paper/75">
+                    {description}
+                  </small>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <ContactSection />
