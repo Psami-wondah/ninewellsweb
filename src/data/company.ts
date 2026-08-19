@@ -19,6 +19,15 @@ export const company = {
     ['ISO', 'International Organization for Standardization'],
     ['PII', 'Professional Indemnity Insurance'],
   ] as const,
+  contact: {
+    email: 'Info@ninewellslegal.com',
+    phones: ['0916 590 4000', '0911 100 2210'],
+  },
+  social: {
+    linkedin: 'https://www.linkedin.com/company/ninewells/',
+    instagram: 'https://www.instagram.com/ninewellslp/',
+    instagramHandle: '@ninewellslp',
+  },
   offices: [
     {
       city: 'Lagos',
@@ -29,10 +38,10 @@ export const company = {
     },
     {
       city: 'Abuja',
-      area: 'Federal Capital Territory',
-      address: 'Abuja, Nigeria',
+      area: 'Maitama',
+      address: '16, Aso Garden Estate, River Trent Street, Off Thames Street, Ministers Hills, Maitama.',
       description: 'Close to the country’s regulatory agencies and key public-sector institutions.',
-      mapUrl: 'https://maps.google.com/?q=Abuja+Nigeria',
+      mapUrl: 'https://maps.google.com/?q=16+Aso+Garden+Estate+River+Trent+Street+Off+Thames+Street+Ministers+Hills+Maitama+Abuja',
     },
   ],
 } as const

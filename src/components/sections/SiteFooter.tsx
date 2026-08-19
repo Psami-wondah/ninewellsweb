@@ -1,8 +1,14 @@
-import { ArrowRight, LinkedinLogo, MapPin } from "@phosphor-icons/react";
+import {
+  ArrowRight,
+  EnvelopeSimple,
+  InstagramLogo,
+  LinkedinLogo,
+  MapPin,
+  Phone,
+} from "@phosphor-icons/react";
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { company } from "../../data/company";
-import { LINKEDIN_URL } from "../../data/siteContent";
 import { BrandLogo } from "../ui/BrandLogo";
 
 export function SiteFooter() {
@@ -110,12 +116,35 @@ export function SiteFooter() {
         </p>
         <a
           className="flex items-center gap-2 no-underline"
-          href={LINKEDIN_URL}
+          href={company.social.linkedin}
           target="_blank"
           rel="noreferrer"
         >
           <LinkedinLogo size={17} /> Ninewells on LinkedIn
         </a>
+        <a
+          className="flex items-center gap-2 no-underline"
+          href={company.social.instagram}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <InstagramLogo size={17} /> {company.social.instagramHandle}
+        </a>
+        <a
+          className="flex items-center gap-2 no-underline"
+          href={`mailto:${company.contact.email}`}
+        >
+          <EnvelopeSimple size={17} /> {company.contact.email}
+        </a>
+        {company.contact.phones.map((phone) => (
+          <a
+            className="flex items-center gap-2 no-underline"
+            href={`tel:${phone.replace(/\s/g, "")}`}
+            key={phone}
+          >
+            <Phone size={17} /> {phone}
+          </a>
+        ))}
         {company.offices.map((office) => (
           <a
             className="flex items-start gap-2 leading-5 no-underline"

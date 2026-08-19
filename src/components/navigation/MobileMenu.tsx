@@ -8,10 +8,10 @@ import {
 } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { company } from "../../data/company";
 import {
   expertise,
   expertiseSlugs,
-  LINKEDIN_URL,
   navItems,
 } from "../../data/siteContent";
 import { useDialogFocus } from "../../hooks/useDialogFocus";
@@ -141,11 +141,19 @@ export function MobileMenu({
         </Link>
         <a
           className="text-[12px] text-white/85 no-underline"
-          href={LINKEDIN_URL}
+          href={company.social.linkedin}
           target="_blank"
           rel="noreferrer"
         >
           Ninewells on LinkedIn
+        </a>
+        <a
+          className="text-[12px] text-white/85 no-underline"
+          href={company.social.instagram}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram {company.social.instagramHandle}
         </a>
       </div>
     </div>

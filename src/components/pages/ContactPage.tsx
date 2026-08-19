@@ -1,14 +1,12 @@
 import {
   ArrowRight,
   EnvelopeSimple,
+  InstagramLogo,
   LinkedinLogo,
   MapPin,
   Phone,
 } from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
 import { company } from "../../data/company";
-import { people } from "../../data/people";
-import { LINKEDIN_URL } from "../../data/siteContent";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function ContactPage() {
@@ -28,17 +26,27 @@ export function ContactPage() {
           </h1>
           <div className="border-t border-white/30 pt-6">
             <p className="m-0 text-[15px] leading-7 text-white/82">
-              Contact a member of our team directly or connect with Ninewells
-              through one of our Nigerian offices.
+              Contact Ninewells directly or connect with us through one of our
+              Nigerian offices.
             </p>
-            <a
-              className="mt-7 inline-flex items-center gap-3 text-[12px] font-semibold text-teal no-underline"
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedinLogo size={20} /> Ninewells on LinkedIn
-            </a>
+            <div className="mt-7 flex flex-wrap gap-x-7 gap-y-3">
+              <a
+                className="inline-flex items-center gap-3 text-[12px] font-semibold text-teal no-underline"
+                href={company.social.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LinkedinLogo size={20} /> LinkedIn
+              </a>
+              <a
+                className="inline-flex items-center gap-3 text-[12px] font-semibold text-teal no-underline"
+                href={company.social.instagram}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <InstagramLogo size={20} /> {company.social.instagramHandle}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -90,69 +98,58 @@ export function ContactPage() {
 
       <section
         className="bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(72px,8vw,106px)] dark:bg-[#071224]"
-        aria-labelledby="direct-contacts-heading"
+        aria-labelledby="firm-contacts-heading"
       >
         <div className="grid gap-10 lg:grid-cols-[.55fr_1.15fr] lg:gap-20">
           <div>
-            <Eyebrow>Direct contacts</Eyebrow>
+            <Eyebrow>Firm contacts</Eyebrow>
             <h2
               className="mt-5 mb-0 font-serif text-[clamp(40px,5vw,64px)] leading-none font-normal text-navy dark:text-paper"
-              id="direct-contacts-heading"
+              id="firm-contacts-heading"
             >
-              Speak with the right person.
+              Talk to Ninewells.
             </h2>
             <p className="mt-7 max-w-[390px] text-[13px] leading-6 text-slate dark:text-paper/78">
-              Every published team member’s confirmed telephone and email
-              details are available below and on their profile.
+              Call or email the firm and we will connect you with the right
+              lawyer or business professional for your enquiry.
             </p>
           </div>
-          <div className="border-t border-navy dark:border-paper">
-            {people.map((person) => (
-              <article
-                className="grid gap-5 border-b border-navy/15 py-6 dark:border-white/15 sm:grid-cols-[72px_1fr_auto] sm:items-center"
-                key={person.slug}
-              >
-                <img
-                  className="h-20 w-16 object-cover"
-                  src={person.image}
-                  style={{ objectPosition: person.imagePosition }}
-                  alt=""
-                />
-                <div>
-                  <Link
-                    className="font-serif text-[24px] text-navy no-underline dark:text-paper"
-                    to={`/people/${person.slug}`}
-                  >
-                    {person.name}
-                  </Link>
-                  <p className="mt-1 mb-0 text-[10px] font-semibold uppercase tracking-[.08em] text-slate dark:text-paper/70">
-                    {person.position} · {person.role}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 text-[11px]">
+          <div className="grid border-t border-l border-navy/20 dark:border-white/20 md:grid-cols-2">
+            <a
+              className="group min-h-[230px] border-r border-b border-navy/20 p-[clamp(24px,4vw,42px)] text-navy no-underline dark:border-white/20 dark:text-paper"
+              href={`mailto:${company.contact.email}`}
+            >
+              <EnvelopeSimple
+                className="text-teal-dark dark:text-teal"
+                size={28}
+              />
+              <small className="mt-14 block text-[9px] font-semibold uppercase tracking-[.12em] text-slate dark:text-paper/70">
+                General enquiries
+              </small>
+              <strong className="mt-3 block font-serif text-[clamp(23px,2.4vw,32px)] leading-tight font-normal break-words">
+                {company.contact.email}
+              </strong>
+            </a>
+            <div className="min-h-[230px] border-r border-b border-navy/20 p-[clamp(24px,4vw,42px)] text-navy dark:border-white/20 dark:text-paper">
+              <Phone
+                className="text-teal-dark dark:text-teal"
+                size={28}
+              />
+              <small className="mt-14 block text-[9px] font-semibold uppercase tracking-[.12em] text-slate dark:text-paper/70">
+                Call the firm
+              </small>
+              <div className="mt-3 flex flex-col gap-2 font-serif text-[clamp(24px,2.7vw,34px)] leading-tight">
+                {company.contact.phones.map((phone) => (
                   <a
-                    className="inline-flex items-center gap-2 text-navy no-underline dark:text-paper"
-                    href={`mailto:${person.email}`}
+                    className="w-fit text-navy no-underline dark:text-paper"
+                    href={`tel:${phone.replace(/\s/g, "")}`}
+                    key={phone}
                   >
-                    <EnvelopeSimple
-                      className="text-teal-dark dark:text-teal"
-                      size={17}
-                    />{" "}
-                    {person.email}
+                    {phone}
                   </a>
-                  <a
-                    className="inline-flex items-center gap-2 text-navy no-underline dark:text-paper"
-                    href={`tel:${person.mobile.replace(/\s/g, "")}`}
-                  >
-                    <Phone
-                      className="text-teal-dark dark:text-teal"
-                      size={17}
-                    />{" "}
-                    {person.mobile}
-                  </a>
-                </div>
-              </article>
-            ))}
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
