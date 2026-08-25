@@ -15,6 +15,7 @@ import { ExpertiseDetailPage } from "./components/pages/ExpertiseDetailPage";
 import { LawyerProfilePage } from "./components/pages/LawyerProfilePage";
 import { PeopleDirectoryPage } from "./components/pages/PeopleDirectoryPage";
 import { AboutPage } from "./components/pages/AboutPage";
+import { CareersPage } from "./components/pages/CareersPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { InsightDetailPage } from "./components/pages/InsightDetailPage";
 import { InsightsDirectoryPage } from "./components/pages/InsightsDirectoryPage";
@@ -131,6 +132,14 @@ function App() {
             element={
               <ContentPage title="About">
                 <AboutPage />
+              </ContentPage>
+            }
+          />
+          <Route
+            path="/careers"
+            element={
+              <ContentPage title="Careers">
+                <CareersPage />
               </ContentPage>
             }
           />

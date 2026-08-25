@@ -106,6 +106,9 @@ export function SiteFooter() {
         <Link className="no-underline" to="/insights">
           Insights
         </Link>
+        <Link className="no-underline" to="/careers">
+          Careers
+        </Link>
         <Link className="no-underline" to="/contact">
           Contact
         </Link>
