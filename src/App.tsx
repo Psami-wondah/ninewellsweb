@@ -17,6 +17,7 @@ import { PeopleDirectoryPage } from "./components/pages/PeopleDirectoryPage";
 import { AboutPage } from "./components/pages/AboutPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { InsightDetailPage } from "./components/pages/InsightDetailPage";
+import { InsightsDirectoryPage } from "./components/pages/InsightsDirectoryPage";
 import { ContactSection } from "./components/sections/ContactSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";
 import { HeroSection } from "./components/sections/HeroSection";
@@ -151,6 +152,14 @@ function App() {
           />
           <Route path="/people/:profileSlug" element={<PersonRoute />} />
           <Route
+            path="/insights"
+            element={
+              <ContentPage title="Insights" contact>
+                <InsightsDirectoryPage />
+              </ContentPage>
+            }
+          />
+          <Route
             path="/expertise/energy-extractives-foreign-investment"
             element={<Navigate to="/expertise/energy" replace />}
           />
@@ -237,7 +246,7 @@ function ExpertiseRoute() {
 function InsightRoute() {
   const { insightSlug } = useParams();
   const insight = insightItems.find((item) => item.slug === insightSlug);
-  if (!insight) return <Navigate to="/#insights" replace />;
+  if (!insight) return <Navigate to="/insights" replace />;
   return (
     <>
       <PageTitle title={insight.title} />

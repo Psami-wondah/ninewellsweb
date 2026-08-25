@@ -1,3 +1,11 @@
+import expertiseCapitalMarketsImage from "../assets/expertise-capital-markets.webp";
+import expertiseCorporateCommercialImage from "../assets/expertise-corporate-commercial.webp";
+import expertiseDisputesImage from "../assets/expertise-disputes.webp";
+import expertiseEnergyImage from "../assets/expertise-energy.webp";
+import expertiseExtractivesImage from "../assets/expertise-extractives.webp";
+import expertiseFinancialServicesImage from "../assets/expertise-financial-services.webp";
+import expertiseForeignInvestmentsImage from "../assets/expertise-foreign-investments.webp";
+import expertiseTechnologyImage from "../assets/expertise-technology.webp";
 import insightBayoLeadPartner from "../assets/insight-bayo-lead-partner.jpg";
 import insightEnergyOutlook from "../assets/insight-energy-outlook.jpg";
 import insightJambVisit from "../assets/insight-jamb-visit.jpg";
@@ -25,31 +33,33 @@ export const practiceAreas = [
       "The energy sector is undergoing significant transformation. We advise clients across the energy value chain through the different stages of their operations.",
     overview:
       "Our work covers regulatory compliance, project development, financing, commercial transactions, dispute resolution and the acquisition or divestment of interests.",
+    featureImage: expertiseEnergyImage,
+    featureImageAlt: "Industrial storage tanks beside the Ijora cityscape in Lagos",
+    featureImageLocation: "Ijora · Lagos",
+    featureImageCreator: "Vitalis Nwenyi",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/large-industrial-tanks-sit-near-a-cityscape-I1VGlHw7OAc",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Upstream, midstream and downstream oil & gas",
-      "Renewable energy and power projects",
-      "Project finance",
-      "Licensing and regulatory compliance",
-      "ESG and carbon initiatives",
-      "Energy disputes",
+      "Upstream, Midstream and Downstream Oil & Gas",
+      "Renewable Energy and Power Projects",
+      "Project Finance",
+      "Licensing and Regulatory Compliance",
+      "ESG and Carbon Initiatives",
+      "Energy Disputes",
     ],
     industries: [
       [
-        "Oil & gas",
+        "Oil & Gas",
         "Upstream, midstream and downstream operators, projects and transactions",
       ],
       [
-        "Power & utilities",
+        "Power & Utilities",
         "Generation, transmission, distribution and energy services",
       ],
-      [
-        "Renewable energy",
-        "Solar, wind and other energy-transition projects",
-      ],
-      [
-        "Energy infrastructure",
-        "Pipelines, facilities and supporting assets",
-      ],
+      ["Renewable Energy", "Solar, wind and other energy-transition projects"],
+      ["Energy Infrastructure", "Pipelines, facilities and supporting assets"],
     ],
   },
   {
@@ -62,30 +72,29 @@ export const practiceAreas = [
       "We advise mining and natural-resources companies throughout the project lifecycle, from licensing to exploration, production and closure.",
     overview:
       "Our multidisciplinary approach connects project development, environmental obligations, commercial structures and fiscal considerations.",
+    featureImage: expertiseExtractivesImage,
+    featureImageAlt: "Black-and-white industrial facility in Ewekoro, Nigeria",
+    featureImageLocation: "Ewekoro · Ogun State",
+    featureImageCreator: "Abiodun Odu",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/a-black-and-white-photo-of-a-factory-uWZ9umiDADw",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Mining licences",
-      "Project development",
-      "Environmental compliance",
-      "Joint ventures",
-      "Royalties and taxation",
+      "Mining Licences",
+      "Project Development",
+      "Environmental Compliance",
+      "Joint Ventures",
+      "Royalties and Taxation",
     ],
     industries: [
+      ["Mining & Minerals", "Licensing, exploration, production and closure"],
+      ["Natural Resources", "Resource development and commercial arrangements"],
       [
-        "Mining & minerals",
-        "Licensing, exploration, production and closure",
-      ],
-      [
-        "Natural resources",
-        "Resource development and commercial arrangements",
-      ],
-      [
-        "Energy & utilities",
+        "Energy & Utilities",
         "Projects connected to power, fuels and infrastructure",
       ],
-      [
-        "Regulated businesses",
-        "Public-sector engagement and compliance",
-      ],
+      ["Regulated Businesses", "Public-sector engagement and compliance"],
     ],
   },
   {
@@ -98,35 +107,44 @@ export const practiceAreas = [
       "We help multinational companies and foreign investors establish and operate businesses in Nigeria, repatriate profits and protect their investments.",
     overview:
       "Our advice helps clients manage expropriation risk and structure dispute resolution through arbitration while addressing regulatory compliance, immigration, technology transfer and taxation.",
+    featureImage: expertiseForeignInvestmentsImage,
+    featureImageAlt:
+      "Aerial view of Lagos Lagoon, a bridge and the Victoria Island skyline",
+    featureImageLocation: "Victoria Island · Lagos",
+    featureImageCreator: "Malik Buraimoh",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/boats-navigate-a-wide-river-beside-a-modern-city-bridge-EMjpo0YjHPw",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Business establishment and market entry",
-      "Investment protection",
-      "Profit repatriation",
-      "Arbitration strategy",
-      "Regulatory compliance",
+      "Business Establishment and Market Entry",
+      "Investment Protection",
+      "Profit Repatriation",
+      "Arbitration Strategy",
+      "Regulatory Compliance",
       "Immigration",
-      "Technology transfer",
+      "Technology Transfer",
       "Taxation",
     ],
     industries: [
       [
-        "Energy & natural resources",
+        "Energy & Natural Resources",
         "Cross-border investments, acquisitions and project development",
       ],
       [
-        "Financial services & fintech",
+        "Financial Services & Fintech",
         "Market entry, investment structures and regulatory permissions",
       ],
       [
-        "Technology & digital economy",
+        "Technology & Digital Economy",
         "International growth, technology transfer and operating models",
       ],
       [
-        "Infrastructure & real estate",
+        "Infrastructure & Real Estate",
         "Development, investment and strategic partnerships",
       ],
       [
-        "Regulated and public-sector markets",
+        "Regulated and Public-Sector Markets",
         "Government engagement, approvals and investment protection",
       ],
     ],
@@ -141,31 +159,40 @@ export const practiceAreas = [
       "We advise banks, fintechs and other financial institutions on the regulatory and transactional matters that shape their businesses.",
     overview:
       "We combine financial-sector knowledge with practical structuring advice for institutions, products, transactions and private clients.",
+    featureImage: expertiseFinancialServicesImage,
+    featureImageAlt: "Central Bank of Nigeria building in Abuja",
+    featureImageLocation: "Abuja · Nigeria",
+    featureImageCreator: "Gabriel Ogulu",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/a-large-building-of-the-central-bank-of-nigeria-xRAewjeW0_I",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Banking & finance",
-      "Loan structuring",
+      "Banking & Finance",
+      "Loan Structuring",
       "Insurance",
-      "Private wealth",
+      "Private Wealth",
+      "Private Equity",
     ],
     industries: [
       [
-        "Banks & financial institutions",
+        "Banks & Financial Institutions",
         "Regulatory, transactional and financing matters",
       ],
       [
-        "Fintech & digital finance",
+        "Fintech & Digital Finance",
         "Products, platforms, payments and innovation",
       ],
       [
-        "Insurance & pensions",
+        "Insurance & Pensions",
         "Regulatory compliance, transactions and governance",
       ],
       [
-        "Capital markets & investment funds",
+        "Capital Markets & Investment Funds",
         "Fundraising, securities and investment structures",
       ],
       [
-        "Private wealth",
+        "Private Wealth",
         "Structures and advice for private clients and family offices",
       ],
     ],
@@ -180,33 +207,41 @@ export const practiceAreas = [
       "We advise businesses at every stage of their lifecycle, from formation and governance to complex cross-border investments, restructurings and commercial agreements.",
     overview:
       "Our team provides practical, business-oriented counsel tailored to each client’s industry, operating realities and commercial objectives.",
+    featureImage: expertiseCorporateCommercialImage,
+    featureImageAlt: "Geometric office building photographed in Lagos",
+    featureImageLocation: "Lagos · Nigeria",
+    featureImageCreator: "Francis Odeyemi",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/grayscale-photo-of-high-rise-building-NfL07rKmJbU",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Mergers & acquisitions",
-      "Regulatory compliance",
-      "Consumer protection & competition",
-      "Governance & company secretarial services",
-      "Real estate & infrastructure",
-      "Employment & immigration",
+      "Mergers & Acquisitions",
+      "Regulatory Compliance",
+      "Consumer Protection & Competition",
+      "Governance & Company Secretarial Services",
+      "Real Estate & Infrastructure",
+      "Employment & Immigration",
     ],
     industries: [
       [
-        "Infrastructure & real estate",
+        "Infrastructure & Real Estate",
         "Development, investment, construction and commercial assets",
       ],
       [
-        "Financial services",
+        "Financial Services",
         "Institutions, investors, products and strategic transactions",
       ],
       [
-        "Technology & digital economy",
+        "Technology & Digital Economy",
         "Platforms, innovation, data and commercial agreements",
       ],
       [
-        "Consumer & commercial businesses",
+        "Consumer & Commercial Businesses",
         "Growth, operations, governance and risk management",
       ],
       [
-        "Regulated businesses",
+        "Regulated Businesses",
         "Compliance, licensing and public-sector engagement",
       ],
     ],
@@ -221,28 +256,36 @@ export const practiceAreas = [
       "We advise issuers, investors and financial institutions on equity and debt offerings and securities regulation.",
     overview:
       "Our capital-markets work connects transaction execution, fundraising objectives and the regulatory requirements governing Nigerian securities.",
+    featureImage: expertiseCapitalMarketsImage,
+    featureImageAlt: "Civic Towers and the Lagos skyline under a blue sky",
+    featureImageLocation: "Lekki · Lagos",
+    featureImageCreator: "Nupo Deyon Daniel",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/city-skyline-under-blue-sky-during-daytime-9ySEZ-ugtJA",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Initial public offerings",
+      "Initial Public Offerings",
       "Bonds",
-      "Private equity",
+
       "Funds",
-      "Securities compliance",
+      "Securities Compliance",
     ],
     industries: [
       [
-        "Financial institutions & funds",
+        "Financial Institutions & Funds",
         "Issuers, investors, banks and investment managers",
       ],
       [
-        "Energy & natural resources",
+        "Energy & Natural Resources",
         "Fundraising, acquisitions and project investment",
       ],
       [
-        "Infrastructure & real assets",
+        "Infrastructure & Real Assets",
         "Development, ownership and long-term investment structures",
       ],
       [
-        "Technology & high-growth businesses",
+        "Technology & High-Growth Businesses",
         "Growth capital, strategic investment and securities compliance",
       ],
     ],
@@ -257,33 +300,42 @@ export const practiceAreas = [
       "We represent clients before Nigerian courts and arbitral tribunals in high-value, complex and commercially consequential disputes.",
     overview:
       "Our lawyers act across every tier of the Nigerian courts and in domestic, international commercial and investor-state treaty arbitration, both as counsel and as members of arbitral tribunals.",
+    featureImage: expertiseDisputesImage,
+    featureImageAlt: "Federal High Court headquarters in Abuja",
+    featureImageLocation: "Abuja · Nigeria",
+    featureImageCreator: "Jummy001",
+    featureImageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Federal_high_court_headquarters_Abuja.jpg",
+    featureImageLicense: "CC BY-SA 4.0",
+    featureImageLicenseUrl:
+      "https://creativecommons.org/licenses/by-sa/4.0/",
     capabilities: [
-      "Commercial litigation",
-      "All tiers of Nigerian courts",
-      "Domestic arbitration",
-      "International commercial arbitration",
-      "Investor-state treaty arbitration",
-      "Arbitral tribunal appointments",
+      "Commercial Litigation",
+      "All Tiers of Nigerian Courts",
+      "Domestic Arbitration",
+      "International Commercial Arbitration",
+      "Investor-State Treaty Arbitration",
+      "Arbitral Tribunal Appointments",
     ],
     industries: [
       [
-        "Energy & natural resources",
+        "Energy & Natural Resources",
         "Commercial, regulatory, project and investment disputes",
       ],
       [
-        "Financial services",
+        "Financial Services",
         "Banking, financing, investment and governance disputes",
       ],
       [
-        "Technology & digital businesses",
+        "Technology & Digital Businesses",
         "Contracts, data, intellectual property and platform disputes",
       ],
       [
-        "Infrastructure & real estate",
+        "Infrastructure & Real Estate",
         "Projects, development, construction and asset disputes",
       ],
       [
-        "Regulated and public-sector markets",
+        "Regulated and Public-Sector Markets",
         "Public law, procurement and stakeholder disputes",
       ],
     ],
@@ -298,21 +350,30 @@ export const practiceAreas = [
       "We advise technology-driven businesses on innovation, transactions, intellectual property and regulatory compliance.",
     overview:
       "Our practice supports established companies, financial institutions and emerging businesses as technology reshapes products, markets, risk and regulation.",
+    featureImage: expertiseTechnologyImage,
+    featureImageAlt: "Telecommunications tower against the sky in Ibadan",
+    featureImageLocation: "Ibadan · Nigeria",
+    featureImageCreator: "Rémy Ajenifuja",
+    featureImageSourceUrl:
+      "https://unsplash.com/photos/black-and-white-tower-under-white-sky-FM5KPa1FUaA",
+    featureImageLicense: "Unsplash",
+    featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
       "Telecommunications",
       "Technology",
       "Fintech",
-      "Artificial intelligence",
+      "Artificial Intelligence",
       "E-commerce",
-      "Data protection and privacy",
-      "Betting & gaming",
+      "Data Protection and Privacy",
+      "Betting & Gaming",
       "Cybersecurity",
       "Blockchain",
-      "Intellectual property",
+      "Intellectual Property",
+      "Trademarks",
     ],
     industries: [
       [
-        "Technology & platforms",
+        "Technology & Platforms",
         "Digital products, software, data and innovation",
       ],
       [
@@ -320,15 +381,15 @@ export const practiceAreas = [
         "Networks, infrastructure, licensing and regulation",
       ],
       [
-        "Fintech & digital finance",
+        "Fintech & Digital Finance",
         "Payments, financial products and technology-enabled services",
       ],
       [
-        "E-commerce & consumer businesses",
+        "E-commerce & Consumer Businesses",
         "Platforms, marketplaces, advertising and commercial operations",
       ],
       [
-        "Sports, media & entertainment",
+        "Sports, Media & Entertainment",
         "Rights, content, sponsorships and digital distribution",
       ],
     ],
@@ -357,10 +418,31 @@ export const expertiseDetails = {
     canonicalExpertiseDetails["financial-services"],
 } as Record<string, (typeof practiceAreas)[number]>;
 
+export const insightGroups = [
+  {
+    category: "Update",
+    title: "Updates",
+    description:
+      "Firm news, appointments, events and other recent developments.",
+  },
+  {
+    category: "Alert",
+    title: "Alerts",
+    description:
+      "Timely intelligence on legal, regulatory and policy changes affecting business.",
+  },
+  {
+    category: "Article",
+    title: "Articles",
+    description:
+      "Perspectives and analysis from our lawyers on legal and commercial issues.",
+  },
+] as const;
+
 export const insightItems = [
   {
     slug: "jamb-registrar-visit-digital-reform-priorities",
-    category: "Firm update",
+    category: "Update",
     date: "14 August 2026",
     dateTime: "2026-08-14",
     title: "JAMB Registrar outlines reform priorities during Ninewells visit",
@@ -373,8 +455,7 @@ export const insightItems = [
       "The Ninewells team with JAMB Registrar Professor Segun Aina during his Lagos office visit",
     sourceUrl:
       "https://www.linkedin.com/posts/ninewells_ninewells-jamb-education-activity-7494053517540773888-aJWg",
-    lede:
-      "The newly appointed Registrar of the Joint Admissions and Matriculation Board, Professor Segun Aina, visited Ninewells’ Lagos office to share his priorities for the institution’s next chapter.",
+    lede: "The newly appointed Registrar of the Joint Admissions and Matriculation Board, Professor Segun Aina, visited Ninewells’ Lagos office to share his priorities for the institution’s next chapter.",
     sections: [
       {
         id: "reform-agenda",
@@ -400,7 +481,7 @@ export const insightItems = [
   },
   {
     slug: "professor-bayo-adaralegbe-lead-partner",
-    category: "Leadership",
+    category: "Update",
     date: "12 August 2026",
     dateTime: "2026-08-12",
     title: "Professor Bayo Adaralegbe announced as Lead Partner",
@@ -413,8 +494,7 @@ export const insightItems = [
       "Ninewells Lead Partner announcement featuring Professor Bayo Adaralegbe",
     sourceUrl:
       "https://www.linkedin.com/posts/ninewells_ninewells-is-very-excited-to-announce-professor-activity-7493277804881608704-Dp1d",
-    lede:
-      "Ninewells has announced Professor Bayo Adaralegbe as Lead Partner, bringing almost forty years of experience across energy, extractives, foreign investment, disputes and corporate governance.",
+    lede: "Ninewells has announced Professor Bayo Adaralegbe as Lead Partner, bringing almost forty years of experience across energy, extractives, foreign investment, disputes and corporate governance.",
     sections: [
       {
         id: "sector-experience",
@@ -449,10 +529,11 @@ export const insightItems = [
   },
   {
     slug: "taxing-virtual-assets-nigeria-nrs-guidelines-2026",
-    category: "Tax & technology",
+    category: "Alert",
     date: "10 August 2026",
     dateTime: "2026-08-10",
-    title: "Taxing virtual assets in Nigeria: reviewing the NRS 2026 guidelines",
+    title:
+      "Taxing virtual assets in Nigeria: reviewing the NRS 2026 guidelines",
     summary:
       "Esther Gbenro and Babatunde Badejo consider how Nigeria’s latest guidance approaches the taxation of a rapidly evolving asset class.",
     author: "Esther Gbenro and Babatunde Badejo",
@@ -462,8 +543,7 @@ export const insightItems = [
       "Ninewells illustration for Taxing Virtual Assets in Nigeria and the NRS Guidelines of 2026",
     sourceUrl:
       "https://www.linkedin.com/posts/ninewells_ninewells-taxlaw-virtualassets-activity-7492571478081748993-L_I4",
-    lede:
-      "As Nigeria’s digital-asset ecosystem develops, the tax treatment of virtual assets is becoming increasingly important for investors, businesses and the wider market.",
+    lede: "As Nigeria’s digital-asset ecosystem develops, the tax treatment of virtual assets is becoming increasingly important for investors, businesses and the wider market.",
     sections: [
       {
         id: "why-it-matters",
@@ -492,7 +572,7 @@ export const insightItems = [
   },
   {
     slug: "ninewells-leica-2026-appreciation-award",
-    category: "Firm update",
+    category: "Update",
     date: "05 August 2026",
     dateTime: "2026-08-05",
     title: "Ninewells recognised for its support of LEICA 2026",
@@ -505,8 +585,7 @@ export const insightItems = [
       "Ninewells appreciation award announcement for the Lawyers in Energy International Conference 2026",
     sourceUrl:
       "https://www.linkedin.com/posts/ninewells_ninewells-leica2026-lawyersinenergy-activity-7490736160282066945-s_ef",
-    lede:
-      "Ninewells received an Appreciation Award from the Lawyers in Energy International Conference 2026 in recognition of the firm’s support for the conference.",
+    lede: "Ninewells received an Appreciation Award from the Lawyers in Energy International Conference 2026 in recognition of the firm’s support for the conference.",
     sections: [
       {
         id: "recognition",
@@ -527,7 +606,7 @@ export const insightItems = [
   },
   {
     slug: "nigeria-energy-recovery-reform-outlook",
-    category: "Energy outlook",
+    category: "Article",
     date: "31 July 2026",
     dateTime: "2026-07-31",
     title: "Nigeria’s production recovery and the next phase of energy reform",
@@ -540,8 +619,7 @@ export const insightItems = [
       "Energy Outlook feature announcing Abdulmajeed Abolaji’s discussion of Nigeria’s oil and gas business",
     sourceUrl:
       "https://www.linkedin.com/posts/ninewells_ninewells-energyoutlook-oilandgas-activity-7488917817275154432-E-_h",
-    lede:
-      "Nigeria’s recent oil-production recovery is prompting renewed attention from investors while reforms, upstream divestments and host-community participation reshape the sector.",
+    lede: "Nigeria’s recent oil-production recovery is prompting renewed attention from investors while reforms, upstream divestments and host-community participation reshape the sector.",
     sections: [
       {
         id: "production-and-investment",

@@ -12,8 +12,13 @@ import { Eyebrow } from "../ui/Eyebrow";
 type Insight = (typeof insightItems)[number];
 
 export function InsightDetailPage({ insight }: { insight: Insight }) {
-  const relatedInsights = insightItems
-    .filter((item) => item.slug !== insight.slug)
+  const otherInsights = insightItems.filter(
+    (item) => item.slug !== insight.slug,
+  );
+  const relatedInsights = [
+    ...otherInsights.filter((item) => item.category === insight.category),
+    ...otherInsights.filter((item) => item.category !== insight.category),
+  ]
     .slice(0, 2);
 
   return (
@@ -25,7 +30,7 @@ export function InsightDetailPage({ insight }: { insight: Insight }) {
         <div className="flex flex-col px-[clamp(22px,7vw,118px)] pt-[clamp(42px,6vw,72px)] pb-[clamp(58px,8vw,92px)]">
           <Link
             className="inline-flex w-fit items-center gap-3 text-[10px] font-semibold uppercase tracking-[.12em] text-slate no-underline dark:text-paper/80"
-            to="/#insights"
+            to="/insights"
           >
             <ArrowLeft size={16} /> All insights
           </Link>

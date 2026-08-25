@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "@fontsource/inter/latin-400.css";
 @import "@fontsource/inter/latin-500.css";
@@ -18,8 +20,8 @@
   --color-stone: #e5e9ec;
   --color-ink: #161f3f;
   --color-slate: #44516a;
-  --font-sans: "Inter", Arial, sans-serif;
-  --font-serif: "EB Garamond", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Geist", Arial, sans-serif;
+  --font-serif: "Instrument Sans", Georgia, serif;
 }
 
 @layer base {

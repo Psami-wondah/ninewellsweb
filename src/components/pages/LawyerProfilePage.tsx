@@ -16,6 +16,22 @@ export function LawyerProfilePage({ person }: { person: Person }) {
   const relatedPeople = people
     .filter((entry) => entry.slug !== person.slug)
     .slice(0, 2);
+  const overviewMetrics = [
+    { label: "Practice areas", value: person.expertise.length },
+    {
+      label: "Representative matters",
+      value: person.representativeWorks.length,
+    },
+    {
+      label: "Qualifications",
+      value:
+        person.academicQualifications.length +
+        person.professionalQualifications.length,
+    },
+    { label: "Honours & awards", value: person.honours.length },
+    { label: "Career highlights", value: person.careerHighlights.length },
+    { label: "Memberships", value: person.memberships.length },
+  ].filter((metric) => metric.value > 0);
   const navigation = [
     ["Overview", "overview"],
     ...(person.expertise.length
@@ -147,6 +163,29 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             <p className="mt-7 mb-0 max-w-[860px] font-serif text-[clamp(30px,3.5vw,46px)] leading-[1.08] font-normal tracking-[-.03em] text-navy dark:text-paper">
               {person.bio}
             </p>
+            <div className="mt-10" aria-labelledby="profile-at-a-glance">
+              <p
+                className="m-0 text-[10px] font-semibold uppercase tracking-[.12em] text-teal-dark dark:text-teal"
+                id="profile-at-a-glance"
+              >
+                Profile at a glance
+              </p>
+              <dl className="mt-4 grid grid-cols-2 gap-px border border-navy/15 bg-navy/15 dark:border-white/15 dark:bg-white/15 md:grid-cols-3">
+                {overviewMetrics.map((metric) => (
+                  <div
+                    className="flex min-h-[132px] flex-col justify-between bg-paper px-5 py-6 dark:bg-[#071224]"
+                    key={metric.label}
+                  >
+                    <dt className="max-w-[150px] text-[10px] leading-4 font-semibold uppercase tracking-[.08em] text-slate dark:text-paper/70">
+                      {metric.label}
+                    </dt>
+                    <dd className="m-0 font-serif text-[clamp(38px,4vw,54px)] leading-none font-normal tracking-[-.04em] text-navy dark:text-paper">
+                      {metric.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
             <div className="mt-10 grid gap-7 text-[15px] leading-7 text-slate dark:text-paper/85 md:grid-cols-2">
               {person.background.map((paragraph) => (
                 <p className="m-0" key={paragraph}>

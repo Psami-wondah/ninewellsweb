@@ -1,6 +1,5 @@
 import { ArrowLeft, ArrowRight, Check } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-import lagosIllustration from "../../assets/lagos-bridge-pen-illustration.webp";
 import { people } from "../../data/people";
 import { expertiseDetails, insightItems } from "../../data/siteContent";
 import { ContactSection } from "../sections/ContactSection";
@@ -269,12 +268,32 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
       >
         <figure className="relative m-0 min-h-[360px] overflow-hidden bg-[#eef0f5] lg:min-h-[510px]">
           <img
-            className="h-full w-full object-cover object-center mix-blend-multiply"
-            src={lagosIllustration}
-            alt="Original blue pen-and-ink illustration of the Lekki–Ikoyi Link Bridge and Lagos skyline"
+            className="h-full w-full object-cover object-center"
+            src={detail.featureImage}
+            alt={detail.featureImageAlt}
           />
-          <figcaption className="absolute bottom-0 left-0 bg-navy-deep/95 px-5 py-3 text-[9px] uppercase tracking-[.13em] text-ivory">
-            Lagos in line / Original Ninewells study
+          <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-between gap-2 bg-navy-deep/95 px-5 py-3 text-[9px] uppercase tracking-[.13em] text-ivory">
+            <span>{detail.featureImageLocation}</span>
+            <span className="flex flex-wrap items-center gap-1 text-white/85">
+              Photo:
+              <a
+                className="underline-offset-4 hover:text-white hover:underline"
+                href={detail.featureImageSourceUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {detail.featureImageCreator}
+              </a>
+              /
+              <a
+                className="underline-offset-4 hover:text-white hover:underline"
+                href={detail.featureImageLicenseUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {detail.featureImageLicense}
+              </a>
+            </span>
           </figcaption>
         </figure>
         <div>

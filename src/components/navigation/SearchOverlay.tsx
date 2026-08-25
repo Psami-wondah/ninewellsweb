@@ -60,7 +60,7 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
         <Link className="no-underline" to="/people" onClick={onClose}>
           Meet the team
         </Link>
-        <Link className="no-underline" to="/#insights" onClick={onClose}>
+        <Link className="no-underline" to="/insights" onClick={onClose}>
           Latest insights
         </Link>
       </div>

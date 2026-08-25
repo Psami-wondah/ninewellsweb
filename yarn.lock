@@ -216,6 +216,11 @@
     "@eslint/core" "^1.2.1"
     levn "^0.4.1"
 
+"@fontsource/averia-libre@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/averia-libre/-/averia-libre-5.3.0.tgz#86213453a28d4a8442c327cf594781714a667954"
+  integrity sha512-A5CjNXcnkNYAkGICcQ8hgjhMudbaZvvPTE2V6plX3Kkwpc0lx7Ye1JaQX+ue1BVQlFfR5kITBQwAyOJ+k8YaaA==
+
 "@fontsource/eb-garamond@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-5.3.0.tgz#080e1e801ad30b2d59206549156993e076f25633"
@@ -225,6 +230,11 @@
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.3.0.tgz#866278dc2357659f8be1755c8b67f29d3697b440"
   integrity sha512-RofMylZmjlJEfELXeNHFWBRcSs75rGU/6bV2S2jfnvv/3rPXPGe0LgUJTklcHZ9lM4OZmAVFhcJPnACfb91A3g==
+
+"@fontsource/manrope@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/manrope/-/manrope-5.3.0.tgz#31a08e9299e654f9d8f33af80d467cceff295861"
+  integrity sha512-obJ1Dv3+uCA6HlHgW8u4BGYxJR9In2HW7gjJhlflEvkrj1X1iSEwu0fToL+JYGC/FEKFfIz1sBuPduvcL2gIAA==
 
 "@fontsource/source-serif-4@^5.3.0":
   version "5.3.0"

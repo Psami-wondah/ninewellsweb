@@ -1,6 +1,10 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-import { featuredInsight, insightItems } from "../../data/siteContent";
+import {
+  featuredInsight,
+  insightGroups,
+  insightItems,
+} from "../../data/siteContent";
 import { Eyebrow } from "../ui/Eyebrow";
 import { InlineLink } from "../ui/InlineLink";
 
@@ -20,12 +24,10 @@ export function InsightsSection() {
           Ideas for what comes next.
         </h2>
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/85">
-          Public updates and analysis from the firm and its lawyers on the
-          shifts shaping Nigerian business.
+          Follow firm developments, stay ahead of legal and regulatory change,
+          and read analysis from our lawyers.
         </p>
-        <InlineLink href="https://www.linkedin.com/company/ninewells/">
-          Follow Ninewells on LinkedIn
-        </InlineLink>
+        <InlineLink href="/insights">Explore all insights</InlineLink>
       </div>
       <article
         className="relative min-h-[420px] bg-navy p-[clamp(28px,5vw,54px)] text-ivory dark:bg-[#001641]"
@@ -50,39 +52,40 @@ export function InsightsSection() {
         </Link>
       </article>
       <div
-        className="border-t border-navy dark:border-paper lg:col-span-2"
+        className="grid border-t border-navy dark:border-paper sm:grid-cols-3 lg:col-span-2"
         data-reveal="up"
         data-reveal-delay="2"
       >
-        {insightItems.map((item, index) => (
-          <Link
-            className="group grid min-h-[120px] grid-cols-[36px_minmax(0,1fr)_24px] items-center gap-3 border-b border-navy/15 px-2 py-6 text-navy no-underline transition-colors hover:bg-teal/5 dark:border-white/15 dark:text-paper dark:hover:bg-teal/10 lg:grid-cols-[60px_minmax(0,1fr)_30px] lg:px-0"
-            to={`/insights/${item.slug}`}
-            key={item.title}
-          >
-            <span className="text-[12px] font-semibold text-teal-dark dark:text-teal">
-              0{index + 1}
-            </span>
-            <span className="grid min-w-0 gap-3 lg:grid-cols-[180px_minmax(0,1fr)] lg:items-start lg:gap-8">
-              <small className="pt-1 text-[10px] font-semibold uppercase leading-4 tracking-[.07em] text-slate dark:text-paper/75">
-                {item.category}
-                <span className="mt-1 block">{item.date}</span>
-              </small>
-              <span className="min-w-0">
-                <strong className="block max-w-[720px] font-serif text-[20px] leading-tight font-normal lg:text-[24px]">
-                  {item.title}
-                </strong>
-                <span className="mt-2 block max-w-[720px] text-[11px] leading-5 text-slate dark:text-paper/80">
-                  {item.summary}
-                </span>
+        {insightGroups.map((group, index) => {
+          const itemCount = insightItems.filter(
+            (item) => item.category === group.category,
+          ).length;
+
+          return (
+            <Link
+              className="group flex min-h-[220px] flex-col border-b border-navy/15 px-5 py-7 text-navy no-underline sm:border-r sm:border-b-0 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0 dark:border-white/15 dark:text-paper"
+              to={`/insights#${group.title.toLowerCase()}`}
+              key={group.category}
+            >
+              <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
+                {String(index + 1).padStart(2, "0")}
               </span>
-            </span>
-            <ArrowRight
-              className="transition-transform group-hover:translate-x-1"
-              size={20}
-            />
-          </Link>
-        ))}
+              <h3 className="mt-5 mb-0 font-serif text-[clamp(30px,3vw,42px)] leading-none font-normal tracking-[-.03em]">
+                {group.title}
+              </h3>
+              <p className="mt-4 mb-6 max-w-[330px] text-[11px] leading-5 text-slate dark:text-paper/75">
+                {group.description}
+              </p>
+              <span className="mt-auto flex items-center justify-between text-[10px] font-semibold uppercase tracking-[.08em]">
+                {itemCount} {itemCount === 1 ? "insight" : "insights"}
+                <ArrowRight
+                  className="transition-transform group-hover:translate-x-1"
+                  size={18}
+                />
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

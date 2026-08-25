@@ -43,8 +43,16 @@ export function AboutPage() {
             src={lagosBridge}
             alt="Lekki–Ikoyi Link Bridge in Lagos"
           />
-          <figcaption className="absolute right-0 bottom-0 bg-navy-deep/95 px-6 py-4 text-[9px] uppercase tracking-[.13em] text-white">
-            Victoria Island · Lagos
+          <figcaption className="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-between gap-2 bg-navy-deep/95 px-6 py-4 text-[9px] uppercase tracking-[.13em] text-white">
+            <span>Ikoyi · Lagos</span>
+            <a
+              className="text-white/85 underline-offset-4 hover:text-white hover:underline"
+              href="https://unsplash.com/photos/a-large-bridge-over-a-large-body-of-water-xayCN6mrMZ8"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photo: Tunde Buremo / Unsplash
+            </a>
           </figcaption>
         </figure>
       </section>
