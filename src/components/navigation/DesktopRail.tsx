@@ -24,7 +24,7 @@ export function DesktopRail({
 
   return (
     <aside
-      className="fixed inset-y-0 left-0 z-50 hidden w-[232px] flex-col border-r border-navy/15 bg-ivory dark:border-white/15 dark:bg-[#071224] lg:flex"
+      className="fixed inset-y-0 left-0 z-50 hidden w-[216px] flex-col overflow-y-auto border-r border-navy/15 bg-ivory dark:border-white/15 dark:bg-[#071224] xl:flex 2xl:w-[232px]"
       aria-label="Primary navigation"
     >
       <Link

@@ -124,7 +124,10 @@ function App() {
         <SearchOverlay onClose={() => setActiveMenu(null)} />
       ) : null}
 
-      <main className="pt-[74px] lg:ml-[232px] lg:pt-0" id="main-content">
+      <main
+        className="app-main pt-[74px] xl:ml-[216px] xl:pt-0 2xl:ml-[232px]"
+        id="main-content"
+      >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route

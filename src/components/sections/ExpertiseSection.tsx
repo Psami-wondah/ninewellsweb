@@ -8,7 +8,7 @@ export function ExpertiseSection() {
   const [openExpertise, setOpenExpertise] = useState<number | null>(0);
   return (
     <section
-      className="grid gap-14 bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,112px)] dark:bg-[#071224] lg:grid-cols-[minmax(300px,.8fr)_minmax(500px,1.35fr)] lg:gap-[clamp(60px,8vw,150px)]"
+      className="grid gap-14 bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,112px)] dark:bg-[#071224] lg:grid-cols-[minmax(260px,.8fr)_minmax(0,1.35fr)] lg:gap-[clamp(44px,6cqw,110px)]"
       id="expertise"
       aria-labelledby="expertise-heading"
     >
@@ -54,7 +54,7 @@ export function ExpertiseSection() {
                 {isOpen ? <Minus size={18} /> : <Plus size={18} />}
               </button>
               <div
-                className={`grid overflow-hidden pl-[42px] transition-all duration-300 lg:grid-cols-[1fr_auto] lg:pl-[58px] ${isOpen ? "max-h-36 gap-3 pb-6 pr-7 opacity-100" : "max-h-0 opacity-0"}`}
+                className={`grid overflow-hidden pl-[42px] transition-all duration-300 lg:grid-cols-[1fr_auto] lg:pl-[58px] ${isOpen ? "max-h-64 gap-3 pb-6 pr-2 opacity-100 sm:pr-7" : "max-h-0 opacity-0"}`}
               >
                 <p className="m-0 text-[13px] text-slate dark:text-paper/75">
                   {description}

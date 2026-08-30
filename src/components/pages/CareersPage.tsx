@@ -284,7 +284,7 @@ export function CareersPage() {
               <span className="flex size-12 shrink-0 items-center justify-center bg-teal/15 text-teal-dark dark:text-teal">
                 <FileArrowUp size={24} aria-hidden="true" />
               </span>
-              <span>
+              <span className="min-w-0">
                 <strong className="block text-[13px] font-semibold">
                   {cvFile ? cvFile.name : "Choose your CV"}
                 </strong>

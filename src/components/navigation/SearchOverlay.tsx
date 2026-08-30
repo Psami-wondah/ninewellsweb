@@ -8,7 +8,7 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
   return (
     <div
       ref={dialogRef}
-      className="fixed inset-x-0 top-0 z-[80] min-h-[460px] border-b border-navy/15 bg-ivory px-[clamp(24px,6vw,95px)] pt-7 pb-11 shadow-[0_24px_60px_rgba(0,22,65,.12)] dark:border-white/15 dark:bg-[#08172a] lg:left-[232px]"
+      className="fixed inset-x-0 top-0 z-[80] h-dvh min-h-0 overflow-y-auto border-b border-navy/15 bg-ivory px-[clamp(24px,6vw,95px)] pt-7 pb-11 shadow-[0_24px_60px_rgba(0,22,65,.12)] dark:border-white/15 dark:bg-[#08172a] xl:left-[216px] xl:h-auto xl:max-h-dvh xl:min-h-[460px] 2xl:left-[232px]"
       role="dialog"
       aria-modal="true"
       aria-label="Search Ninewells"
@@ -18,7 +18,7 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
           Search Ninewells
         </Eyebrow>
         <button
-          className="flex size-10 items-center justify-center border border-navy/20 bg-transparent text-navy dark:border-white/25 dark:text-paper"
+          className="flex size-11 items-center justify-center border border-navy/20 bg-transparent text-navy dark:border-white/25 dark:text-paper"
           type="button"
           onClick={onClose}
           aria-label="Close search"

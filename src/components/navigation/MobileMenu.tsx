@@ -35,7 +35,7 @@ export function MobileMenu({
   return (
     <div
       ref={dialogRef}
-      className="fixed inset-0 z-[90] flex flex-col overflow-y-auto bg-navy-deep text-ivory animate-[mobile-in_300ms_cubic-bezier(.2,.7,.2,1)] lg:hidden"
+      className="fixed inset-0 z-[90] flex flex-col overflow-y-auto bg-navy-deep text-ivory animate-[mobile-in_300ms_cubic-bezier(.2,.7,.2,1)] xl:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Navigation"
@@ -43,7 +43,7 @@ export function MobileMenu({
       <div className="flex min-h-[76px] items-center justify-between border-b border-white/20 px-5">
         <BrandLogo className="w-[120px]" variant="dark" />
         <button
-          className="border-0 bg-transparent text-ivory"
+          className="flex size-11 items-center justify-center border-0 bg-transparent text-ivory"
           type="button"
           onClick={onClose}
           aria-label="Close navigation"

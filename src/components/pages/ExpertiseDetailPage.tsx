@@ -31,19 +31,19 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
           <ArrowLeft size={16} /> All expertise
         </Link>
         <div
-          className="mt-[clamp(72px,10vw,138px)] grid gap-12 lg:grid-cols-[.25fr_1.15fr_.6fr] lg:items-end"
+          className="mt-[clamp(72px,10vw,138px)] grid gap-10 lg:grid-cols-[.2fr_1fr] lg:items-end min-[1920px]:grid-cols-[.25fr_1.15fr_.6fr] min-[1920px]:gap-12"
           data-reveal="up"
         >
-          <span className="font-serif text-[clamp(62px,7vw,92px)] leading-none text-teal">
+          <span className="font-serif text-[clamp(52px,6cqw,92px)] leading-none text-teal">
             {detail.number}
           </span>
           <h1
-            className="m-0 max-w-[820px] font-serif text-[clamp(58px,7.5vw,108px)] leading-[.86] font-normal tracking-[-.055em] text-ivory"
+            className="m-0 max-w-[820px] hyphens-auto font-serif text-[clamp(48px,5.5cqw,84px)] leading-[.9] font-normal tracking-[-.055em] text-ivory [overflow-wrap:anywhere]"
             id="expertise-detail-heading"
           >
             {detail.title}
           </h1>
-          <p className="m-0 max-w-[430px] border-t border-white/30 pt-6 text-[15px] leading-7 text-white/82">
+          <p className="m-0 max-w-[560px] border-t border-white/30 pt-6 text-[15px] leading-7 text-white/82 lg:col-start-2 min-[1920px]:col-start-auto">
             {detail.introduction}
           </p>
         </div>

@@ -17,11 +17,11 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
   const { pathname } = useLocation();
   return (
     <div
-      className="fixed inset-y-0 right-0 left-[232px] z-[60] hidden bg-navy-deep/12 lg:block"
+      className="fixed inset-y-0 right-0 left-[216px] z-[60] hidden bg-navy-deep/12 xl:block 2xl:left-[232px]"
       onPointerDown={onClose}
     >
       <div
-        className="border-b border-navy/15 bg-ivory px-[clamp(40px,6vw,95px)] pt-7 pb-11 shadow-[0_24px_60px_rgba(0,22,65,.12)] animate-[menu-in_260ms_cubic-bezier(.2,.7,.2,1)] dark:border-white/15 dark:bg-[#08172a] dark:shadow-black/30"
+        className="max-h-dvh overflow-y-auto border-b border-navy/15 bg-ivory px-[clamp(40px,6vw,95px)] pt-7 pb-11 shadow-[0_24px_60px_rgba(0,22,65,.12)] animate-[menu-in_260ms_cubic-bezier(.2,.7,.2,1)] dark:border-white/15 dark:bg-[#08172a] dark:shadow-black/30"
         role="region"
         aria-label="Expertise menu"
         onPointerDown={(event) => event.stopPropagation()}
@@ -31,7 +31,7 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
             {content.eyebrow}
           </Eyebrow>
           <button
-            className="flex size-10 items-center justify-center border border-navy/20 bg-transparent text-navy dark:border-white/25 dark:text-paper"
+            className="flex size-11 items-center justify-center border border-navy/20 bg-transparent text-navy dark:border-white/25 dark:text-paper"
             type="button"
             onClick={onClose}
             aria-label="Close menu"

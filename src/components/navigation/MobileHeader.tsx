@@ -12,7 +12,7 @@ type MobileHeaderProps = {
 
 export function MobileHeader({ onOpen, theme, onToggleTheme }: MobileHeaderProps) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex h-[74px] items-center justify-between border-b border-navy/15 bg-ivory px-5 dark:border-white/15 dark:bg-[#071224] lg:hidden">
+    <header className="fixed inset-x-0 top-0 z-50 flex h-[74px] items-center justify-between border-b border-navy/15 bg-ivory px-5 dark:border-white/15 dark:bg-[#071224] xl:hidden">
       <Link to="/" aria-label="Ninewells home"><BrandLogo className="w-[132px]" /></Link>
       <div className="flex items-center gap-2">
         <ThemeToggle theme={theme} onToggle={onToggleTheme} showLabel={false} />

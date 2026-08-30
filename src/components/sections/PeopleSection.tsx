@@ -34,7 +34,7 @@ export function PeopleSection() {
       </div>
 
       <div
-        className="mt-16 grid border-t border-l border-navy/20 bg-ivory dark:border-white/20 dark:bg-[#0a192c] md:grid-cols-2 xl:grid-cols-5"
+        className="mt-16 grid border-t border-l border-navy/20 bg-ivory dark:border-white/20 dark:bg-[#0a192c] md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5"
         data-reveal="up"
         data-reveal-delay="1"
       >
