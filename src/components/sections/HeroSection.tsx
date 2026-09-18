@@ -1,7 +1,6 @@
 import { ArrowDown, ArrowRight } from "@phosphor-icons/react";
 import lagosBridge from "../../assets/lagos-lekki-ikoyi.webp";
 import { Eyebrow } from "../ui/Eyebrow";
-import { InlineLink } from "../ui/InlineLink";
 
 export function HeroSection() {
   return (
@@ -19,7 +18,7 @@ export function HeroSection() {
           Abuja
         </p>
         <h1
-          className="m-0 max-w-[780px] font-serif text-[clamp(54px,8vw,104px)] leading-[.92] font-normal tracking-[-.055em] text-paper"
+          className="m-0 max-w-[690px] font-serif text-[clamp(54px,8vw,104px)] leading-[.92] font-normal tracking-[-.055em] text-paper"
           id="hero-heading"
         >
           A Modern Law Firm Serving Lagos, Abuja, and Beyond
@@ -28,11 +27,11 @@ export function HeroSection() {
           Ninewells is a fully integrated, multidisciplinary Nigerian law firm
           with offices in Victoria Island, Lagos, the country&apos;s commercial
           capital, and Maitama, Abuja, its political capital. These two vantage
-          points connect us with clients, stakeholders and decision-makers. Built
-          on experience, innovation and trust, we combine deep legal expertise
-          with modern technology to deliver commercially astute solutions across
-          energy, extractives, foreign investments, financial services,
-          corporate and commercial, capital markets, disputes, and
+          points connect us with clients, stakeholders and decision-makers.
+          Built on experience, innovation and trust, we combine deep legal
+          expertise with modern technology to deliver commercially astute
+          solutions across energy, extractives, foreign investments, financial
+          services, corporate and commercial, capital markets, disputes, and
           telecommunications, technology and digital law.
         </p>
         <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
@@ -46,9 +45,9 @@ export function HeroSection() {
               size={19}
             />
           </a>
-          <InlineLink href="/people" className="dark:text-paper text-paper">
+          {/* <InlineLink href="/people" className="dark:text-paper text-paper">
             Meet the team
-          </InlineLink>
+          </InlineLink> */}
         </div>
         <div className="mt-14 max-w-[560px] border-t border-white/15 pt-6 lg:mt-auto">
           <Eyebrow>Our approach</Eyebrow>
