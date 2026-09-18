@@ -8,15 +8,16 @@ const homeSections: Array<[NavItem, string]> = [
   ['About', 'about'],
   ['Expertise', 'expertise'],
   ['People', 'people'],
-  ['Insights', 'insights'],
+  ['Intelligence', 'intelligence'],
   ['Contact', 'contact'],
 ]
 
 function getRouteItem(pathname: string): NavItem | null {
   if (pathname === '/about') return 'About'
+  if (pathname === '/technology') return 'Technology'
   if (pathname === '/contact') return 'Contact'
-  if (pathname.startsWith('/expertise/')) return 'Expertise'
-  if (pathname === '/insights' || pathname.startsWith('/insights/')) return 'Insights'
+  if (pathname === '/expertise' || pathname.startsWith('/expertise/')) return 'Expertise'
+  if (pathname === '/intelligence' || pathname.startsWith('/intelligence/')) return 'Intelligence'
   if (pathname === '/people' || pathname.startsWith('/people/')) return 'People'
   return null
 }

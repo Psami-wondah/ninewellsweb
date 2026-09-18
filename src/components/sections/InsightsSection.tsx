@@ -12,22 +12,23 @@ export function InsightsSection() {
   return (
     <section
       className="grid gap-14 border-t border-navy/15 bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,112px)] dark:border-white/15 dark:bg-[#0a192c] lg:grid-cols-[.8fr_1.1fr] lg:gap-16"
-      id="insights"
-      aria-labelledby="insights-heading"
+      id="intelligence"
+      aria-labelledby="intelligence-heading"
     >
       <div data-reveal="left">
-        <Eyebrow>Insights</Eyebrow>
+        <Eyebrow>Intelligence</Eyebrow>
         <h2
           className="my-6 font-serif text-[clamp(43px,5vw,70px)] leading-[.98] font-normal tracking-[-.04em] text-navy dark:text-paper"
-          id="insights-heading"
+          id="intelligence-heading"
         >
           Ideas for what comes next.
         </h2>
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/85">
           Follow firm developments, stay ahead of legal and regulatory change,
-          and read analysis from our lawyers.
+          and read practical analysis from our lawyers across Nigeria’s key
+          industries and legal practices.
         </p>
-        <InlineLink href="/insights">Explore all insights</InlineLink>
+        <InlineLink href="/intelligence">Explore all intelligence</InlineLink>
       </div>
       <article
         className="relative min-h-[420px] bg-navy p-[clamp(28px,5vw,54px)] text-ivory dark:bg-[#001641]"
@@ -45,7 +46,7 @@ export function InsightsSection() {
         </p>
         <Link
           className="absolute right-7 bottom-7 flex size-[52px] items-center justify-center bg-teal text-navy-deep transition-colors hover:bg-teal"
-          to={`/insights/${featuredInsight.slug}`}
+          to={`/intelligence/${featuredInsight.slug}`}
           aria-label={`Read ${featuredInsight.title}`}
         >
           <ArrowRight size={25} />
@@ -64,7 +65,7 @@ export function InsightsSection() {
           return (
             <Link
               className="group flex min-h-[220px] flex-col border-b border-navy/15 px-5 py-7 text-navy no-underline sm:border-r sm:border-b-0 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0 dark:border-white/15 dark:text-paper"
-              to={`/insights#${group.title.toLowerCase()}`}
+              to={`/intelligence#${group.title.toLowerCase()}`}
               key={group.category}
             >
               <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">

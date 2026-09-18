@@ -227,7 +227,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
         aria-labelledby="expertise-insights-heading"
       >
         <div>
-          <Eyebrow>Related insights</Eyebrow>
+          <Eyebrow>Related intelligence</Eyebrow>
           <h2
             className="mt-5 mb-0 font-serif text-[clamp(38px,4.5vw,58px)] leading-none font-normal text-navy dark:text-paper"
             id="expertise-insights-heading"
@@ -239,7 +239,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
           {insightItems.slice(0, 2).map((item, index) => (
             <Link
               className="group grid min-h-[92px] grid-cols-[42px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper"
-              to={`/insights/${item.slug}`}
+              to={`/intelligence/${item.slug}`}
               key={item.title}
             >
               <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">

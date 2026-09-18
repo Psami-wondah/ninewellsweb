@@ -3,6 +3,7 @@ import adebimpeImage from '../assets/Adebimpe.webp'
 import adejokeImage from '../assets/Adejoke.webp'
 import bayoImage from '../assets/Bayo-Adaralegbe.webp'
 import estherImage from '../assets/Esther-Gbenro-pic.webp'
+import financialServicesImage from '../assets/expertise-financial-services.webp'
 import { LINKEDIN_URL } from './siteContent'
 
 export type Person = {
@@ -12,10 +13,10 @@ export type Person = {
   title?: string
   role: string
   teamType: 'Lawyer' | 'Business services'
-  location: string
   mobile: string
   email: string
   image: string
+  imageAlt?: string
   imagePosition?: string
   expertise: string[]
   bio: string
@@ -33,12 +34,11 @@ export type Person = {
 export const people: Person[] = [
   {
     slug: 'bayo-adaralegbe',
-    name: 'Professor Bayo Adaralegbe SAN',
+    name: 'Bayo Adaralegbe',
     position: 'Lead Partner',
     title: 'Ph.D, C.Arb, FEI, FCIS · Adjunct Professor, University of Ibadan',
     role: 'Energy, Extractives, Foreign Investments & Disputes',
     teamType: 'Lawyer',
-    location: 'Lagos',
     mobile: '0803 719 3050',
     email: 'badaralegbe@ninewellslegal.com',
     image: bayoImage,
@@ -102,7 +102,7 @@ export const people: Person[] = [
       'Nigerian Gas Association',
       'Nigerian Bar Association',
       'Chartered Institute of Arbitrators, United Kingdom',
-      'Chartered Governance Institute, United Kingdom',
+      'Institute of Chartered Secretaries and Administrators, United Kingdom',
     ],
     sourceUrl: LINKEDIN_URL,
     sourceLabel: 'Ninewells on LinkedIn',
@@ -113,7 +113,6 @@ export const people: Person[] = [
     position: 'Partner',
     role: 'Corporate & Commercial',
     teamType: 'Lawyer',
-    location: 'Lagos',
     mobile: '0803 592 3409',
     email: 'adejoke.odocha@ninewellslegal.com',
     image: adejokeImage,
@@ -123,8 +122,15 @@ export const people: Person[] = [
     background: [
       'She advises multinational corporations, financial institutions, investors, private-equity sponsors, government agencies and indigenous businesses on complex corporate transactions, strategic investments, regulatory compliance, governance and cross-border commercial matters across Africa.',
       'Her practice combines top-tier private-practice expertise with extensive in-house legal leadership. Before joining Ninewells, she worked at Templars and served as legal counsel to Rendeavour, Africa’s largest new-city developer, Atlantic Energy and Schlumberger. This breadth of experience enables her to align legal strategy with clients’ broader commercial objectives.',
+      'Beyond transactional work, Adejoke is a recognised voice on entrepreneurship, gender inclusion and access to finance, supporting fundraising strategy, investment-readiness assessments and ESG alignment for early-stage and growth businesses.',
     ],
-    representativeWorks: [],
+    representativeWorks: [
+      'Advised on major urban-development projects including Alaro City in the Lekki Free Zone, the Jigna Project in Abuja and Appolonia City in Accra.',
+      'Structured a US$300 million private-equity fund for Travant Capital Partners.',
+      'Led legal structuring on a US$25 million cross-border loan facility.',
+      'Acted as Solicitor to the Issue on a ₦1 billion IPO.',
+      'Advised on the acquisition of a Nigerian competitor for Siegwerk.',
+    ],
     academicQualifications: [
       'LL.M. in International Business Law, London School of Economics and Political Science.',
       'Bachelor of Laws (LL.B.), University of Warwick.',
@@ -145,9 +151,8 @@ export const people: Person[] = [
     slug: 'abdulmajeed-abolaji',
     name: 'Abdulmajeed Abolaji',
     position: 'Managing Associate',
-    role: 'Energy, Extractives, Foreign Investments & Financial Services',
+    role: 'Energy, Extractives & Foreign Investments',
     teamType: 'Lawyer',
-    location: 'Lagos',
     mobile: '0803 196 3519',
     email: 'abdulmajeed.abolaji@ninewellslegal.com',
     image: abdulmajeedImage,
@@ -188,12 +193,70 @@ export const people: Person[] = [
     sourceLabel: 'LinkedIn profile',
   },
   {
+    slug: 'amanda-opara',
+    name: 'Amanda Opara',
+    position: 'Managing Associate',
+    role: 'Financial Services & Capital Markets',
+    teamType: 'Lawyer',
+    mobile: '0703 064 7714',
+    email: 'amanda.opara@ninewellslegal.com',
+    image: financialServicesImage,
+    imageAlt: 'Financial services and capital markets at Ninewells',
+    imagePosition: 'center',
+    expertise: ['Financial Services', 'Capital Markets'],
+    bio: 'Amanda Opara is a Managing Associate in Financial Services & Capital Markets. She focuses on lending and project finance and has led Nigerian counsel workstreams on cross-border financings from structuring through signing, closing and post-closing perfection.',
+    background: [
+      'A highly accomplished banking and finance lawyer, Amanda advises international and domestic banks, multilateral development banks, export credit agencies and corporates on complex financing transactions across Africa, spanning bilateral and syndicated lending, project finance, trade finance, leveraged acquisition financing and cross-border restructurings.',
+      'Before joining Ninewells, she was part of the Banking and Finance Practice Group at G. Elias, where she advised on high-profile loan and capital-market transactions.',
+    ],
+    representativeWorks: [
+      'Led the Nigerian counsel workstream for Afreximbank on a $300 million cross-border trade finance facility to Access Holdings Plc.',
+      'Led the Nigerian counsel workstream for the Export-Import Bank of China on a $300 million facility to Africa Finance Corporation.',
+      'Led the Nigerian counsel workstream for BUA Group on a $200 million Afreximbank financing for a greenfield petrochemical project.',
+      'Led the Nigerian counsel workstream for China Development Bank on an RMB800 million bilateral facility to Stanbic IBTC Bank.',
+      'Advised Titan Trust Bank on its acquisition of Union Bank of Nigeria, including a related $300 million leveraged acquisition financing and subsequent merger.',
+      'Advised BUA Group on Africa Finance Corporation’s $200 million financing for a sustainable sugar and ethanol project.',
+      'Advised Smile Telecoms Holdings on the cross-border restructuring of multi-lender indebtedness, including a circa $64 million refinancing.',
+      'Acted for security trustees on an IFC-led $500 million syndicated facility to BUA Cement Plc.',
+      'Advised Afreximbank on $152 million multicurrency credit facilities financing the African Medical Centre of Excellence.',
+      'Advised syndicate lenders on a $3.3 billion syndicated pre-export financing for the Nigerian National Petroleum Company Ltd (NNPC).',
+      'Advised a global bank, as lead arranger and security agent, on a $271 million syndicated pre-export financing.',
+      'Advised a leading Nigerian bank on a $75 million facility to a major indigenous oil exploration and production company.',
+      'Advised on BUA Cement Plc’s ₦200 billion debt programme and ₦100 billion bond issuance — then the largest corporate bond issuance in the Nigerian debt capital market.',
+      'Advised MTN Nigeria Communications Plc on its ₦478.2 billion equity programme and Series 1 offer for sale of shares.',
+      'Acted as solicitor to the issue on Fidson Healthcare Plc’s ₦25 billion commercial paper programme.',
+    ],
+    academicQualifications: [
+      'MSc in Law and Finance, University of Oxford.',
+      'Nigerian Bar Qualification Academic Training, Nigerian Law School.',
+      'Bachelor of Laws (LL.B.), University of Nigeria.',
+    ],
+    professionalQualifications: ['Certificate of Call to Bar, Council of Legal Education.'],
+    honours: [
+      'IFLR1000 — Rising Star in Banking (twice).',
+      'Legal 500 — recognised for Banking, Finance & Capital Markets (twice).',
+      'Nigerian Legal Awards — 40 Under 40 (2024).',
+      'Nigerian Law School Director-General’s Award for Outstanding Academic Performance.',
+      'Mastercard Foundation Scholar and Africa Oxford Initiative Scholar, University of Oxford.',
+    ],
+    careerHighlights: [
+      'Operations and Impact Administration Fellow, African Venture Philanthropy Alliance (AVPA).',
+      'Research Fellow, Oxford Community Action.',
+      'One of six lawyers selected for the Presidential Enabling Business Environment Council Finance Working Group, advising on federal investment-climate reforms.',
+    ],
+    memberships: [
+      'Nigerian Bar Association (NBA).',
+      'Nigerian Bar Association Section on Business Law (NBA-SBL).',
+    ],
+    sourceUrl: LINKEDIN_URL,
+    sourceLabel: 'Ninewells on LinkedIn',
+  },
+  {
     slug: 'esther-gbenro',
     name: 'Esther Gbenro',
     position: 'Senior Associate',
     role: 'Telecommunications, Technology & Digital Law',
     teamType: 'Lawyer',
-    location: 'Lagos',
     mobile: '0703 127 0781',
     email: 'esther.gbenro@ninewellslegal.com',
     image: estherImage,
@@ -217,7 +280,10 @@ export const people: Person[] = [
       'Represented clients before the Corporate Affairs Commission in business-name and trademark disputes.',
     ],
     academicQualifications: ['Bachelor of Laws (LL.B.), Ekiti State University.'],
-    professionalQualifications: ['Certificate of Call to Bar, Council of Legal Education.'],
+    professionalQualifications: [
+      'Certificate of Call to Bar, Council of Legal Education.',
+      'Certified Data Protection Officer.',
+    ],
     honours: [
       'Director-General’s Prize for attaining First Class and eighth overall best graduating student, Nigerian Law School.',
       'Award of Excellence, Ekiti State Government.',
@@ -238,15 +304,14 @@ export const people: Person[] = [
     position: 'Chief Operating Officer',
     role: 'Business Operations',
     teamType: 'Business services',
-    location: 'Lagos',
     mobile: '0805 652 7337',
     email: 'adebimpe.fajemisin@ninewellslegal.com',
     image: adebimpeImage,
     imagePosition: 'center 18%',
     expertise: [],
-    bio: 'Adebimpe Fajemisin is the Chief Operating Officer at Ninewells Law Practice.',
+    bio: 'Adebimpe’s academic background, training and experience give her the skill set to keep Ninewells organised so its lawyers can deliver immediate legal solutions to clients, applying cutting-edge technology, the best available legal resources and a cost-effective approach.',
     background: [
-      'Her academic qualifications, professional training and experience help Ninewells organise its people, technology and legal resources so its lawyers can provide immediate, effective and cost-conscious solutions to clients’ problems.',
+      'She keeps Ninewells organised so its lawyers can deliver immediate legal solutions to clients, applying cutting-edge technology, the best available legal resources and a cost-effective approach.',
       'Before joining Ninewells, Adebimpe worked with Olaniwun Ajayi and Templars.',
     ],
     representativeWorks: [],
@@ -256,7 +321,7 @@ export const people: Person[] = [
       'Bachelor of Science (B.Sc.) in Banking and Finance, Covenant University.',
       'ICAN qualification in progress.',
     ],
-    professionalQualifications: [],
+    professionalQualifications: ['Certified Data Protection Officer.'],
     honours: [],
     careerHighlights: ['Olaniwun Ajayi', 'Templars'],
     memberships: ['Association of Law Firm Administrators Nigeria'],

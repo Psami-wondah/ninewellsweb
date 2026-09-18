@@ -1,5 +1,9 @@
 # React + TypeScript + Vite
 
+## Site URL configuration
+
+Set `VITE_SITE_URL` to the confirmed production origin when deploying so route metadata, canonical URLs and JSON-LD use the production hostname. Without it, development uses the current browser origin and non-browser rendering falls back to `http://localhost:5173`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

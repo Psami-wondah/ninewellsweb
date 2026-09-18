@@ -15,46 +15,53 @@ export function HeroSection() {
         data-reveal="left"
       >
         <p className="mb-10 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[.16em] text-paper lg:mb-12">
-          Nigerian legal counsel <span className="h-px w-5 bg-teal" /> Victoria
-          Island · Lagos
+          Modern Nigerian law firm <span className="h-px w-5 bg-teal" /> Lagos ·
+          Abuja
         </p>
         <h1
           className="m-0 max-w-[780px] font-serif text-[clamp(60px,9vw,126px)] leading-[1] font-normal tracking-[-.055em] text-paper"
           id="hero-heading"
         >
-          Clarity for
+          A Modern Law Firm
           <br />
-          complex
+          Serving Lagos, Abuja,
           <br />
-          decisions.
+          and Beyond
         </h1>
         <p className="mt-9 max-w-[540px] text-[15px] leading-7 text-paper/85 lg:mt-10 lg:text-[16px]">
-          Ninewells is a fully integrated Nigerian law firm advising businesses,
-          institutions and investors on complex commercial, regulatory and
-          high-stakes matters.
+          Ninewells is a fully integrated, multidisciplinary Nigerian law firm
+          with offices in Victoria Island, Lagos and Maitama, Abuja. Our Lagos
+          office sits at the heart of Nigeria’s commercial and financial
+          district, while Abuja places us close to regulatory agencies and
+          public-sector institutions. These locations keep us connected to
+          clients, stakeholders and key decision-makers. Built on experience,
+          innovation and trust, we combine deep legal expertise with modern
+          technology across Energy, Extractives, Foreign Investments, Financial
+          Services, Corporate &amp; Commercial, Capital Markets, Disputes and
+          Telecommunications, Technology &amp; Digital Law.
         </p>
         <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
           <a
             className="group inline-flex min-h-[52px] items-center gap-6  px-6 text-[13px] font-semibold  no-underline transition-colors  bg-teal text-navy-deep hover:bg-[#54bbbb]"
-            href="#expertise"
+            href="/contact"
           >
-            Explore our expertise{" "}
+            Speak to Our Legal Team{" "}
             <ArrowRight
               className="transition-transform group-hover:translate-x-1"
               size={19}
             />
           </a>
-          <InlineLink href="/people" className="dark:text-paper text-paper">
-            Meet the team
+          <InlineLink href="/expertise" className="dark:text-paper text-paper">
+            Explore Our Expertise
           </InlineLink>
         </div>
         <div className="mt-14 max-w-[560px] border-t border-white/15 pt-6 lg:mt-auto">
           <Eyebrow>Featured insight</Eyebrow>
           <a
             className="mt-2 flex max-w-[450px] items-end justify-between gap-5 font-serif text-[18px] leading-tight no-underline text-paper lg:text-[20px]"
-            href="#insights"
+            href="#intelligence"
           >
-            Experience. Innovation. Trust.{" "}
+            Experience · Innovation · Trust{" "}
             <ArrowRight className="shrink-0" size={18} />
           </a>
         </div>

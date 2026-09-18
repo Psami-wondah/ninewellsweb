@@ -65,7 +65,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             <ArrowLeft size={16} /> All people
           </Link>
           <Eyebrow>
-            {person.location} / {person.position}
+            {person.position}
           </Eyebrow>
           <h1
             className="mt-6 mb-5 max-w-[760px] font-serif text-[clamp(55px,7vw,100px)] leading-[.88] font-normal tracking-[-.055em] text-navy dark:text-paper"
@@ -122,7 +122,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             className="h-full w-full object-cover"
             src={person.image}
             style={{ objectPosition: person.imagePosition }}
-            alt={`${person.name}, ${person.position} at Ninewells`}
+            alt={person.imageAlt ?? `${person.name}, ${person.position} at Ninewells`}
           />
           <figcaption className="absolute right-0 bottom-0 bg-navy-deep px-6 py-4 text-[9px] font-semibold uppercase tracking-[.14em] text-ivory">
             {person.teamType} / Ninewells
@@ -299,7 +299,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
                 className="h-20 w-[68px] object-cover"
                 src={entry.image}
                 style={{ objectPosition: entry.imagePosition }}
-                alt=""
+                alt={entry.imageAlt ?? `${entry.name}, ${entry.position}`}
               />
               <span>
                 <strong className="block font-serif text-[25px] font-normal">

@@ -17,8 +17,11 @@ import { PeopleDirectoryPage } from "./components/pages/PeopleDirectoryPage";
 import { AboutPage } from "./components/pages/AboutPage";
 import { CareersPage } from "./components/pages/CareersPage";
 import { ContactPage } from "./components/pages/ContactPage";
+import { ExpertiseDirectoryPage } from "./components/pages/ExpertiseDirectoryPage";
 import { InsightDetailPage } from "./components/pages/InsightDetailPage";
 import { InsightsDirectoryPage } from "./components/pages/InsightsDirectoryPage";
+import { TechnologyPage } from "./components/pages/TechnologyPage";
+import { PageMeta } from "./components/seo/PageMeta";
 import { ContactSection } from "./components/sections/ContactSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";
 import { HeroSection } from "./components/sections/HeroSection";
@@ -27,6 +30,14 @@ import { PeopleSection } from "./components/sections/PeopleSection";
 import { ProofSection } from "./components/sections/ProofSection";
 import { SiteFooter } from "./components/sections/SiteFooter";
 import { people } from "./data/people";
+import {
+  getExpertiseSeo,
+  getInsightSeo,
+  getPersonSeo,
+  seoRoutes,
+  withFirmStructuredData,
+  type SeoConfig,
+} from "./data/seo";
 import { expertiseDetails, insightItems } from "./data/siteContent";
 import { useTheme } from "./hooks/useTheme";
 import type { MenuName } from "./types/navigation";
@@ -132,45 +143,35 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route
             path="/about"
-            element={
-              <ContentPage title="About">
-                <AboutPage />
-              </ContentPage>
-            }
+            element={<ContentPage seo={withFirmStructuredData(seoRoutes.about)}><AboutPage /></ContentPage>}
+          />
+          <Route
+            path="/technology"
+            element={<ContentPage seo={withFirmStructuredData(seoRoutes.technology)}><TechnologyPage /></ContentPage>}
+          />
+          <Route
+            path="/expertise"
+            element={<ContentPage seo={withFirmStructuredData(seoRoutes.expertise)}><ExpertiseDirectoryPage /></ContentPage>}
           />
           <Route
             path="/careers"
-            element={
-              <ContentPage title="Careers">
-                <CareersPage />
-              </ContentPage>
-            }
+            element={<ContentPage seo={withFirmStructuredData({ title: "Careers at Ninewells | Ninewells", description: "Build a career in a fully integrated, multidisciplinary Nigerian law firm.", canonicalPath: "/careers" })}><CareersPage /></ContentPage>}
           />
           <Route
             path="/contact"
-            element={
-              <ContentPage title="Contact">
-                <ContactPage />
-              </ContentPage>
-            }
+            element={<ContentPage seo={withFirmStructuredData(seoRoutes.contact)}><ContactPage /></ContentPage>}
           />
           <Route
             path="/people"
-            element={
-              <ContentPage title="People" contact>
-                <PeopleDirectoryPage />
-              </ContentPage>
-            }
+            element={<ContentPage seo={withFirmStructuredData(seoRoutes.people)} contact><PeopleDirectoryPage /></ContentPage>}
           />
           <Route path="/people/:profileSlug" element={<PersonRoute />} />
           <Route
-            path="/insights"
-            element={
-              <ContentPage title="Insights" contact>
-                <InsightsDirectoryPage />
-              </ContentPage>
-            }
+            path="/intelligence"
+            element={<ContentPage seo={withFirmStructuredData(seoRoutes.intelligence)} contact><InsightsDirectoryPage /></ContentPage>}
           />
+          <Route path="/insights" element={<Navigate to="/intelligence" replace />} />
+          <Route path="/ai" element={<Navigate to="/technology" replace />} />
           <Route
             path="/expertise/energy-extractives-foreign-investment"
             element={<Navigate to="/expertise/energy" replace />}
@@ -187,7 +188,8 @@ function App() {
             path="/expertise/:expertiseSlug"
             element={<ExpertiseRoute />}
           />
-          <Route path="/insights/:insightSlug" element={<InsightRoute />} />
+          <Route path="/intelligence/:insightSlug" element={<InsightRoute />} />
+          <Route path="/insights/:insightSlug" element={<LegacyInsightRoute />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
@@ -198,7 +200,7 @@ function App() {
 function HomePage() {
   return (
     <>
-      <PageTitle />
+      <PageMeta seo={withFirmStructuredData(seoRoutes.home)} />
       <HeroSection />
       <ExpertiseSection />
       <ProofSection />
@@ -211,17 +213,17 @@ function HomePage() {
 }
 
 function ContentPage({
-  title,
+  seo,
   contact = false,
   children,
 }: {
-  title: string;
+  seo: SeoConfig;
   contact?: boolean;
   children: ReactNode;
 }) {
   return (
     <>
-      <PageTitle title={title} />
+      <PageMeta seo={seo} />
       {children}
       {contact ? <ContactSection /> : null}
       <SiteFooter />
@@ -235,7 +237,7 @@ function PersonRoute() {
   if (!person) return <Navigate to="/people" replace />;
   return (
     <>
-      <PageTitle title={person.name} />
+      <PageMeta seo={getPersonSeo(person)} />
       <LawyerProfilePage person={person} />
       <SiteFooter />
     </>
@@ -248,7 +250,7 @@ function ExpertiseRoute() {
   if (!detail) return <Navigate to="/#expertise" replace />;
   return (
     <>
-      <PageTitle title={detail.title} />
+      <PageMeta seo={getExpertiseSeo(detail)} />
       <ExpertiseDetailPage detail={detail} />
       <SiteFooter />
     </>
@@ -258,23 +260,19 @@ function ExpertiseRoute() {
 function InsightRoute() {
   const { insightSlug } = useParams();
   const insight = insightItems.find((item) => item.slug === insightSlug);
-  if (!insight) return <Navigate to="/insights" replace />;
+  if (!insight) return <Navigate to="/intelligence" replace />;
   return (
     <>
-      <PageTitle title={insight.title} />
+      <PageMeta seo={getInsightSeo(insight)} />
       <InsightDetailPage insight={insight} />
       <SiteFooter />
     </>
   );
 }
 
-function PageTitle({ title }: { title?: string }) {
-  useEffect(() => {
-    document.title = title
-      ? `${title} | Ninewells`
-      : "Ninewells | Nigerian legal counsel";
-  }, [title]);
-  return null;
+function LegacyInsightRoute() {
+  const { insightSlug } = useParams();
+  return <Navigate to={`/intelligence/${insightSlug ?? ""}`} replace />;
 }
 
 export default App;

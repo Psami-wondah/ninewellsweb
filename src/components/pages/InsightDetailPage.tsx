@@ -30,9 +30,9 @@ export function InsightDetailPage({ insight }: { insight: Insight }) {
         <div className="flex flex-col px-[clamp(22px,7vw,118px)] pt-[clamp(42px,6vw,72px)] pb-[clamp(58px,8vw,92px)]">
           <Link
             className="inline-flex w-fit items-center gap-3 text-[10px] font-semibold uppercase tracking-[.12em] text-slate no-underline dark:text-paper/80"
-            to="/insights"
+            to="/intelligence"
           >
-            <ArrowLeft size={16} /> All insights
+            <ArrowLeft size={16} /> All intelligence
           </Link>
           <div className="mt-[clamp(74px,9vw,124px)]" data-reveal="up">
             <Eyebrow>
@@ -146,13 +146,13 @@ export function InsightDetailPage({ insight }: { insight: Insight }) {
 
       <section
         className="bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(70px,8vw,100px)] dark:bg-[#0a192c]"
-        aria-labelledby="related-insights-heading"
+        aria-labelledby="related-intelligence-heading"
       >
         <div className="border-b border-navy pb-7 dark:border-paper">
           <Eyebrow>Continue reading</Eyebrow>
           <h2
             className="mt-5 mb-0 font-serif text-[clamp(39px,5vw,64px)] leading-none font-normal text-navy dark:text-paper"
-            id="related-insights-heading"
+            id="related-intelligence-heading"
           >
             More from Ninewells.
           </h2>
@@ -161,7 +161,7 @@ export function InsightDetailPage({ insight }: { insight: Insight }) {
           {relatedInsights.map((item, index) => (
             <Link
               className="group grid min-h-[170px] grid-cols-[42px_1fr_28px] items-center gap-4 border-b border-navy/15 py-7 text-navy no-underline md:first:border-r md:first:pr-8 md:last:pl-8 dark:border-white/15 dark:text-paper"
-              to={`/insights/${item.slug}`}
+              to={`/intelligence/${item.slug}`}
               key={item.slug}
             >
               <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">

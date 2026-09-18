@@ -35,7 +35,7 @@ export function SiteFooter() {
             className="mt-5 mb-0 max-w-[570px] font-serif text-[clamp(34px,4.3vw,55px)] leading-none font-normal tracking-[-.035em] text-navy dark:text-paper"
             id="newsletter-heading"
           >
-            Insight for the decisions ahead.
+            Intelligence for the decisions ahead.
           </h2>
         </div>
         <div>
@@ -75,7 +75,7 @@ export function SiteFooter() {
               aria-live="polite"
             >
               {submitted
-                ? "Thank you for your interest in Ninewells insights."
+                ? "Thank you for your interest in Ninewells intelligence."
                 : "Occasional updates. You can unsubscribe at any time."}
             </p>
           </form>
@@ -97,14 +97,17 @@ export function SiteFooter() {
         <Link className="no-underline" to="/about">
           About
         </Link>
-        <Link className="no-underline" to="/#expertise">
-          Expertise
-        </Link>
         <Link className="no-underline" to="/people">
           People
         </Link>
-        <Link className="no-underline" to="/insights">
-          Insights
+        <Link className="no-underline" to="/technology">
+          Technology
+        </Link>
+        <Link className="no-underline" to="/expertise">
+          Expertise
+        </Link>
+        <Link className="no-underline" to="/intelligence">
+          Intelligence
         </Link>
         <Link className="no-underline" to="/careers">
           Careers
@@ -148,6 +151,12 @@ export function SiteFooter() {
             <Phone size={17} /> {phone}
           </a>
         ))}
+        <a
+          className="flex items-center gap-2 no-underline"
+          href={`tel:${company.contact.chiefOperationsOfficer.replace(/\s/g, "")}`}
+        >
+          <Phone size={17} /> Chief Operations Officer: {company.contact.chiefOperationsOfficer}
+        </a>
         {company.offices.map((office) => (
           <a
             className="flex items-start gap-2 leading-5 no-underline"

@@ -16,9 +16,10 @@ export const LINKEDIN_URL = "https://www.linkedin.com/company/ninewells/";
 
 export const navItems = [
   "About",
+  "Technology",
   "Expertise",
   "People",
-  "Insights",
+  "Intelligence",
   "Contact",
 ] as const;
 
@@ -28,11 +29,11 @@ export const practiceAreas = [
     slug: "energy",
     title: "Energy",
     description:
-      "Advice across the energy value chain, from operations and regulation to projects, finance and disputes.",
+      "Full-value-chain advice across regulation, projects, financing, transactions, acquisitions, divestments and disputes.",
     introduction:
-      "The energy sector is undergoing significant transformation. We advise clients across the energy value chain through the different stages of their operations.",
+      "The energy sector is undergoing significant transformation. We advise clients across the full energy value chain through the different stages of their operations.",
     overview:
-      "Our work covers regulatory compliance, project development, financing, commercial transactions, dispute resolution and the acquisition or divestment of interests.",
+      "Our work covers regulatory compliance, project development, financing, commercial transactions, acquisitions and divestments of interests, and dispute resolution.",
     featureImage: expertiseEnergyImage,
     featureImageAlt: "Industrial storage tanks beside the Ijora cityscape in Lagos",
     featureImageLocation: "Ijora · Lagos",
@@ -67,7 +68,7 @@ export const practiceAreas = [
     slug: "extractives",
     title: "Extractives",
     description:
-      "Legal and commercial guidance for mining and natural-resources projects throughout their lifecycle.",
+      "Legal and commercial guidance for mining and natural-resources projects from licensing and exploration through production and closure.",
     introduction:
       "We advise mining and natural-resources companies throughout the project lifecycle, from licensing to exploration, production and closure.",
     overview:
@@ -102,11 +103,11 @@ export const practiceAreas = [
     slug: "foreign-investments",
     title: "Foreign Investments",
     description:
-      "Market-entry, investment-protection and regulatory advice for international businesses investing in Nigeria.",
+      "Market-entry, investment-protection and regulatory advice for international businesses investing and operating in Nigeria.",
     introduction:
       "We help multinational companies and foreign investors establish and operate businesses in Nigeria, repatriate profits and protect their investments.",
     overview:
-      "Our advice helps clients manage expropriation risk and structure dispute resolution through arbitration while addressing regulatory compliance, immigration, technology transfer and taxation.",
+      "Our advice covers investment protection, repatriation, expropriation risk, arbitration, regulatory compliance, immigration, technology transfer and taxation.",
     featureImage: expertiseForeignInvestmentsImage,
     featureImageAlt:
       "Aerial view of Lagos Lagoon, a bridge and the Victoria Island skyline",
@@ -154,7 +155,7 @@ export const practiceAreas = [
     slug: "financial-services",
     title: "Financial Services",
     description:
-      "Regulatory and transactional advice for banks, fintechs and other financial institutions.",
+      "Regulatory and transactional advice for banks, fintechs and financial institutions across Banking & Finance, Loan Structuring, Insurance and Private Wealth.",
     introduction:
       "We advise banks, fintechs and other financial institutions on the regulatory and transactional matters that shape their businesses.",
     overview:
@@ -206,7 +207,7 @@ export const practiceAreas = [
     introduction:
       "We advise businesses at every stage of their lifecycle, from formation and governance to complex cross-border investments, restructurings and commercial agreements.",
     overview:
-      "Our team provides practical, business-oriented counsel tailored to each client’s industry, operating realities and commercial objectives.",
+      "Our team provides practical, business-oriented counsel across M&A, compliance, competition and consumer protection, governance, real estate, infrastructure, employment and immigration.",
     featureImage: expertiseCorporateCommercialImage,
     featureImageAlt: "Geometric office building photographed in Lagos",
     featureImageLocation: "Lagos · Nigeria",
@@ -251,11 +252,11 @@ export const practiceAreas = [
     slug: "capital-markets",
     title: "Capital Markets",
     description:
-      "Advice on equity and debt offerings, investment structures and securities regulation.",
+      "Advice on equity and debt offerings, IPOs, private equity, funds and securities regulation.",
     introduction:
       "We advise issuers, investors and financial institutions on equity and debt offerings and securities regulation.",
     overview:
-      "Our capital-markets work connects transaction execution, fundraising objectives and the regulatory requirements governing Nigerian securities.",
+      "Our capital-markets work connects transaction execution, fundraising objectives, investment structures and the regulatory requirements governing Nigerian securities.",
     featureImage: expertiseCapitalMarketsImage,
     featureImageAlt: "Civic Towers and the Lagos skyline under a blue sky",
     featureImageLocation: "Lekki · Lagos",
@@ -267,7 +268,7 @@ export const practiceAreas = [
     capabilities: [
       "Initial Public Offerings",
       "Bonds",
-
+      "Private Equity",
       "Funds",
       "Securities Compliance",
     ],
@@ -299,7 +300,7 @@ export const practiceAreas = [
     introduction:
       "We represent clients before Nigerian courts and arbitral tribunals in high-value, complex and commercially consequential disputes.",
     overview:
-      "Our lawyers act across every tier of the Nigerian courts and in domestic, international commercial and investor-state treaty arbitration, both as counsel and as members of arbitral tribunals.",
+      "Our lawyers act across every tier of the Nigerian courts and in domestic arbitration, international commercial arbitration and investor-state treaty arbitration, both as counsel and as members of arbitral tribunals.",
     featureImage: expertiseDisputesImage,
     featureImageAlt: "Federal High Court headquarters in Abuja",
     featureImageLocation: "Abuja · Nigeria",
@@ -345,11 +346,11 @@ export const practiceAreas = [
     slug: "telecommunications-technology-digital-law",
     title: "Telecommunications, Technology & Digital Law",
     description:
-      "Legal and regulatory guidance for technology-driven businesses operating in the digital economy.",
+      "Legal and regulatory guidance for telecommunications operators, technology-driven businesses and digital platforms operating in Nigeria’s digital economy.",
     introduction:
-      "We advise technology-driven businesses on innovation, transactions, intellectual property and regulatory compliance.",
+      "We advise telecommunications operators, ISPs, fintechs, digital platforms and other technology-driven businesses on the legal issues shaping Nigeria’s connected economy.",
     overview:
-      "Our practice supports established companies, financial institutions and emerging businesses as technology reshapes products, markets, risk and regulation.",
+      "Our work covers NCC licensing and spectrum matters, data protection, cybersecurity, technology transactions, SaaS agreements, telecom interconnection, platform liability, digital-economy regulation, blockchain and intellectual property.",
     featureImage: expertiseTechnologyImage,
     featureImageAlt: "Telecommunications tower against the sky in Ibadan",
     featureImageLocation: "Ibadan · Nigeria",
@@ -362,14 +363,14 @@ export const practiceAreas = [
       "Telecommunications",
       "Technology",
       "Fintech",
-      "Artificial Intelligence",
       "E-commerce",
       "Data Protection and Privacy",
       "Betting & Gaming",
       "Cybersecurity",
       "Blockchain",
       "Intellectual Property",
-      "Trademarks",
+      "Technology Transactions and SaaS Agreements",
+      "Platform Liability and Interconnection Disputes",
     ],
     industries: [
       [

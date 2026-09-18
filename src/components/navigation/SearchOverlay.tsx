@@ -1,10 +1,24 @@
 import { ArrowRight, X } from "@phosphor-icons/react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { searchEntries } from "../../data/search";
 import { useDialogFocus } from "../../hooks/useDialogFocus";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function SearchOverlay({ onClose }: { onClose: () => void }) {
   const dialogRef = useDialogFocus();
+  const [query, setQuery] = useState("");
+  const results = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+    if (!normalizedQuery) return [];
+    return searchEntries
+      .filter((entry) =>
+        `${entry.title} ${entry.description} ${entry.type}`
+          .toLowerCase()
+          .includes(normalizedQuery),
+      )
+      .slice(0, 8);
+  }, [query]);
   return (
     <div
       ref={dialogRef}
@@ -39,7 +53,9 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
             className="w-full border-0 bg-transparent py-4 font-serif text-[clamp(30px,4vw,55px)] text-navy outline-0 placeholder:text-slate/85 dark:text-paper dark:placeholder:text-paper/70"
             id="site-search"
             type="search"
-            placeholder="Search people, expertise and insights"
+            placeholder="Search people, expertise and intelligence"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
           />
           <button
             className="w-16 border-0 bg-transparent text-navy dark:text-paper"
@@ -50,6 +66,37 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
           </button>
         </div>
       </form>
+      {query.trim() ? (
+        <div className="border-t border-navy/20 dark:border-white/20">
+          {results.length ? (
+            results.map((result) => (
+              <Link
+                className="grid grid-cols-[100px_1fr_20px] items-center gap-4 border-b border-navy/15 py-4 text-navy no-underline dark:border-white/15 dark:text-paper"
+                to={result.href}
+                key={result.href}
+                onClick={onClose}
+              >
+                <small className="text-[9px] font-semibold uppercase tracking-[.12em] text-teal-dark dark:text-teal">
+                  {result.type}
+                </small>
+                <span>
+                  <strong className="block font-serif text-[21px] font-normal">
+                    {result.title}
+                  </strong>
+                  <span className="mt-1 block text-[11px] leading-5 text-slate dark:text-paper/70">
+                    {result.description}
+                  </span>
+                </span>
+                <ArrowRight size={17} />
+              </Link>
+            ))
+          ) : (
+            <p className="py-6 text-[13px] text-slate dark:text-paper/75">
+              No Ninewells pages match that search.
+            </p>
+          )}
+        </div>
+      ) : null}
       <div className="flex flex-wrap gap-7 text-[12px] text-navy dark:text-paper">
         <span className="font-semibold text-teal-dark dark:text-teal">
           Suggested
@@ -63,8 +110,8 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
         <Link className="no-underline" to="/careers" onClick={onClose}>
           Careers
         </Link>
-        <Link className="no-underline" to="/insights" onClick={onClose}>
-          Latest insights
+        <Link className="no-underline" to="/intelligence" onClick={onClose}>
+          Latest intelligence
         </Link>
       </div>
     </div>

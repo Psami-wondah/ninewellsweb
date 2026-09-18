@@ -18,14 +18,21 @@ export function ExpertiseSection() {
           className="my-6 font-serif text-[clamp(43px,5vw,70px)] leading-[.98] font-normal tracking-[-.04em] text-navy dark:text-paper"
           id="expertise-heading"
         >
-          Integrated expertise.
+          Integrated legal expertise.
           <br />
           Pragmatic solutions.
         </h2>
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/80">
-          We bring depth, commercial judgement and joined-up thinking to matters
-          where every decision carries weight.
+          As a fully integrated, multidisciplinary law firm, we bring depth,
+          commercial judgement and joined-up thinking to matters where every
+          decision carries weight.
         </p>
+        <Link
+          className="inline-flex items-center gap-4 border-b border-teal pb-1.5 text-[13px] font-semibold text-navy no-underline dark:text-paper"
+          to="/expertise"
+        >
+          Explore all expertise <ArrowRight size={18} />
+        </Link>
       </div>
       <div
         className="border-t border-navy dark:border-paper"

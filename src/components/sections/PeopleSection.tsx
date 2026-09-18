@@ -49,7 +49,7 @@ export function PeopleSection() {
                 className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
                 src={person.image}
                 style={{ objectPosition: person.imagePosition }}
-                alt={`${person.name}, ${person.position}`}
+                alt={person.imageAlt ?? `${person.name}, ${person.position}`}
               />
               <small className="absolute top-0 left-0 bg-navy-deep px-3 py-2 text-[9px] font-semibold tracking-[.12em] text-white">
                 {String(index + 1).padStart(2, "0")}

@@ -2,6 +2,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { insightGroups, insightItems } from "../../data/siteContent";
 import { Eyebrow } from "../ui/Eyebrow";
+import { InlineLink } from "../ui/InlineLink";
 
 export function InsightsDirectoryPage() {
   return (
@@ -15,17 +16,19 @@ export function InsightsDirectoryPage() {
           data-reveal="up"
         >
           <div>
-            <Eyebrow>Insights / Archive</Eyebrow>
+            <Eyebrow>Intelligence / Archive</Eyebrow>
             <h1
               className="mt-6 mb-0 max-w-[850px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper"
               id="insights-directory-heading"
             >
-              Intelligence for what comes next.
+              Intelligence — Legal Insights from a Modern Nigerian Law Firm
             </h1>
           </div>
           <p className="m-0 max-w-[500px] text-[15px] leading-7 text-slate dark:text-paper/80">
-            Firm developments, timely legal and regulatory intelligence, and
-            considered analysis from Ninewells and its lawyers.
+            Ninewells Intelligence shares practical legal analysis on energy,
+            extractives, foreign investment, financial services, corporate and
+            commercial matters, capital markets, disputes, and
+            telecommunications, technology and digital law.
           </p>
         </div>
       </section>
@@ -98,7 +101,7 @@ export function InsightsDirectoryPage() {
                 {groupedItems.map((item, index) => (
                   <Link
                     className="group grid min-h-[150px] grid-cols-[38px_minmax(0,1fr)_28px] items-center gap-3 border-b border-navy/15 py-7 text-navy no-underline transition-colors hover:bg-teal/5 dark:border-white/15 dark:text-paper dark:hover:bg-teal/10 sm:grid-cols-[48px_minmax(0,1fr)_30px]"
-                    to={`/insights/${item.slug}`}
+                    to={`/intelligence/${item.slug}`}
                     key={item.slug}
                   >
                     <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
@@ -126,6 +129,9 @@ export function InsightsDirectoryPage() {
             </section>
           );
         })}
+        <div className="mt-12 flex justify-end">
+          <InlineLink href="/contact">Talk to Our Team About These Issues</InlineLink>
+        </div>
       </div>
     </>
   );
