@@ -126,7 +126,11 @@
 }
 
 .app-main h1[class*="text-[clamp"] {
-  font-size: clamp(46px, 6.5cqw, 108px) !important;
+  font-size: clamp(46px, 6cqw, 84px) !important;
+}
+
+.app-main #hero-heading {
+  font-size: clamp(54px, 7.8cqw, 104px) !important;
 }
 
 .app-main #expertise-detail-heading {

@@ -15,18 +15,26 @@ export function InsightsDirectoryPage() {
           data-reveal="up"
         >
           <div>
-            <Eyebrow>Insights / Archive</Eyebrow>
+            <Eyebrow>Intelligence</Eyebrow>
             <h1
               className="mt-6 mb-0 max-w-[850px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper"
               id="insights-directory-heading"
             >
-              Intelligence for what comes next.
+              Legal Insights from a Modern Nigerian Law Firm
             </h1>
           </div>
           <p className="m-0 max-w-[500px] text-[15px] leading-7 text-slate dark:text-paper/80">
-            Firm developments, timely legal and regulatory intelligence, and
-            considered analysis from Ninewells and its lawyers.
+            Ninewells Intelligence is where we share our lawyers’ thinking on
+            the issues shaping Nigerian business and regulation — from energy,
+            extractives and foreign investment to financial services, corporate
+            and commercial, capital markets, disputes and digital law. Written
+            by the same team advising clients in Lagos and Abuja, this is
+            practical analysis from the ground.
           </p>
+          <div className="mt-8 grid gap-4 border-t border-navy/20 pt-5 text-[12px] leading-5 text-slate dark:border-white/20 dark:text-paper/75 sm:grid-cols-2">
+            <p className="m-0"><strong>What you’ll find:</strong> regulatory updates and deal insights.</p>
+            <p className="m-0"><strong>Also:</strong> sector spotlights and firm news.</p>
+          </div>
         </div>
       </section>
 
@@ -98,7 +106,7 @@ export function InsightsDirectoryPage() {
                 {groupedItems.map((item, index) => (
                   <Link
                     className="group grid min-h-[150px] grid-cols-[38px_minmax(0,1fr)_28px] items-center gap-3 border-b border-navy/15 py-7 text-navy no-underline transition-colors hover:bg-teal/5 dark:border-white/15 dark:text-paper dark:hover:bg-teal/10 sm:grid-cols-[48px_minmax(0,1fr)_30px]"
-                    to={`/insights/${item.slug}`}
+                    to={`/intelligence/${item.slug}`}
                     key={item.slug}
                   >
                     <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
@@ -126,6 +134,12 @@ export function InsightsDirectoryPage() {
             </section>
           );
         })}
+        <Link
+          className="mt-10 inline-flex items-center gap-3 border-b border-teal pb-2 text-[13px] font-semibold text-navy no-underline dark:text-paper"
+          to="/contact"
+        >
+          Talk to Our Team About These Issues <ArrowRight size={18} />
+        </Link>
       </div>
     </>
   );

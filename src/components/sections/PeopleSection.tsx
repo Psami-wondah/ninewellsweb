@@ -45,12 +45,16 @@ export function PeopleSection() {
             key={person.name}
           >
             <span className="relative block overflow-hidden bg-stone">
-              <img
-                className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
-                src={person.image}
-                style={{ objectPosition: person.imagePosition }}
-                alt={`${person.name}, ${person.position}`}
-              />
+                {person.image ? (
+                  <img
+                    className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
+                    src={person.image}
+                    style={{ objectPosition: person.imagePosition }}
+                    alt={`${person.name}, ${person.position} at Ninewells`}
+                  />
+                ) : (
+                  <span className="block h-full bg-stone dark:bg-[#101f33]" aria-hidden="true" />
+                )}
               <small className="absolute top-0 left-0 bg-navy-deep px-3 py-2 text-[9px] font-semibold tracking-[.12em] text-white">
                 {String(index + 1).padStart(2, "0")}
               </small>

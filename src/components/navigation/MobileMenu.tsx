@@ -82,6 +82,15 @@ export function MobileMenu({
                     className={`flex flex-col overflow-hidden pl-9 transition-all duration-300 ${isOpen ? "max-h-[340px] pb-4 opacity-100" : "max-h-0 opacity-0"}`}
                     aria-hidden={!isOpen}
                   >
+                    <Link
+                      className={`py-2 text-[13px] font-semibold no-underline ${pathname === "/expertise" ? "text-teal" : "text-white/80"}`}
+                      to="/expertise"
+                      onClick={onClose}
+                      tabIndex={isOpen ? 0 : -1}
+                      aria-current={pathname === "/expertise" ? "page" : undefined}
+                    >
+                      All expertise
+                    </Link>
                     {expertise.map((entry) => entry[1]).map((link) => {
                       const expertiseHref =
                         expertiseSlugs[link as keyof typeof expertiseSlugs];

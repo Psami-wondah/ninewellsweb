@@ -1,7 +1,7 @@
 import { ArrowRight, Minus, Plus } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { expertise, expertiseSlugs } from "../../data/siteContent";
+import { expertise, expertiseLanding, expertiseSlugs } from "../../data/siteContent";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function ExpertiseSection() {
@@ -18,13 +18,12 @@ export function ExpertiseSection() {
           className="my-6 font-serif text-[clamp(43px,5vw,70px)] leading-[.98] font-normal tracking-[-.04em] text-navy dark:text-paper"
           id="expertise-heading"
         >
-          Integrated expertise.
+          Legal expertise across
           <br />
-          Pragmatic solutions.
+          Nigeria&apos;s key industries.
         </h2>
         <p className="mb-8 max-w-[450px] text-[14px] leading-6 text-slate dark:text-paper/80">
-          We bring depth, commercial judgement and joined-up thinking to matters
-          where every decision carries weight.
+          {expertiseLanding.introduction}
         </p>
       </div>
       <div

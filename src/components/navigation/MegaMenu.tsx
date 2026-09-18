@@ -44,6 +44,13 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
             <h2 className="my-3 whitespace-pre-line font-serif text-[42px] leading-[.98] font-normal tracking-[-.035em] text-navy dark:text-paper">
               {content.heading}
             </h2>
+            <Link
+              className="mt-7 inline-flex items-center gap-2 text-[12px] font-semibold text-teal-dark no-underline dark:text-teal"
+              to="/expertise"
+              onClick={onClose}
+            >
+              All expertise <ArrowRight size={16} />
+            </Link>
           </div>
           {content.columns.map((column, index) => (
             <div className="flex flex-col gap-3.5" key={index}>
@@ -72,7 +79,7 @@ export function MegaMenu({ menu, onClose }: MegaMenuProps) {
         </div>
         <Link
           className="grid grid-cols-[160px_1fr_30px] items-center border-t border-navy/15 pt-6 text-navy no-underline dark:border-white/15 dark:text-paper"
-          to={`/insights/${featuredInsight.slug}`}
+          to={`/intelligence/${featuredInsight.slug}`}
           onClick={onClose}
         >
           <Eyebrow>Featured insight</Eyebrow>

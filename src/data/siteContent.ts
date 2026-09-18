@@ -16,9 +16,10 @@ export const LINKEDIN_URL = "https://www.linkedin.com/company/ninewells/";
 
 export const navItems = [
   "About",
+  "Technology",
   "Expertise",
   "People",
-  "Insights",
+  "Intelligence",
   "Contact",
 ] as const;
 
@@ -104,9 +105,9 @@ export const practiceAreas = [
     description:
       "Market-entry, investment-protection and regulatory advice for international businesses investing in Nigeria.",
     introduction:
-      "We help multinational companies and foreign investors establish and operate businesses in Nigeria, repatriate profits and protect their investments.",
+      "We help multinational companies and foreign investors establish and grow their businesses in Nigeria, ensure repatriation of profits and protect investments by managing expropriation risk — including a preference for arbitration over local courts.",
     overview:
-      "Our advice helps clients manage expropriation risk and structure dispute resolution through arbitration while addressing regulatory compliance, immigration, technology transfer and taxation.",
+      "This extends to regulatory compliance, immigration, technology transfer and taxation matters.",
     featureImage: expertiseForeignInvestmentsImage,
     featureImageAlt:
       "Aerial view of Lagos Lagoon, a bridge and the Victoria Island skyline",
@@ -172,7 +173,6 @@ export const practiceAreas = [
       "Loan Structuring",
       "Insurance",
       "Private Wealth",
-      "Private Equity",
     ],
     industries: [
       [
@@ -267,7 +267,7 @@ export const practiceAreas = [
     capabilities: [
       "Initial Public Offerings",
       "Bonds",
-
+      "Private Equity",
       "Funds",
       "Securities Compliance",
     ],
@@ -362,7 +362,6 @@ export const practiceAreas = [
       "Telecommunications",
       "Technology",
       "Fintech",
-      "Artificial Intelligence",
       "E-commerce",
       "Data Protection and Privacy",
       "Betting & Gaming",
@@ -417,6 +416,27 @@ export const expertiseDetails = {
   "financial-services-capital-markets":
     canonicalExpertiseDetails["financial-services"],
 } as Record<string, (typeof practiceAreas)[number]>;
+
+export const technologyPage = {
+  philosophy:
+    "Ninewells is a technology-assisted Nigerian law firm. We believe that we are the main drivers for our clients’ success, while technology helps us to be more efficient. Being a modern law firm in Lagos and Abuja means equipping our lawyers with the best technology available.",
+  practiceIntroduction:
+    "We advise telecommunications operators, ISPs, fintechs and digital platforms on the legal issues shaping Nigeria’s connected economy. Our lawyers handle NCC licensing and spectrum matters, data-protection compliance under the NDPA, cybersecurity and incident-response obligations, technology transactions and SaaS agreements, disputes arising from telecom interconnection or platform liability, and related digital-economy regulation.",
+  practiceClosing:
+    "As Nigeria’s digital economy scales, our clients need counsel who understand both the regulatory terrain and the commercial pressure to move fast — that’s where our lawyers, backed by efficient technology, deliver.",
+  whyItMatters: [
+    ["Regulatory speed", "NCC licensing, spectrum allocation and NDPA compliance move quickly; delayed legal guidance can mean lost market windows or regulatory exposure."],
+    ["Data-driven risk", "Telecom and digital businesses handle vast volumes of user data; a single compliance gap can trigger fines, breach notifications or reputational damage."],
+    ["Complex, fast-moving contracts", "SaaS agreements, interconnection agreements and platform terms require lawyers who track technology trends as closely as they track case law."],
+    ["Cross-border data flows", "Digital businesses often move data and capital across jurisdictions, requiring counsel fluent in Nigerian and international digital-law standards."],
+    ["Dispute readiness", "When platform liability or interconnection disputes arise, clients need counsel who understand the technical and commercial context from the outset."],
+  ],
+} as const;
+
+export const expertiseLanding = {
+  introduction:
+    "As a fully integrated, multidisciplinary law firm in Lagos and Abuja, Ninewells advises multinational companies, financial institutions and indigenous businesses across Nigeria’s key industries.",
+} as const;
 
 export const insightGroups = [
   {

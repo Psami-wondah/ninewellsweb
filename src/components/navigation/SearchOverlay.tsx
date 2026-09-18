@@ -39,7 +39,7 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
             className="w-full border-0 bg-transparent py-4 font-serif text-[clamp(30px,4vw,55px)] text-navy outline-0 placeholder:text-slate/85 dark:text-paper dark:placeholder:text-paper/70"
             id="site-search"
             type="search"
-            placeholder="Search people, expertise and insights"
+            placeholder="Search people, expertise and intelligence"
           />
           <button
             className="w-16 border-0 bg-transparent text-navy dark:text-paper"
@@ -63,8 +63,8 @@ export function SearchOverlay({ onClose }: { onClose: () => void }) {
         <Link className="no-underline" to="/careers" onClick={onClose}>
           Careers
         </Link>
-        <Link className="no-underline" to="/insights" onClick={onClose}>
-          Latest insights
+        <Link className="no-underline" to="/intelligence" onClick={onClose}>
+          Latest intelligence
         </Link>
       </div>
     </div>

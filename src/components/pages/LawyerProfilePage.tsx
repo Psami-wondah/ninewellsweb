@@ -64,9 +64,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
           >
             <ArrowLeft size={16} /> All people
           </Link>
-          <Eyebrow>
-            {person.location} / {person.position}
-          </Eyebrow>
+          <Eyebrow>{person.position}</Eyebrow>
           <h1
             className="mt-6 mb-5 max-w-[760px] font-serif text-[clamp(55px,7vw,100px)] leading-[.88] font-normal tracking-[-.055em] text-navy dark:text-paper"
             id="profile-heading"
@@ -118,12 +116,16 @@ export function LawyerProfilePage({ person }: { person: Person }) {
           data-reveal="fade"
           data-reveal-delay="1"
         >
-          <img
-            className="h-full w-full object-cover"
-            src={person.image}
-            style={{ objectPosition: person.imagePosition }}
-            alt={`${person.name}, ${person.position} at Ninewells`}
-          />
+          {person.image ? (
+            <img
+              className="h-full w-full object-cover"
+              src={person.image}
+              style={{ objectPosition: person.imagePosition }}
+              alt={`${person.name}, ${person.position} at Ninewells`}
+            />
+          ) : (
+            <span className="block h-full bg-stone dark:bg-[#101f33]" aria-hidden="true" />
+          )}
           <figcaption className="absolute right-0 bottom-0 bg-navy-deep px-6 py-4 text-[9px] font-semibold uppercase tracking-[.14em] text-ivory">
             {person.teamType} / Ninewells
           </figcaption>
@@ -295,12 +297,16 @@ export function LawyerProfilePage({ person }: { person: Person }) {
               to={`/people/${entry.slug}`}
               key={entry.slug}
             >
-              <img
-                className="h-20 w-[68px] object-cover"
-                src={entry.image}
-                style={{ objectPosition: entry.imagePosition }}
-                alt=""
-              />
+              {entry.image ? (
+                <img
+                  className="h-20 w-[68px] object-cover"
+                  src={entry.image}
+                  style={{ objectPosition: entry.imagePosition }}
+                  alt={`${entry.name}, ${entry.position} at Ninewells`}
+                />
+              ) : (
+                <span className="block h-20 w-[68px] bg-stone dark:bg-[#101f33]" aria-hidden="true" />
+              )}
               <span>
                 <strong className="block font-serif text-[25px] font-normal">
                   {entry.name}

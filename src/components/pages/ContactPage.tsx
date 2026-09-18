@@ -19,10 +19,10 @@ export function ContactPage() {
         <Eyebrow className="text-teal">Contact Ninewells</Eyebrow>
         <div className="mt-[clamp(70px,10vw,130px)] grid gap-12 lg:grid-cols-[1.2fr_.6fr] lg:items-end">
           <h1
-            className="m-0 max-w-[930px] font-serif text-[clamp(65px,9vw,126px)] leading-[.84] font-normal tracking-[-.055em]"
+            className="m-0 max-w-[930px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em]"
             id="contact-page-heading"
           >
-            Let’s begin with the decision.
+            Law Firm Offices in Lagos and Abuja
           </h1>
           <div className="border-t border-white/30 pt-6">
             <p className="m-0 text-[15px] leading-7 text-white/82">
@@ -60,7 +60,7 @@ export function ContactPage() {
           className="mt-5 mb-12 max-w-[820px] font-serif text-[clamp(42px,5vw,68px)] leading-none font-normal text-navy dark:text-paper"
           id="offices-heading"
         >
-          Present in Nigeria’s commercial and regulatory centres.
+          Lagos and Abuja, close to the decisions that matter.
         </h2>
         <div className="grid border-t border-l border-navy/20 dark:border-white/20 md:grid-cols-2">
           {company.offices.map((office, index) => (
@@ -71,8 +71,8 @@ export function ContactPage() {
               <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-8 mb-2 font-serif text-[44px] font-normal text-navy dark:text-paper">
-                {office.city}
+              <h3 className="mt-8 mb-2 font-serif text-[clamp(30px,3.5vw,44px)] font-normal text-navy dark:text-paper">
+                {office.city} Office
               </h3>
               <p className="text-[10px] font-semibold uppercase tracking-[.12em] text-teal-dark dark:text-teal">
                 {office.area}
@@ -109,9 +109,11 @@ export function ContactPage() {
             >
               Talk to Ninewells.
             </h2>
-            <p className="mt-7 max-w-[390px] text-[13px] leading-6 text-slate dark:text-paper/78">
-              Call or email the firm and we will connect you with the right
-              lawyer or business professional for your enquiry.
+            <p className="mt-7 max-w-[430px] text-[13px] leading-6 text-slate dark:text-paper/78">
+              Whether you need energy, corporate, finance, dispute resolution
+              or technology law counsel, Ninewells is ready to help — from our
+              offices in Lagos and Abuja, or wherever your business takes you
+              across Nigeria.
             </p>
           </div>
           <div className="grid border-t border-l border-navy/20 dark:border-white/20 md:grid-cols-2">
@@ -149,9 +151,18 @@ export function ContactPage() {
                   </a>
                 ))}
               </div>
+              <p className="mt-4 text-[11px] leading-5 text-slate dark:text-paper/75">
+                Chief Operating Officer: {company.contact.chiefOperatingOfficerPhone}
+              </p>
             </div>
           </div>
         </div>
+        <a
+          className="mt-12 inline-flex items-center gap-3 border-b border-teal pb-2 text-[13px] font-semibold text-navy no-underline dark:text-paper"
+          href={`mailto:${company.contact.email}`}
+        >
+          Send Us a Message <ArrowRight size={18} />
+        </a>
       </section>
     </>
   );

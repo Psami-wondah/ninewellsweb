@@ -12,6 +12,7 @@ import { MobileHeader } from "./components/navigation/MobileHeader";
 import { MobileMenu } from "./components/navigation/MobileMenu";
 import { SearchOverlay } from "./components/navigation/SearchOverlay";
 import { ExpertiseDetailPage } from "./components/pages/ExpertiseDetailPage";
+import { ExpertisePage } from "./components/pages/ExpertisePage";
 import { LawyerProfilePage } from "./components/pages/LawyerProfilePage";
 import { PeopleDirectoryPage } from "./components/pages/PeopleDirectoryPage";
 import { AboutPage } from "./components/pages/AboutPage";
@@ -19,6 +20,8 @@ import { CareersPage } from "./components/pages/CareersPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { InsightDetailPage } from "./components/pages/InsightDetailPage";
 import { InsightsDirectoryPage } from "./components/pages/InsightsDirectoryPage";
+import { TechnologyPage } from "./components/pages/TechnologyPage";
+import { PageMeta } from "./components/seo/PageMeta";
 import { ContactSection } from "./components/sections/ContactSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";
 import { HeroSection } from "./components/sections/HeroSection";
@@ -27,7 +30,18 @@ import { PeopleSection } from "./components/sections/PeopleSection";
 import { ProofSection } from "./components/sections/ProofSection";
 import { SiteFooter } from "./components/sections/SiteFooter";
 import { people } from "./data/people";
-import { expertiseDetails, insightItems } from "./data/siteContent";
+import {
+  expertiseDetails,
+  insightItems,
+} from "./data/siteContent";
+import {
+  buildInsightJsonLd,
+  buildPersonJsonLd,
+  getInsightSeo,
+  getPersonSeo,
+  getPracticeSeo,
+  seoPages,
+} from "./data/seo";
 import { useTheme } from "./hooks/useTheme";
 import type { MenuName } from "./types/navigation";
 
@@ -133,15 +147,31 @@ function App() {
           <Route
             path="/about"
             element={
-              <ContentPage title="About">
+              <ContentPage seo={seoPages.about}>
                 <AboutPage />
+              </ContentPage>
+            }
+          />
+          <Route
+            path="/technology"
+            element={
+              <ContentPage seo={seoPages.technology}>
+                <TechnologyPage />
+              </ContentPage>
+            }
+          />
+          <Route
+            path="/expertise"
+            element={
+              <ContentPage seo={seoPages.expertise}>
+                <ExpertisePage />
               </ContentPage>
             }
           />
           <Route
             path="/careers"
             element={
-              <ContentPage title="Careers">
+              <ContentPage seo={seoPages.careers}>
                 <CareersPage />
               </ContentPage>
             }
@@ -149,7 +179,7 @@ function App() {
           <Route
             path="/contact"
             element={
-              <ContentPage title="Contact">
+              <ContentPage seo={seoPages.contact}>
                 <ContactPage />
               </ContentPage>
             }
@@ -157,20 +187,21 @@ function App() {
           <Route
             path="/people"
             element={
-              <ContentPage title="People" contact>
+              <ContentPage seo={seoPages.people} contact>
                 <PeopleDirectoryPage />
               </ContentPage>
             }
           />
           <Route path="/people/:profileSlug" element={<PersonRoute />} />
           <Route
-            path="/insights"
+            path="/intelligence"
             element={
-              <ContentPage title="Insights" contact>
+              <ContentPage seo={seoPages.intelligence} contact>
                 <InsightsDirectoryPage />
               </ContentPage>
             }
           />
+          <Route path="/insights" element={<Navigate to="/intelligence" replace />} />
           <Route
             path="/expertise/energy-extractives-foreign-investment"
             element={<Navigate to="/expertise/energy" replace />}
@@ -187,7 +218,14 @@ function App() {
             path="/expertise/:expertiseSlug"
             element={<ExpertiseRoute />}
           />
-          <Route path="/insights/:insightSlug" element={<InsightRoute />} />
+          <Route
+            path="/intelligence/:insightSlug"
+            element={<InsightRoute />}
+          />
+          <Route
+            path="/insights/:insightSlug"
+            element={<LegacyInsightRedirect />}
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
@@ -198,7 +236,7 @@ function App() {
 function HomePage() {
   return (
     <>
-      <PageTitle />
+      <PageMeta config={seoPages.home} />
       <HeroSection />
       <ExpertiseSection />
       <ProofSection />
@@ -211,17 +249,17 @@ function HomePage() {
 }
 
 function ContentPage({
-  title,
+  seo,
   contact = false,
   children,
 }: {
-  title: string;
+  seo: (typeof seoPages)[keyof typeof seoPages];
   contact?: boolean;
   children: ReactNode;
 }) {
   return (
     <>
-      <PageTitle title={title} />
+      <PageMeta config={seo} />
       {children}
       {contact ? <ContactSection /> : null}
       <SiteFooter />
@@ -235,7 +273,7 @@ function PersonRoute() {
   if (!person) return <Navigate to="/people" replace />;
   return (
     <>
-      <PageTitle title={person.name} />
+      <PageMeta config={{ ...getPersonSeo(person), jsonLd: buildPersonJsonLd(person) }} />
       <LawyerProfilePage person={person} />
       <SiteFooter />
     </>
@@ -248,7 +286,7 @@ function ExpertiseRoute() {
   if (!detail) return <Navigate to="/#expertise" replace />;
   return (
     <>
-      <PageTitle title={detail.title} />
+      <PageMeta config={getPracticeSeo(detail)} />
       <ExpertiseDetailPage detail={detail} />
       <SiteFooter />
     </>
@@ -258,23 +296,19 @@ function ExpertiseRoute() {
 function InsightRoute() {
   const { insightSlug } = useParams();
   const insight = insightItems.find((item) => item.slug === insightSlug);
-  if (!insight) return <Navigate to="/insights" replace />;
+  if (!insight) return <Navigate to="/intelligence" replace />;
   return (
     <>
-      <PageTitle title={insight.title} />
+      <PageMeta config={{ ...getInsightSeo(insight), jsonLd: buildInsightJsonLd(insight) }} />
       <InsightDetailPage insight={insight} />
       <SiteFooter />
     </>
   );
 }
 
-function PageTitle({ title }: { title?: string }) {
-  useEffect(() => {
-    document.title = title
-      ? `${title} | Ninewells`
-      : "Ninewells | Nigerian legal counsel";
-  }, [title]);
-  return null;
+function LegacyInsightRedirect() {
+  const { insightSlug } = useParams();
+  return <Navigate to={`/intelligence/${insightSlug ?? ""}`} replace />;
 }
 
 export default App;

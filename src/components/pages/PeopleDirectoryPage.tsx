@@ -15,7 +15,7 @@ export function PeopleDirectoryPage() {
           data-reveal="up"
         >
           <div>
-            <Eyebrow>People / Directory</Eyebrow>
+            <Eyebrow>Our People</Eyebrow>
             <h1
               className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper"
               id="people-directory-heading"
@@ -24,9 +24,16 @@ export function PeopleDirectoryPage() {
             </h1>
           </div>
           <p className="m-0 max-w-[490px] text-[15px] leading-7 text-slate dark:text-paper/80">
-            Meet the lawyers and business professionals behind Ninewells. Search
-            the team by expertise, sector, location or position.
+            Meet the lawyers and business professionals behind Ninewells. Our
+            team brings experience across the firm’s integrated practices and
+            the sectors they serve.
           </p>
+          <Link
+            className="mt-6 inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper"
+            to="/intelligence"
+          >
+            Read Our Legal Intelligence <ArrowRight size={17} />
+          </Link>
         </div>
       </section>
 
@@ -55,19 +62,21 @@ export function PeopleDirectoryPage() {
                 data-reveal-delay={String((index % 3) + 1)}
               >
                 <span className="relative block h-24 w-20 overflow-hidden bg-stone">
-                  <img
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
-                    src={person.image}
-                    style={{ objectPosition: person.imagePosition }}
-                    alt=""
-                  />
+                  {person.image ? (
+                    <img
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                      src={person.image}
+                      style={{ objectPosition: person.imagePosition }}
+                      alt={`${person.name}, ${person.position} at Ninewells`}
+                    />
+                  ) : null}
                   <small className="absolute bottom-0 left-0 bg-navy-deep px-2 py-1 text-[8px] text-white">
                     {String(index + 1).padStart(2, "0")}
                   </small>
                 </span>
                 <span>
                   <small className="text-[9px] font-semibold uppercase tracking-[.13em] text-teal-dark dark:text-teal">
-                    {person.location} · {person.position}
+                    {person.position}
                   </small>
                   <strong className="mt-3 block font-serif text-[clamp(31px,3vw,45px)] leading-none font-normal">
                     {person.name}

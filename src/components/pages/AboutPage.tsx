@@ -20,10 +20,9 @@ export function AboutPage() {
         >
           <Eyebrow className="text-teal">About Ninewells</Eyebrow>
           <div className="my-16">
-            <h1 className="m-0 max-w-[850px] font-serif text-[clamp(62px,8.5vw,120px)] leading-[.86] font-normal tracking-[-.055em]">
-              One firm.
-              <br />
-              Connected thinking.
+            <h1 className="m-0 max-w-[850px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em]">
+              A Modern Nigerian Law Firm Built on Experience, Innovation, and
+              Trust
             </h1>
             <p className="mt-9 max-w-[690px] text-[16px] leading-8 text-white/82">
               {company.description}
@@ -175,14 +174,14 @@ export function AboutPage() {
               className="mt-5 mb-0 font-serif text-[clamp(40px,5vw,66px)] leading-none font-normal text-navy dark:text-paper"
               id="locations-heading"
             >
-              Close to commerce and government.
+              Strategically Located in Lagos and Abuja
             </h2>
           </div>
           <Link
             className="inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper"
-            to="/contact"
+            to="/expertise"
           >
-            Contact Ninewells <ArrowRight size={17} />
+            Explore Our Expertise <ArrowRight size={17} />
           </Link>
         </div>
         <div className="grid md:grid-cols-2">

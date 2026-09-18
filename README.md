@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Ninewells website
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -73,3 +73,6 @@ export default defineConfig([
 ])
 
 ```
+## SEO configuration
+
+Set `VITE_SITE_URL` to the confirmed production origin before deployment so canonical URLs, Open Graph URLs and JSON-LD use the production domain. Without it, development metadata falls back to the current browser origin; no sitemap is generated until the production domain is confirmed.

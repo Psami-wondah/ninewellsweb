@@ -97,14 +97,17 @@ export function SiteFooter() {
         <Link className="no-underline" to="/about">
           About
         </Link>
-        <Link className="no-underline" to="/#expertise">
+        <Link className="no-underline" to="/technology">
+          Technology
+        </Link>
+        <Link className="no-underline" to="/expertise">
           Expertise
         </Link>
         <Link className="no-underline" to="/people">
           People
         </Link>
-        <Link className="no-underline" to="/insights">
-          Insights
+        <Link className="no-underline" to="/intelligence">
+          Intelligence
         </Link>
         <Link className="no-underline" to="/careers">
           Careers
@@ -148,6 +151,12 @@ export function SiteFooter() {
             <Phone size={17} /> {phone}
           </a>
         ))}
+        <a
+          className="flex items-center gap-2 no-underline"
+          href={`tel:${company.contact.chiefOperatingOfficerPhone}`}
+        >
+          <Phone size={17} /> COO: {company.contact.chiefOperatingOfficerPhone}
+        </a>
         {company.offices.map((office) => (
           <a
             className="flex items-start gap-2 leading-5 no-underline"

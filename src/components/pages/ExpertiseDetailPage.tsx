@@ -26,7 +26,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
       >
         <Link
           className="inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.12em] text-white/80 no-underline"
-          to="/#expertise"
+          to="/expertise"
         >
           <ArrowLeft size={16} /> All expertise
         </Link>
@@ -239,7 +239,7 @@ export function ExpertiseDetailPage({ detail }: { detail: ExpertiseDetail }) {
           {insightItems.slice(0, 2).map((item, index) => (
             <Link
               className="group grid min-h-[92px] grid-cols-[42px_1fr_24px] items-center border-b border-navy/15 text-navy no-underline dark:border-white/15 dark:text-paper"
-              to={`/insights/${item.slug}`}
+              to={`/intelligence/${item.slug}`}
               key={item.title}
             >
               <span className="text-[10px] font-semibold text-teal-dark dark:text-teal">
