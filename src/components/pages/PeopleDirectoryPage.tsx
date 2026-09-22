@@ -1,6 +1,8 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { people } from "../../data/people";
+import { pageCallouts } from "../../data/siteContent";
+import { CentralCalloutSection } from "../sections/CentralCalloutSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function PeopleDirectoryPage() {
@@ -17,16 +19,15 @@ export function PeopleDirectoryPage() {
           <div>
             <Eyebrow>Our People</Eyebrow>
             <h1
-              className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper"
+              className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em] text-navy dark:text-paper"
               id="people-directory-heading"
             >
               Find the right adviser.
             </h1>
           </div>
           <p className="m-0 max-w-[490px] text-[15px] leading-7 text-slate dark:text-paper/80">
-            Meet the lawyers and business professionals behind Ninewells. Our
-            team brings experience across the firm’s integrated practices and
-            the sectors they serve.
+            Browse the firm&apos;s lawyers and business professionals by profile
+            and practice focus.
           </p>
           <Link
             className="mt-6 inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper"
@@ -64,9 +65,12 @@ export function PeopleDirectoryPage() {
                 <span className="relative block h-24 w-20 overflow-hidden bg-stone">
                   {person.image ? (
                     <img
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                      className={`h-full w-full transition-transform duration-700 group-hover:scale-[1.035] ${person.cardImageFit === "contain" ? "object-contain" : "object-cover"} ${person.cardImageInset ? "p-1.5" : ""}`}
                       src={person.image}
-                      style={{ objectPosition: person.imagePosition }}
+                      style={{
+                        objectPosition:
+                          person.cardImagePosition ?? person.imagePosition,
+                      }}
                       alt={`${person.name}, ${person.position} at Ninewells`}
                     />
                   ) : null}
@@ -111,6 +115,8 @@ export function PeopleDirectoryPage() {
           </div>
         )}
       </section>
+
+      <CentralCalloutSection callout={pageCallouts.people} />
     </>
   );
 }

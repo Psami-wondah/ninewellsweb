@@ -6,7 +6,6 @@ export type NavItem = (typeof navItems)[number]
 
 const homeSections: Array<[NavItem, string]> = [
   ['About', 'about'],
-  ['Technology', 'technology'],
   ['Expertise', 'expertise'],
   ['People', 'people'],
   ['Intelligence', 'intelligence'],
@@ -15,7 +14,6 @@ const homeSections: Array<[NavItem, string]> = [
 
 function getRouteItem(pathname: string): NavItem | null {
   if (pathname === '/about') return 'About'
-  if (pathname === '/technology') return 'Technology'
   if (pathname === '/contact') return 'Contact'
   if (pathname === '/expertise') return 'Expertise'
   if (pathname.startsWith('/expertise/')) return 'Expertise'

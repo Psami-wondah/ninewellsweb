@@ -20,7 +20,6 @@ import { CareersPage } from "./components/pages/CareersPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { InsightDetailPage } from "./components/pages/InsightDetailPage";
 import { InsightsDirectoryPage } from "./components/pages/InsightsDirectoryPage";
-import { TechnologyPage } from "./components/pages/TechnologyPage";
 import { PageMeta } from "./components/seo/PageMeta";
 import { ContactSection } from "./components/sections/ContactSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";
@@ -155,9 +154,10 @@ function App() {
           <Route
             path="/technology"
             element={
-              <ContentPage seo={seoPages.technology}>
-                <TechnologyPage />
-              </ContentPage>
+              <Navigate
+                to="/expertise/telecommunications-technology-digital-law"
+                replace
+              />
             }
           />
           <Route

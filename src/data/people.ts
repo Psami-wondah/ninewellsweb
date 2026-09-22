@@ -1,6 +1,7 @@
 import abdulmajeedImage from '../assets/Abdulmajeed.webp'
 import adebimpeImage from '../assets/Adebimpe.webp'
 import adejokeImage from '../assets/Adejoke.webp'
+import amandaImage from '../assets/Amanda-Opara.jpeg'
 import bayoImage from '../assets/Bayo-Adaralegbe.webp'
 import estherImage from '../assets/Esther-Gbenro-pic.webp'
 import { LINKEDIN_URL } from './siteContent'
@@ -16,6 +17,9 @@ export type Person = {
   email: string
   image?: string
   imagePosition?: string
+  cardImageFit?: 'cover' | 'contain'
+  cardImagePosition?: string
+  cardImageInset?: boolean
   expertise: string[]
   bio: string
   background: string[]
@@ -154,6 +158,9 @@ export const people: Person[] = [
     email: 'abdulmajeed.abolaji@ninewellslegal.com',
     image: abdulmajeedImage,
     imagePosition: 'center 18%',
+    cardImageFit: 'contain',
+    cardImagePosition: 'center bottom',
+    cardImageInset: true,
     expertise: ['Energy', 'Extractives', 'Financial Services', 'Foreign Investments'],
     bio: 'Abdulmajeed Abolaji is a Managing Associate in the Energy, Extractives and Foreign Investments Practice Group of Ninewells.',
     background: [
@@ -197,8 +204,9 @@ export const people: Person[] = [
     teamType: 'Lawyer',
     mobile: '0703 064 7714',
     email: 'amanda.opara@ninewellslegal.com',
-    // TODO: replace with an approved Amanda Opara portrait when supplied by the client.
-    image: undefined,
+    image: amandaImage,
+    imagePosition: 'center top',
+    cardImagePosition: 'center top',
     expertise: ['Financial Services', 'Capital Markets'],
     bio: 'Amanda Opara is a Managing Associate whose practice focuses on lending and project finance. She has worked on major transactions involving leading financial institutions and corporations, leading Nigerian counsel workstreams on cross-border financings from structuring through signing, closing and post-closing perfection.',
     background: [

@@ -47,9 +47,12 @@ export function PeopleSection() {
             <span className="relative block overflow-hidden bg-stone">
                 {person.image ? (
                   <img
-                    className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
+                    className={`h-full w-full transition-transform duration-1000 group-hover:scale-[1.035] ${person.cardImageFit === "contain" ? "object-contain" : "object-cover"} ${person.cardImageInset ? "p-3" : ""}`}
                     src={person.image}
-                    style={{ objectPosition: person.imagePosition }}
+                    style={{
+                      objectPosition:
+                        person.cardImagePosition ?? person.imagePosition,
+                    }}
                     alt={`${person.name}, ${person.position} at Ninewells`}
                   />
                 ) : (

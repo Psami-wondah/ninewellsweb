@@ -7,6 +7,8 @@ import {
   Phone,
 } from "@phosphor-icons/react";
 import { company } from "../../data/company";
+import { pageCallouts } from "../../data/siteContent";
+import { CentralCalloutSection } from "../sections/CentralCalloutSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function ContactPage() {
@@ -22,7 +24,7 @@ export function ContactPage() {
             className="m-0 max-w-[930px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em]"
             id="contact-page-heading"
           >
-            Law Firm Offices in Lagos and Abuja
+            Let&apos;s begin with the decision.
           </h1>
           <div className="border-t border-white/30 pt-6">
             <p className="m-0 text-[15px] leading-7 text-white/82">
@@ -95,6 +97,8 @@ export function ContactPage() {
           ))}
         </div>
       </section>
+
+      <CentralCalloutSection callout={pageCallouts.contact} />
 
       <section
         className="bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(72px,8vw,106px)] dark:bg-[#071224]"

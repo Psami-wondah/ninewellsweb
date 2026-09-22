@@ -1,7 +1,7 @@
 import homeImage from "../assets/lagos-lekki-ikoyi.webp";
 import { company } from "./company";
 import { people, type Person } from "./people";
-import { insightItems, practiceAreas } from "./siteContent";
+import { insightItems, practiceAreas, type PracticeArea } from "./siteContent";
 
 export type SeoConfig = {
   title: string;
@@ -36,13 +36,6 @@ export const seoPages = {
     description:
       "Discover Ninewells, a fully integrated, multidisciplinary Nigerian law firm based in Victoria Island, Lagos, with a strategic office in Abuja.",
     path: "/about",
-    image: homeImage,
-  },
-  technology: {
-    title: "Technology-Assisted Law Firm in Nigeria | Ninewells",
-    description:
-      "Ninewells is a technology-assisted Nigerian law firm in Lagos and Abuja, combining human-led legal judgement with modern tools for speed, quality and efficiency.",
-    path: "/technology",
     image: homeImage,
   },
   expertise: {
@@ -81,8 +74,13 @@ export const seoPages = {
   },
 } as const satisfies Record<string, SeoConfig>;
 
-export function getPracticeSeo(detail: (typeof practiceAreas)[number]): SeoConfig {
-  const keyword = detail.title === "Disputes" ? "Dispute Resolution" : detail.title;
+export function getPracticeSeo(detail: PracticeArea): SeoConfig {
+  const keyword =
+    detail.slug === "telecommunications-technology-digital-law"
+      ? "Telecommunications, Technology & Digital Law"
+      : detail.title === "Disputes"
+        ? "Dispute Resolution"
+        : detail.title;
   return {
     title: `${keyword} Lawyers in Nigeria | Ninewells`,
     description: detail.description,

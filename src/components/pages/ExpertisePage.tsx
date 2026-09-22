@@ -1,6 +1,11 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-import { expertiseLanding, practiceAreas } from "../../data/siteContent";
+import {
+  expertiseLanding,
+  pageCallouts,
+  practiceAreas,
+} from "../../data/siteContent";
+import { CentralCalloutSection } from "../sections/CentralCalloutSection";
 import { ContactSection } from "../sections/ContactSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
@@ -62,8 +67,9 @@ export function ExpertisePage() {
         </Link>
       </section>
 
+      <CentralCalloutSection callout={pageCallouts.expertise} />
+
       <ContactSection />
     </>
   );
 }
-

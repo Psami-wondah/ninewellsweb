@@ -97,9 +97,6 @@ export function SiteFooter() {
         <Link className="no-underline" to="/about">
           About
         </Link>
-        <Link className="no-underline" to="/technology">
-          Technology
-        </Link>
         <Link className="no-underline" to="/expertise">
           Expertise
         </Link>

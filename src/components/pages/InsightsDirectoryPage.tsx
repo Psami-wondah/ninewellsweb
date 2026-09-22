@@ -1,6 +1,11 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-import { insightGroups, insightItems } from "../../data/siteContent";
+import {
+  insightGroups,
+  insightItems,
+  pageCallouts,
+} from "../../data/siteContent";
+import { CentralCalloutSection } from "../sections/CentralCalloutSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function InsightsDirectoryPage() {
@@ -17,10 +22,10 @@ export function InsightsDirectoryPage() {
           <div>
             <Eyebrow>Intelligence</Eyebrow>
             <h1
-              className="mt-6 mb-0 max-w-[850px] font-serif text-[clamp(60px,8vw,112px)] leading-[.86] font-normal tracking-[-.055em] text-navy dark:text-paper"
+              className="mt-6 mb-0 max-w-[850px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em] text-navy dark:text-paper"
               id="insights-directory-heading"
             >
-              Legal Insights from a Modern Nigerian Law Firm
+              Intelligence for what comes next.
             </h1>
           </div>
           <p className="m-0 max-w-[500px] text-[15px] leading-7 text-slate dark:text-paper/80">
@@ -141,6 +146,8 @@ export function InsightsDirectoryPage() {
           Talk to Our Team About These Issues <ArrowRight size={18} />
         </Link>
       </div>
+
+      <CentralCalloutSection callout={pageCallouts.intelligence} />
     </>
   );
 }

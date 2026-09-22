@@ -14,14 +14,81 @@ import insightVirtualAssets from "../assets/insight-virtual-assets.jpg";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/company/ninewells/";
 
+export type Callout = {
+  eyebrow?: string;
+  heading: string;
+  body: string | readonly string[];
+  cta?: {
+    label: string;
+    href?: string;
+    note?: string;
+  };
+};
+
+export type PracticeArea = {
+  number: string;
+  slug: string;
+  title: string;
+  description: string;
+  introduction: string;
+  overview: string;
+  body?: readonly string[];
+  featureImage: string;
+  featureImageAlt: string;
+  featureImageLocation: string;
+  featureImageCreator: string;
+  featureImageSourceUrl: string;
+  featureImageLicense: string;
+  featureImageLicenseUrl: string;
+  capabilities: readonly string[];
+  industries: readonly (readonly [string, string])[];
+  callout?: Callout;
+  considerations?: readonly (readonly [string, string])[];
+};
+
 export const navItems = [
   "About",
-  "Technology",
   "Expertise",
   "People",
   "Intelligence",
   "Contact",
 ] as const;
+
+export const pageCallouts = {
+  home: {
+    eyebrow: "Ninewells",
+    heading: "Modern Law Firm in Lagos & Abuja, Nigeria",
+    body:
+      "Ninewells is a fully integrated, modern Nigerian law firm with offices in Lagos and Abuja, advising on energy, corporate, finance, disputes, and technology law.",
+  },
+  about: {
+    eyebrow: "About Ninewells",
+    heading: "Modern Nigerian Law Firm in Lagos & Abuja",
+    body:
+      "Discover Ninewells Law Practice — a fully integrated, multidisciplinary law firm based in Victoria Island, Lagos, with a strategic office in Abuja, Nigeria.",
+  },
+  expertise: {
+    eyebrow: "Our expertise",
+    heading: "Energy, Corporate & Dispute Resolution Lawyers in Nigeria",
+    body:
+      "From energy and extractives to corporate, capital markets, and technology law — explore Ninewells’ expertise, delivered from Lagos and Abuja.",
+  },
+  people: {
+    heading: "Our People",
+    body:
+      "Meet the partners and associates of Ninewells — experienced Nigerian lawyers advising on energy, finance, disputes, and technology law.",
+  },
+  intelligence: {
+    heading: "Legal Insights from a Modern Nigerian Law Firm",
+    body:
+      "Read Ninewells’ latest legal insights and analysis on all aspects of Nigerian law. Our lawyers balance keeping up with trends and remembering the past, using that perspective to craft their interpretations of the law.",
+  },
+  contact: {
+    heading: "Law Firm Offices in Lagos & Abuja",
+    body:
+      "Reach Ninewells Law Practice at our Lagos office in Victoria Island or our Abuja office in Maitama. Call, email, or visit our modern Nigerian law firm today.",
+  },
+} as const satisfies Record<string, Callout>;
 
 export const practiceAreas = [
   {
@@ -50,6 +117,16 @@ export const practiceAreas = [
       "ESG and Carbon Initiatives",
       "Energy Disputes",
     ],
+    callout: {
+      eyebrow: "Energy (Power, Oil & Gas, Renewables)",
+      heading: "Closing deals and powering projects across West Africa’s energy value chain.",
+      body:
+        "Led by Prof. Adaralegbe’s near four-decade upstream and dispute pedigree, our team advises NOCs, IOCs, and independents on PIA 2021 compliance, upstream M&A, and gas commercialisation; drafts bankable PPAs and power licensing advice; and structures solar, mini-grid, and carbon credit deals — with direct partner execution on every file.",
+      cta: {
+        label: "Request a Consultation on Energy Asset Divestments",
+        href: "/contact",
+      },
+    },
     industries: [
       [
         "Oil & Gas",
@@ -88,6 +165,16 @@ export const practiceAreas = [
       "Joint Ventures",
       "Royalties and Taxation",
     ],
+    callout: {
+      eyebrow: "Extractives (Solid Minerals & Mining)",
+      heading: "Securing titles, structuring bankable mining projects in Nigeria.",
+      body:
+        "We fast-track Exploration Licences and Mining Leases through the Mining Cadastre Office, negotiate Community Development Agreements that protect your social licence to operate, and clear mineral export and local-processing compliance — moving at the pace mining projects demand.",
+      cta: {
+        label: "Download Our Guide to Securing Nigerian Mining Titles",
+        note: "Guide download awaiting client asset",
+      },
+    },
     industries: [
       ["Mining & Minerals", "Licensing, exploration, production and closure"],
       ["Natural Resources", "Resource development and commercial arrangements"],
@@ -127,6 +214,16 @@ export const practiceAreas = [
       "Technology Transfer",
       "Taxation",
     ],
+    callout: {
+      eyebrow: "Foreign Investment & Market Entry",
+      heading: "Your agile legal bridge for inbound capital into Nigeria.",
+      body:
+        "We handle CAC/NIPC incorporation, eCCI capital importation and FX registration with the CBN, and Pioneer Status or Free Trade Zone (NEPZA) tax planning — so you can enter, operate, and repatriate profits without lag.",
+      cta: {
+        label: "Speak Directly With Our Market Entry Partner",
+        href: "/contact",
+      },
+    },
     industries: [
       [
         "Energy & Natural Resources",
@@ -317,6 +414,16 @@ export const practiceAreas = [
       "Investor-State Treaty Arbitration",
       "Arbitral Tribunal Appointments",
     ],
+    callout: {
+      eyebrow: "Disputes (Litigation & Arbitration)",
+      heading: "Resolving disputes, protecting interests, delivering results.",
+      body:
+        "We combine rigorous legal analysis with decisive advocacy across commercial and general litigation, regulatory and investigations-adjacent disputes, domestic and international commercial arbitration, and investor-state treaty arbitration. Our cross-sector reach includes energy and natural resources, banking and finance, corporate and commercial, construction and infrastructure, and technology and data disputes.",
+      cta: {
+        label: "Discuss Your Dispute With Our Litigation & Arbitration Team",
+        href: "/contact",
+      },
+    },
     industries: [
       [
         "Energy & Natural Resources",
@@ -347,9 +454,12 @@ export const practiceAreas = [
     description:
       "Legal and regulatory guidance for technology-driven businesses operating in the digital economy.",
     introduction:
-      "We advise technology-driven businesses on innovation, transactions, intellectual property and regulatory compliance.",
+      "We advise telecommunications operators, ISPs, fintechs, digital platforms and technology companies on the legal issues shaping Nigeria’s connected economy.",
     overview:
-      "Our practice supports established companies, financial institutions and emerging businesses as technology reshapes products, markets, risk and regulation.",
+      "Our lawyers handle NCC licensing and spectrum matters, data-protection compliance under the NDPA, cybersecurity and incident-response obligations, technology transactions and SaaS agreements, disputes arising from telecom interconnection or platform liability, and related digital-economy regulation.",
+    body: [
+      "As Nigeria’s digital economy scales, clients need counsel who understand both the regulatory terrain and the commercial pressure to move fast. Our lawyers use technology to improve the speed, quality and efficiency of delivery while retaining human legal judgement at the centre of every mandate.",
+    ],
     featureImage: expertiseTechnologyImage,
     featureImageAlt: "Telecommunications tower against the sky in Ibadan",
     featureImageLocation: "Ibadan · Nigeria",
@@ -369,6 +479,36 @@ export const practiceAreas = [
       "Blockchain",
       "Intellectual Property",
       "Trademarks",
+    ],
+    callout: {
+      eyebrow: "Telecommunications, Technology & Digital Law",
+      heading: "A Technology-Assisted Law Firm in Nigeria.",
+      body: [
+        "For us, technology is an assistant. We as humans do the main work for our clients.",
+        "Ninewells is a modern law firm in Lagos and Abuja built for the modern day.",
+      ],
+    },
+    considerations: [
+      [
+        "Regulatory speed",
+        "NCC licensing, spectrum allocation and NDPA compliance move quickly; delayed legal guidance can mean lost market windows or regulatory exposure.",
+      ],
+      [
+        "Data-driven risk",
+        "Telecom and digital businesses handle vast volumes of user data; a single compliance gap can trigger fines, breach notifications or reputational damage.",
+      ],
+      [
+        "Complex, fast-moving contracts",
+        "SaaS agreements, interconnection agreements and platform terms require lawyers who track technology trends as closely as they track case law.",
+      ],
+      [
+        "Cross-border data flows",
+        "Digital businesses often move data and capital across jurisdictions, requiring counsel fluent in Nigerian and international digital-law standards.",
+      ],
+      [
+        "Dispute readiness",
+        "When platform liability or interconnection disputes arise, clients need counsel who understand the technical and commercial context from the outset.",
+      ],
     ],
     industries: [
       [
@@ -393,7 +533,7 @@ export const practiceAreas = [
       ],
     ],
   },
-] as const;
+] as const satisfies readonly PracticeArea[];
 
 export type ExpertiseName = (typeof practiceAreas)[number]["title"];
 
@@ -407,7 +547,7 @@ export const expertiseSlugs = Object.fromEntries(
 
 const canonicalExpertiseDetails = Object.fromEntries(
   practiceAreas.map((practice) => [practice.slug, practice]),
-) as Record<string, (typeof practiceAreas)[number]>;
+) as Record<string, PracticeArea>;
 
 export const expertiseDetails = {
   ...canonicalExpertiseDetails,
@@ -415,27 +555,11 @@ export const expertiseDetails = {
   "dispute-resolution": canonicalExpertiseDetails.disputes,
   "financial-services-capital-markets":
     canonicalExpertiseDetails["financial-services"],
-} as Record<string, (typeof practiceAreas)[number]>;
-
-export const technologyPage = {
-  philosophy:
-    "Ninewells is a technology-assisted Nigerian law firm. We believe that we are the main drivers for our clients’ success, while technology helps us to be more efficient. Being a modern law firm in Lagos and Abuja means equipping our lawyers with the best technology available.",
-  practiceIntroduction:
-    "We advise telecommunications operators, ISPs, fintechs and digital platforms on the legal issues shaping Nigeria’s connected economy. Our lawyers handle NCC licensing and spectrum matters, data-protection compliance under the NDPA, cybersecurity and incident-response obligations, technology transactions and SaaS agreements, disputes arising from telecom interconnection or platform liability, and related digital-economy regulation.",
-  practiceClosing:
-    "As Nigeria’s digital economy scales, our clients need counsel who understand both the regulatory terrain and the commercial pressure to move fast — that’s where our lawyers, backed by efficient technology, deliver.",
-  whyItMatters: [
-    ["Regulatory speed", "NCC licensing, spectrum allocation and NDPA compliance move quickly; delayed legal guidance can mean lost market windows or regulatory exposure."],
-    ["Data-driven risk", "Telecom and digital businesses handle vast volumes of user data; a single compliance gap can trigger fines, breach notifications or reputational damage."],
-    ["Complex, fast-moving contracts", "SaaS agreements, interconnection agreements and platform terms require lawyers who track technology trends as closely as they track case law."],
-    ["Cross-border data flows", "Digital businesses often move data and capital across jurisdictions, requiring counsel fluent in Nigerian and international digital-law standards."],
-    ["Dispute readiness", "When platform liability or interconnection disputes arise, clients need counsel who understand the technical and commercial context from the outset."],
-  ],
-} as const;
+} as Record<string, PracticeArea>;
 
 export const expertiseLanding = {
   introduction:
-    "As a fully integrated, multidisciplinary law firm in Lagos and Abuja, Ninewells advises multinational companies, financial institutions and indigenous businesses across Nigeria’s key industries.",
+    "Ninewells advises multinational companies, financial institutions and indigenous businesses across Nigeria’s eight key practice areas.",
 } as const;
 
 export const insightGroups = [
@@ -670,6 +794,22 @@ export const insightItems = [
     ],
   },
 ] as const;
+
+export const insightPracticeSlugs: Record<string, readonly string[]> = {
+  "professor-bayo-adaralegbe-lead-partner": [
+    "energy",
+    "extractives",
+    "foreign-investments",
+    "corporate-commercial",
+    "disputes",
+  ],
+  "taxing-virtual-assets-nigeria-nrs-guidelines-2026": [
+    "financial-services",
+    "telecommunications-technology-digital-law",
+  ],
+  "ninewells-leica-2026-appreciation-award": ["energy"],
+  "nigeria-energy-recovery-reform-outlook": ["energy"],
+};
 
 export const featuredInsight = insightItems[2];
 

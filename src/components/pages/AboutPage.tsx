@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import lagosBridge from "../../assets/lagos-lekki-ikoyi.webp";
 import { company } from "../../data/company";
 import { people } from "../../data/people";
-import { practiceAreas } from "../../data/siteContent";
+import { pageCallouts, practiceAreas } from "../../data/siteContent";
+import { CentralCalloutSection } from "../sections/CentralCalloutSection";
 import { ContactSection } from "../sections/ContactSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
@@ -21,11 +22,11 @@ export function AboutPage() {
           <Eyebrow className="text-teal">About Ninewells</Eyebrow>
           <div className="my-16">
             <h1 className="m-0 max-w-[850px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em]">
-              A Modern Nigerian Law Firm Built on Experience, Innovation, and
-              Trust
+              Experience. Innovation. Trust.
             </h1>
             <p className="mt-9 max-w-[690px] text-[16px] leading-8 text-white/82">
-              {company.description}
+              A collaborative Nigerian partnership built to understand the
+              client&apos;s whole decision and advance their interests.
             </p>
           </div>
           <p className="m-0 border-t border-white/25 pt-6 text-[11px] font-semibold uppercase tracking-[.13em] text-teal">
@@ -77,6 +78,8 @@ export function AboutPage() {
           ))}
         </div>
       </section>
+
+      <CentralCalloutSection callout={pageCallouts.about} />
 
       <section
         className="bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(72px,8vw,104px)] dark:bg-[#071224]"

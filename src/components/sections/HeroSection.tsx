@@ -24,15 +24,11 @@ export function HeroSection() {
           A Modern Law Firm Serving Lagos, Abuja, and Beyond
         </h1>
         <p className="mt-9 max-w-[540px] text-[15px] leading-7 text-paper/85 lg:mt-10 lg:text-[16px]">
-          Ninewells is a fully integrated, multidisciplinary Nigerian law firm
-          with offices in Victoria Island, Lagos, the country&apos;s commercial
-          capital, and Maitama, Abuja, its political capital. These two vantage
-          points connect us with clients, stakeholders and decision-makers.
-          Built on experience, innovation and trust, we combine deep legal
-          expertise with modern technology to deliver commercially astute
-          solutions across energy, extractives, foreign investments, financial
-          services, corporate and commercial, capital markets, disputes, and
-          telecommunications, technology and digital law.
+          From Victoria Island, at the heart of Nigeria&apos;s commercial and
+          financial activity, and Maitama, close to public institutions and
+          regulators, we stay connected to clients, stakeholders and
+          decision-makers. Experience, innovation and trust shape our modern
+          approach to legal-service delivery.
         </p>
         <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
           <a
