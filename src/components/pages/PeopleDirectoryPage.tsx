@@ -2,7 +2,6 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { people } from "../../data/people";
 import { pageCallouts } from "../../data/siteContent";
-import { CentralCalloutSection } from "../sections/CentralCalloutSection";
 import { Eyebrow } from "../ui/Eyebrow";
 
 export function PeopleDirectoryPage() {
@@ -13,7 +12,7 @@ export function PeopleDirectoryPage() {
         aria-labelledby="people-directory-heading"
       >
         <div
-          className="grid gap-10 lg:grid-cols-[1.25fr_.75fr] lg:items-end"
+          className="grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end"
           data-reveal="up"
         >
           <div>
@@ -25,16 +24,17 @@ export function PeopleDirectoryPage() {
               Find the right adviser.
             </h1>
           </div>
-          <p className="m-0 max-w-[490px] text-[15px] leading-7 text-slate dark:text-paper/80">
-            Browse the firm&apos;s lawyers and business professionals by profile
-            and practice focus.
-          </p>
-          <Link
-            className="mt-6 inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper"
-            to="/intelligence"
-          >
-            Read Our Legal Intelligence <ArrowRight size={17} />
-          </Link>
+          <div className="flex max-w-[560px] flex-col items-start">
+            <p className="m-0 text-[15px] leading-7 text-slate dark:text-paper/80">
+              {pageCallouts.people.body}
+            </p>
+            <Link
+              className="mt-6 inline-flex items-center gap-3 border-b border-teal pb-1 text-[12px] font-semibold text-navy no-underline dark:text-paper"
+              to="/intelligence"
+            >
+              Read Our Legal Intelligence <ArrowRight size={17} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -116,7 +116,6 @@ export function PeopleDirectoryPage() {
         )}
       </section>
 
-      <CentralCalloutSection callout={pageCallouts.people} />
     </>
   );
 }
