@@ -32,9 +32,9 @@ export function InsightsDirectoryPage() {
             Ninewells Intelligence is where we share our lawyers’ thinking on
             the issues shaping Nigerian business and regulation — from energy,
             extractives and foreign investment to financial services, corporate
-            and commercial, capital markets, disputes and digital law. Written
-            by the same team advising clients in Lagos and Abuja, this is
-            practical analysis from the ground.
+            and commercial, capital markets, disputes and digital law. This is
+            practical analysis grounded in the issues shaping Nigerian business
+            and regulation.
           </p>
           <div className="mt-8 grid gap-4 border-t border-navy/20 pt-5 text-[12px] leading-5 text-slate dark:border-white/20 dark:text-paper/75 sm:grid-cols-2">
             <p className="m-0"><strong>What you’ll find:</strong> regulatory updates and deal insights.</p>

@@ -42,17 +42,13 @@ export function CentralCalloutSection({
             </p>
           ))}
         </div>
-        {callout.cta?.href ? (
+        {callout.cta ? (
           <Link
             className="mt-9 inline-flex items-center gap-3 border-b border-teal pb-2 text-[12px] font-semibold text-ivory no-underline"
             to={callout.cta.href}
           >
             {callout.cta.label} <ArrowRight size={18} />
           </Link>
-        ) : callout.cta?.note ? (
-          <p className="mt-9 mb-0 text-[10px] font-semibold uppercase tracking-[.12em] text-teal">
-            {callout.cta.note}
-          </p>
         ) : null}
       </div>
       {children ? (

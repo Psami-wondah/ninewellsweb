@@ -68,8 +68,15 @@ export function ExpertiseDetailPage({ detail }: { detail: PracticeArea }) {
           <h2 className="m-0 max-w-[900px] font-serif text-[clamp(34px,4vw,56px)] leading-[1.08] font-normal tracking-[-.035em] text-navy dark:text-paper">
             {detail.overview}
           </h2>
+          {detail.bodyHeading ? (
+            <h2 className="mt-12 mb-0 max-w-[820px] font-serif text-[clamp(32px,3.5vw,48px)] leading-[1.05] font-normal tracking-[-.03em] text-navy dark:text-paper">
+              {detail.bodyHeading}
+            </h2>
+          ) : null}
           {detail.body?.length ? (
-            <div className="mt-9 grid max-w-[840px] gap-6 text-[15px] leading-7 text-slate dark:text-paper/78">
+            <div
+              className={`${detail.bodyHeading ? "mt-6" : "mt-9"} grid max-w-[840px] gap-6 text-[15px] leading-7 text-slate dark:text-paper/78`}
+            >
               {detail.body.map((paragraph) => (
                 <p className="m-0" key={paragraph}>
                   {paragraph}

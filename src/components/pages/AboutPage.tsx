@@ -22,16 +22,14 @@ export function AboutPage() {
           <Eyebrow className="text-teal">About Ninewells</Eyebrow>
           <div className="my-16">
             <h1 className="m-0 max-w-[850px] font-serif text-[clamp(46px,6vw,84px)] leading-[.92] font-normal tracking-[-.045em]">
-              Experience. Innovation. Trust.
+              A Modern Nigerian Law Firm Built on Experience, Innovation, and
+              Trust
             </h1>
             <p className="mt-9 max-w-[690px] text-[16px] leading-8 text-white/82">
               A collaborative Nigerian partnership built to understand the
               client&apos;s whole decision and advance their interests.
             </p>
           </div>
-          <p className="m-0 border-t border-white/25 pt-6 text-[11px] font-semibold uppercase tracking-[.13em] text-teal">
-            Experience · Innovation · Trust
-          </p>
         </div>
         <figure
           className="relative m-0 min-h-[460px] overflow-hidden bg-navy-deep"

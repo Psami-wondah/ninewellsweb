@@ -34,13 +34,13 @@ export function PeopleSection() {
       </div>
 
       <div
-        className="mt-16 grid border-t border-l border-navy/20 bg-ivory dark:border-white/20 dark:bg-[#0a192c] md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5"
+        className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
         data-reveal="up"
         data-reveal-delay="1"
       >
         {people.map((person, index) => (
           <Link
-            className="group relative grid min-h-[470px] grid-rows-[310px_1fr] overflow-hidden border-r border-b border-navy/20 text-navy no-underline dark:border-white/20 dark:text-paper xl:min-h-[510px] xl:grid-rows-[340px_1fr]"
+            className="group relative grid min-h-[470px] grid-rows-[310px_1fr] overflow-hidden border border-navy/20 bg-ivory text-navy no-underline dark:border-white/20 dark:bg-[#0a192c] dark:text-paper xl:min-h-[510px] xl:grid-rows-[340px_1fr]"
             to={`/people/${person.slug}`}
             key={person.name}
           >

@@ -47,13 +47,9 @@ export function HeroSection() {
         </div>
         <div className="mt-14 max-w-[560px] border-t border-white/15 pt-6 lg:mt-auto">
           <Eyebrow>Our approach</Eyebrow>
-          <a
-            className="mt-2 flex max-w-[450px] items-end justify-between gap-5 font-serif text-[18px] leading-tight no-underline text-paper lg:text-[20px]"
-            href="#intelligence"
-          >
-            Experience · Innovation · Trust{" "}
-            <ArrowRight className="shrink-0" size={18} />
-          </a>
+          <p className="mt-2 mb-0 max-w-[450px] font-serif text-[18px] leading-tight text-paper lg:text-[20px]">
+            Experience · Innovation · Trust
+          </p>
         </div>
       </div>
       <figure

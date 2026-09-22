@@ -20,8 +20,7 @@ export type Callout = {
   body: string | readonly string[];
   cta?: {
     label: string;
-    href?: string;
-    note?: string;
+    href: string;
   };
 };
 
@@ -32,6 +31,7 @@ export type PracticeArea = {
   description: string;
   introduction: string;
   overview: string;
+  bodyHeading?: string;
   body?: readonly string[];
   featureImage: string;
   featureImageAlt: string;
@@ -69,7 +69,7 @@ export const pageCallouts = {
   },
   expertise: {
     eyebrow: "Our expertise",
-    heading: "Energy, Corporate & Dispute Resolution Lawyers in Nigeria",
+    heading: "Integrated Legal Expertise Across Nigeria’s Key Industries",
     body:
       "From energy and extractives to corporate, capital markets, and technology law — explore Ninewells’ expertise, delivered from Lagos and Abuja.",
   },
@@ -170,10 +170,7 @@ export const practiceAreas = [
       heading: "Securing titles, structuring bankable mining projects in Nigeria.",
       body:
         "We fast-track Exploration Licences and Mining Leases through the Mining Cadastre Office, negotiate Community Development Agreements that protect your social licence to operate, and clear mineral export and local-processing compliance — moving at the pace mining projects demand.",
-      cta: {
-        label: "Download Our Guide to Securing Nigerian Mining Titles",
-        note: "Guide download awaiting client asset",
-      },
+      // TODO: Add "Download Our Guide to Securing Nigerian Mining Titles" when the client supplies the guide asset.
     },
     industries: [
       ["Mining & Minerals", "Licensing, exploration, production and closure"],
@@ -457,8 +454,10 @@ export const practiceAreas = [
       "We advise telecommunications operators, ISPs, fintechs, digital platforms and technology companies on the legal issues shaping Nigeria’s connected economy.",
     overview:
       "Our lawyers handle NCC licensing and spectrum matters, data-protection compliance under the NDPA, cybersecurity and incident-response obligations, technology transactions and SaaS agreements, disputes arising from telecom interconnection or platform liability, and related digital-economy regulation.",
+    bodyHeading: "A Modern Law Firm Built for the Technology Era",
     body: [
-      "As Nigeria’s digital economy scales, clients need counsel who understand both the regulatory terrain and the commercial pressure to move fast. Our lawyers use technology to improve the speed, quality and efficiency of delivery while retaining human legal judgement at the centre of every mandate.",
+      "Ninewells is a technology-assisted Nigerian law firm. Our lawyers remain responsible for the legal work and use technology to improve the speed, quality and efficiency of delivery.",
+      "Being a modern law firm means equipping our lawyers with strong, modern tools and the best available legal resources while keeping human legal judgement at the centre of every mandate.",
     ],
     featureImage: expertiseTechnologyImage,
     featureImageAlt: "Telecommunications tower against the sky in Ibadan",
@@ -469,16 +468,14 @@ export const practiceAreas = [
     featureImageLicense: "Unsplash",
     featureImageLicenseUrl: "https://unsplash.com/license",
     capabilities: [
-      "Telecommunications",
-      "Technology",
-      "Fintech",
-      "E-commerce",
-      "Data Protection and Privacy",
-      "Betting & Gaming",
-      "Cybersecurity",
-      "Blockchain",
-      "Intellectual Property",
-      "Trademarks",
+      "Telecommunications Regulation",
+      "NCC Licensing & Spectrum",
+      "Data Protection & Privacy",
+      "Cybersecurity & Incident Response",
+      "Technology Transactions & SaaS Agreements",
+      "Telecom Interconnection & Platform Liability",
+      "Fintech & Digital Platforms",
+      "E-commerce & Digital Business",
     ],
     callout: {
       eyebrow: "Telecommunications, Technology & Digital Law",
@@ -559,7 +556,7 @@ export const expertiseDetails = {
 
 export const expertiseLanding = {
   introduction:
-    "Ninewells advises multinational companies, financial institutions and indigenous businesses across Nigeria’s eight key practice areas.",
+    "As a fully integrated, multidisciplinary law firm, Ninewells advises multinational companies, financial institutions and indigenous businesses across Nigeria’s key industries.",
 } as const;
 
 export const insightGroups = [
