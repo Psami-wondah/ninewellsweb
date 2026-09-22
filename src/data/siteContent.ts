@@ -170,7 +170,11 @@ export const practiceAreas = [
       heading: "Securing titles, structuring bankable mining projects in Nigeria.",
       body:
         "We fast-track Exploration Licences and Mining Leases through the Mining Cadastre Office, negotiate Community Development Agreements that protect your social licence to operate, and clear mineral export and local-processing compliance — moving at the pace mining projects demand.",
-      // TODO: Add "Download Our Guide to Securing Nigerian Mining Titles" when the client supplies the guide asset.
+      cta: {
+        label: "Download Our Guide to Securing Nigerian Mining Titles",
+        // TODO: Replace "#" with the final mining-title guide URL before launch.
+        href: "#",
+      },
     },
     industries: [
       ["Mining & Minerals", "Licensing, exploration, production and closure"],
@@ -456,8 +460,7 @@ export const practiceAreas = [
       "Our lawyers handle NCC licensing and spectrum matters, data-protection compliance under the NDPA, cybersecurity and incident-response obligations, technology transactions and SaaS agreements, disputes arising from telecom interconnection or platform liability, and related digital-economy regulation.",
     bodyHeading: "A Modern Law Firm Built for the Technology Era",
     body: [
-      "Ninewells is a technology-assisted Nigerian law firm. Our lawyers remain responsible for the legal work and use technology to improve the speed, quality and efficiency of delivery.",
-      "Being a modern law firm means equipping our lawyers with strong, modern tools and the best available legal resources while keeping human legal judgement at the centre of every mandate.",
+      "Being a modern law firm means equipping our lawyers with strong, modern technology and the best available legal resources. We use those tools to improve the speed, quality and efficiency of our work.",
     ],
     featureImage: expertiseTechnologyImage,
     featureImageAlt: "Telecommunications tower against the sky in Ibadan",
