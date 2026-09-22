@@ -19,7 +19,7 @@ export function CentralCalloutSection({
 
   return (
     <section
-      className="grid gap-10 bg-navy px-[clamp(22px,8vw,130px)] py-[clamp(76px,9vw,112px)] text-ivory dark:bg-[#030d1d] lg:grid-cols-[.8fr_1.2fr] lg:gap-x-20"
+      className="grid gap-10 bg-navy px-[clamp(22px,8vw,130px)] py-[clamp(64px,7cqw,92px)] text-ivory dark:bg-[#030d1d] lg:grid-cols-[.9fr_1.1fr] lg:gap-x-20"
       id={id}
       aria-label={`${callout.heading} callout`}
     >
@@ -27,7 +27,7 @@ export function CentralCalloutSection({
         {callout.eyebrow ? (
           <Eyebrow className="text-teal">{callout.eyebrow}</Eyebrow>
         ) : null}
-        <h2 className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(42px,4.5vw,66px)] leading-[.98] font-normal tracking-[-.04em] text-ivory">
+        <h2 className="mt-6 mb-0 max-w-[760px] font-serif text-[clamp(32px,3.2cqw,50px)] leading-[.98] font-normal tracking-[-.035em] text-ivory">
           {callout.heading}
         </h2>
       </div>
@@ -35,7 +35,7 @@ export function CentralCalloutSection({
         <div className="grid gap-5">
           {body.map((paragraph) => (
             <p
-              className="m-0 max-w-[880px] font-serif text-[clamp(25px,2.5vw,39px)] leading-tight text-white/95"
+              className="m-0 max-w-[760px] font-serif text-[clamp(18px,1.6cqw,24px)] leading-[1.45] text-pretty text-white/95"
               key={paragraph}
             >
               {paragraph}

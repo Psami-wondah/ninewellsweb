@@ -331,10 +331,6 @@ export const practiceAreas = [
         "Institutions, investors, products and strategic transactions",
       ],
       [
-        "Technology & Digital Economy",
-        "Platforms, innovation, data and commercial agreements",
-      ],
-      [
         "Consumer & Commercial Businesses",
         "Growth, operations, governance and risk management",
       ],

@@ -65,11 +65,11 @@ export function ExpertiseDetailPage({ detail }: { detail: PracticeArea }) {
           </p>
         </div>
         <div data-reveal="right" data-reveal-delay="1">
-          <h2 className="m-0 max-w-[900px] font-serif text-[clamp(34px,4vw,56px)] leading-[1.08] font-normal tracking-[-.035em] text-navy dark:text-paper">
+          <p className="m-0 max-w-[850px] font-serif text-[clamp(24px,2.4cqw,36px)] leading-[1.15] font-normal tracking-[-.02em] text-navy dark:text-paper">
             {detail.overview}
-          </h2>
+          </p>
           {detail.bodyHeading ? (
-            <h2 className="mt-12 mb-0 max-w-[820px] font-serif text-[clamp(32px,3.5vw,48px)] leading-[1.05] font-normal tracking-[-.03em] text-navy dark:text-paper">
+            <h2 className="mt-12 mb-0 max-w-[820px] font-serif text-[clamp(26px,2.5cqw,38px)] leading-[1.08] font-normal tracking-[-.03em] text-navy dark:text-paper">
               {detail.bodyHeading}
             </h2>
           ) : null}
