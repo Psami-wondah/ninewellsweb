@@ -58,7 +58,7 @@ export function AboutPage() {
       <section className="grid gap-14 bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,120px)] dark:bg-[#08172a] lg:grid-cols-[.52fr_1.18fr] lg:gap-[clamp(70px,10vw,170px)]">
         <div className="self-start lg:sticky lg:top-14">
           <Eyebrow>How we work</Eyebrow>
-          <h2 className="mt-6 font-serif text-[clamp(40px,5vw,66px)] leading-none font-normal text-navy dark:text-paper">
+          <h2 className="mt-6 font-serif text-[clamp(30px,2.8cqw,44px)] leading-[1.05] font-normal text-navy dark:text-paper">
             Built around the client’s whole decision.
           </h2>
         </div>
@@ -68,7 +68,7 @@ export function AboutPage() {
         >
           {company.about.map((paragraph, index) => (
             <p
-              className={`m-0 border-t border-navy/15 pt-5 dark:border-white/15 ${index === 0 ? "font-serif text-[clamp(26px,3vw,38px)] leading-tight text-navy md:col-span-2 dark:text-paper" : ""}`}
+              className={`m-0 border-t border-navy/15 pt-5 dark:border-white/15 ${index === 0 ? "font-serif text-[clamp(20px,1.8cqw,28px)] leading-[1.35] text-navy md:col-span-2 dark:text-paper" : ""}`}
               key={paragraph}
             >
               {paragraph}

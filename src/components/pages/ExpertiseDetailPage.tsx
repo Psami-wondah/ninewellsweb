@@ -65,7 +65,7 @@ export function ExpertiseDetailPage({ detail }: { detail: PracticeArea }) {
           </p>
         </div>
         <div data-reveal="right" data-reveal-delay="1">
-          <p className="m-0 max-w-[850px] font-serif text-[clamp(24px,2.4cqw,36px)] leading-[1.15] font-normal tracking-[-.02em] text-navy dark:text-paper">
+          <p className="m-0 max-w-[850px] font-serif text-[clamp(20px,1.8cqw,28px)] leading-[1.35] font-normal tracking-[-.015em] text-navy dark:text-paper">
             {detail.overview}
           </p>
           {detail.bodyHeading ? (

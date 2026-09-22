@@ -162,7 +162,7 @@ export function LawyerProfilePage({ person }: { person: Person }) {
             >
               Overview
             </h2>
-            <p className="mt-7 mb-0 max-w-[860px] font-serif text-[clamp(30px,3.5vw,46px)] leading-[1.08] font-normal tracking-[-.03em] text-navy dark:text-paper">
+            <p className="mt-7 mb-0 max-w-[860px] font-serif text-[clamp(20px,1.8cqw,28px)] leading-[1.35] font-normal tracking-[-.03em] text-navy dark:text-paper">
               {person.bio}
             </p>
             <div className="mt-10" aria-labelledby="profile-at-a-glance">

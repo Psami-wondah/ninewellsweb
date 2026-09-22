@@ -78,6 +78,8 @@ export function InsightsDirectoryPage() {
         })}
       </nav>
 
+      <CentralCalloutSection callout={pageCallouts.intelligence} />
+
       <div className="bg-paper px-[clamp(22px,7vw,118px)] py-[clamp(58px,8vw,96px)] dark:bg-[#071224]">
         {insightGroups.map((group, groupIndex) => {
           const groupedItems = insightItems.filter(
@@ -146,8 +148,6 @@ export function InsightsDirectoryPage() {
           Talk to Our Team About These Issues <ArrowRight size={18} />
         </Link>
       </div>
-
-      <CentralCalloutSection callout={pageCallouts.intelligence} />
     </>
   );
 }

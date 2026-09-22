@@ -35,7 +35,7 @@ export function CentralCalloutSection({
         <div className="grid gap-5">
           {body.map((paragraph) => (
             <p
-              className="m-0 max-w-[760px] font-serif text-[clamp(18px,1.6cqw,24px)] leading-[1.45] text-pretty text-white/95"
+              className="m-0 max-w-[680px] font-serif text-[clamp(16px,1.15cqw,19px)] leading-[1.55] text-pretty text-white/95"
               key={paragraph}
             >
               {paragraph}
