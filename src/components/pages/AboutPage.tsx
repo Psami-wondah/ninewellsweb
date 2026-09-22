@@ -58,7 +58,7 @@ export function AboutPage() {
       <section className="grid gap-14 bg-ivory px-[clamp(22px,7vw,118px)] py-[clamp(76px,9vw,120px)] dark:bg-[#08172a] lg:grid-cols-[.52fr_1.18fr] lg:gap-[clamp(70px,10vw,170px)]">
         <div className="self-start lg:sticky lg:top-14">
           <Eyebrow>How we work</Eyebrow>
-          <h2 className="mt-6 font-serif text-[clamp(30px,2.8cqw,44px)] leading-[1.05] font-normal text-navy dark:text-paper">
+          <h2 className="mt-6 font-serif text-[clamp(40px,5vw,66px)] leading-none font-normal text-navy dark:text-paper">
             Built around the client’s whole decision.
           </h2>
         </div>

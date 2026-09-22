@@ -157,12 +157,12 @@ export function LawyerProfilePage({ person }: { person: Person }) {
           <section aria-labelledby="overview">
             <Eyebrow>Biography</Eyebrow>
             <h2
-              className="mt-5 mb-0 scroll-mt-24 font-serif text-[clamp(34px,4vw,52px)] leading-none font-normal text-navy lg:scroll-mt-8 dark:text-paper"
+              className="mt-5 mb-0 scroll-mt-24 font-serif text-[clamp(26px,2.4cqw,36px)] leading-[1.05] font-normal text-navy lg:scroll-mt-8 dark:text-paper"
               id="overview"
             >
               Overview
             </h2>
-            <p className="mt-7 mb-0 max-w-[860px] font-serif text-[clamp(20px,1.8cqw,28px)] leading-[1.35] font-normal tracking-[-.03em] text-navy dark:text-paper">
+            <p className="mt-7 mb-0 max-w-[860px] font-serif text-[clamp(18px,1.45cqw,24px)] leading-[1.45] font-normal tracking-[-.03em] text-navy dark:text-paper">
               {person.bio}
             </p>
             <div className="mt-10" aria-labelledby="profile-at-a-glance">
